@@ -1,3 +1,5 @@
+//
+//  ServerRepository.swift
 //  MoodStation
 //
 //  Created by Yongwoo Marco on 2022/02/23.
@@ -24,5 +26,4 @@ struct ServerRepository: Repository {
     func fetchItems(completed: @escaping (Result<[Record], Error>) -> Void) {
 
     }
-
 }

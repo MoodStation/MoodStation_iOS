@@ -9,6 +9,5 @@ protocol Repository {
     func read(id: Int, completed: @escaping (Result<Record, Error>) -> Void)
     func update(item: Record, completed: @escaping (Bool) -> Void)
     func delete(item: Record, completed: @escaping (Bool) -> Void)
-
     func fetchItems(completed: @escaping (Result<[Record], Error>) -> Void)
 }
