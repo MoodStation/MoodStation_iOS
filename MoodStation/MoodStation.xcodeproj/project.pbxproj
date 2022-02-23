@@ -19,6 +19,7 @@
 		A963E67727C650B600DAF770 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E67627C650B600DAF770 /* Record.swift */; };
 		A9FD6F9827C654FD00EC97FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD6F9627C654FD00EC97FC /* Repository.swift */; };
 		A9FD6F9927C654FD00EC97FC /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD6F9727C654FD00EC97FC /* ServerRepository.swift */; };
+		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A963E67627C650B600DAF770 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		A9FD6F9627C654FD00EC97FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		A9FD6F9727C654FD00EC97FC /* ServerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
+		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		A963E63027C648A200DAF770 /* MoodStation */ = {
 			isa = PBXGroup;
 			children = (
+				F11A10A227C651C700E29A24 /* Extension */,
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
 				A963E63327C648A200DAF770 /* SceneDelegate.swift */,
 				A963E63527C648A200DAF770 /* ViewController.swift */,
@@ -150,6 +153,12 @@
 				A9FD6F9727C654FD00EC97FC /* ServerRepository.swift */,
 			);
 			path = Utils;
+		F11A10A227C651C700E29A24 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10A327C651CE00E29A24 /* UIColor+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +298,7 @@
 				A963E67727C650B600DAF770 /* Record.swift in Sources */,
 				A9FD6F9927C654FD00EC97FC /* ServerRepository.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
+				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
