@@ -16,7 +16,9 @@
 		A963E64927C648A400DAF770 /* MoodStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E64827C648A400DAF770 /* MoodStationTests.swift */; };
 		A963E65327C648A400DAF770 /* MoodStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65227C648A400DAF770 /* MoodStationUITests.swift */; };
 		A963E65527C648A400DAF770 /* MoodStationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */; };
-		A963E66327C6499E00DAF770 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E66227C6499E00DAF770 /* Record.swift */; };
+		A963E67727C650B600DAF770 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E67627C650B600DAF770 /* Record.swift */; };
+		A9FD6F9827C654FD00EC97FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD6F9627C654FD00EC97FC /* Repository.swift */; };
+		A9FD6F9927C654FD00EC97FC /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD6F9727C654FD00EC97FC /* ServerRepository.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +53,9 @@
 		A963E64E27C648A400DAF770 /* MoodStationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodStationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E65227C648A400DAF770 /* MoodStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITests.swift; sourceTree = "<group>"; };
 		A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A963E66227C6499E00DAF770 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		A963E67627C650B600DAF770 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		A9FD6F9627C654FD00EC97FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		A9FD6F9727C654FD00EC97FC /* ServerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +111,8 @@
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
 				A963E63327C648A200DAF770 /* SceneDelegate.swift */,
 				A963E63527C648A200DAF770 /* ViewController.swift */,
-				A963E66127C6499400DAF770 /* Model */,
+				A963E67527C650B600DAF770 /* Model */,
+				A9FD6F9527C654FD00EC97FC /* Utils */,
 				A963E63727C648A200DAF770 /* Main.storyboard */,
 				A963E63A27C648A300DAF770 /* Assets.xcassets */,
 				A963E63C27C648A300DAF770 /* LaunchScreen.storyboard */,
@@ -133,14 +138,21 @@
 			path = MoodStationUITests;
 			sourceTree = "<group>";
 		};
-		A963E66127C6499400DAF770 /* Model */ = {
+		A963E67527C650B600DAF770 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A963E66227C6499E00DAF770 /* Record.swift */,
+				A963E67627C650B600DAF770 /* Record.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A9FD6F9527C654FD00EC97FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A9FD6F9627C654FD00EC97FC /* Repository.swift */,
+				A9FD6F9727C654FD00EC97FC /* ServerRepository.swift */,
+			);
+			path = Utils;
 		F11A10A227C651C700E29A24 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,7 +294,9 @@
 			files = (
 				A963E63627C648A200DAF770 /* ViewController.swift in Sources */,
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
-				A963E66327C6499E00DAF770 /* Record.swift in Sources */,
+				A9FD6F9827C654FD00EC97FC /* Repository.swift in Sources */,
+				A963E67727C650B600DAF770 /* Record.swift in Sources */,
+				A9FD6F9927C654FD00EC97FC /* ServerRepository.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 			);
