@@ -108,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				F11A10A527C65A8300E29A24 /* Model */,
+				F11A10AC27C65BFE00E29A24 /* Utils */,
 				F11A10A227C651C700E29A24 /* Extension */,
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
 				A963E63327C648A200DAF770 /* SceneDelegate.swift */,
@@ -149,10 +150,17 @@
 			isa = PBXGroup;
 			children = (
 				F11A10A627C65A9100E29A24 /* Record.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F11A10AC27C65BFE00E29A24 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
 				F11A10A827C65A9800E29A24 /* Repository.swift */,
 				F11A10AA27C65AA100E29A24 /* ServerRepository.swift */,
 			);
-			path = Model;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
