@@ -17,6 +17,7 @@
 		A963E65327C648A400DAF770 /* MoodStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65227C648A400DAF770 /* MoodStationUITests.swift */; };
 		A963E65527C648A400DAF770 /* MoodStationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */; };
 		A963E66327C6499E00DAF770 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E66227C6499E00DAF770 /* Record.swift */; };
+		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A963E65227C648A400DAF770 /* MoodStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITests.swift; sourceTree = "<group>"; };
 		A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A963E66227C6499E00DAF770 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		A963E63027C648A200DAF770 /* MoodStation */ = {
 			isa = PBXGroup;
 			children = (
+				F11A10A227C651C700E29A24 /* Extension */,
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
 				A963E63327C648A200DAF770 /* SceneDelegate.swift */,
 				A963E63527C648A200DAF770 /* ViewController.swift */,
@@ -136,6 +139,14 @@
 				A963E66227C6499E00DAF770 /* Record.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F11A10A227C651C700E29A24 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10A327C651CE00E29A24 /* UIColor+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
 				A963E66327C6499E00DAF770 /* Record.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
+				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
