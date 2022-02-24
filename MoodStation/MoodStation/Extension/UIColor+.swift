@@ -35,14 +35,14 @@ extension UIColor {
     
     // MARK: - Gray Scale
     
-//    static let black = UIColor(hex: "#171717")
+    static let customBlack = UIColor(hex: "#171717")
     static let gray06 = UIColor(hex: "#222222")
     static let gray05 = UIColor(hex: "#2E2E2E")
     static let gray04 = UIColor(hex: "#555555")
     static let gray03 = UIColor(hex: "#9E9E9E")
     static let gray02 = UIColor(hex: "#C1C1C1")
     static let gray01 = UIColor(hex: "#ECECEC")
-//    static let whtie = UIColor(hex: "#FBFBFB")
+    static let customWhtie = UIColor(hex: "#FBFBFB")
     
     //MARK: - Brand Color
     
