@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EB0B354489CE90012055769 /* Pods_MoodStation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */; };
+		5C3D1569CEA1FB53139F4818 /* Pods_MoodStation_MoodStationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9AEBEF8539A77A071E7B7D /* Pods_MoodStation_MoodStationUITests.framework */; };
+		761E7951A7DA378270FC9C29 /* Pods_MoodStationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */; };
 		A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63127C648A200DAF770 /* AppDelegate.swift */; };
 		A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63327C648A200DAF770 /* SceneDelegate.swift */; };
 		A963E63627C648A200DAF770 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63527C648A200DAF770 /* ViewController.swift */; };
@@ -40,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16F377E057AB68E8A586A76F /* Pods-MoodStation-MoodStationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation-MoodStationUITests.release.xcconfig"; path = "Target Support Files/Pods-MoodStation-MoodStationUITests/Pods-MoodStation-MoodStationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2E80FF9C16305F3E518A7761 /* Pods-MoodStation-MoodStationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation-MoodStationUITests.debug.xcconfig"; path = "Target Support Files/Pods-MoodStation-MoodStationUITests/Pods-MoodStation-MoodStationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		49832C8378816691891F40D3 /* Pods-MoodStationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.debug.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E9AEBEF8539A77A071E7B7D /* Pods_MoodStation_MoodStationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation_MoodStationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8554F1D67D75FDAA6530D087 /* Pods-MoodStation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation.debug.xcconfig"; path = "Target Support Files/Pods-MoodStation/Pods-MoodStation.debug.xcconfig"; sourceTree = "<group>"; };
+		88AE66616A50C489F5F9196F /* Pods-MoodStation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation.release.xcconfig"; path = "Target Support Files/Pods-MoodStation/Pods-MoodStation.release.xcconfig"; sourceTree = "<group>"; };
+		9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E62E27C648A200DAF770 /* MoodStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E63127C648A200DAF770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A963E63327C648A200DAF770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +63,8 @@
 		A963E64E27C648A400DAF770 /* MoodStationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodStationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E65227C648A400DAF770 /* MoodStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITests.swift; sourceTree = "<group>"; };
 		A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		F11A10A627C65A9100E29A24 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		F11A10A827C65A9800E29A24 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB0B354489CE90012055769 /* Pods_MoodStation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761E7951A7DA378270FC9C29 /* Pods_MoodStationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +92,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C3D1569CEA1FB53139F4818 /* Pods_MoodStation_MoodStationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62090D29E85122EC2AE7E398 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */,
+				7E9AEBEF8539A77A071E7B7D /* Pods_MoodStation_MoodStationUITests.framework */,
+				9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7645D2196BEE5492FD0513B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8554F1D67D75FDAA6530D087 /* Pods-MoodStation.debug.xcconfig */,
+				88AE66616A50C489F5F9196F /* Pods-MoodStation.release.xcconfig */,
+				2E80FF9C16305F3E518A7761 /* Pods-MoodStation-MoodStationUITests.debug.xcconfig */,
+				16F377E057AB68E8A586A76F /* Pods-MoodStation-MoodStationUITests.release.xcconfig */,
+				49832C8378816691891F40D3 /* Pods-MoodStationTests.debug.xcconfig */,
+				D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A963E62527C648A200DAF770 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +130,8 @@
 				A963E64727C648A400DAF770 /* MoodStationTests */,
 				A963E65127C648A400DAF770 /* MoodStationUITests */,
 				A963E62F27C648A200DAF770 /* Products */,
+				7645D2196BEE5492FD0513B8 /* Pods */,
+				62090D29E85122EC2AE7E398 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A963E65827C648A400DAF770 /* Build configuration list for PBXNativeTarget "MoodStation" */;
 			buildPhases = (
+				4FEEC6B2794B2352CA74F941 /* [CP] Check Pods Manifest.lock */,
 				A963E62A27C648A200DAF770 /* Sources */,
 				A963E62B27C648A200DAF770 /* Frameworks */,
 				A963E62C27C648A200DAF770 /* Resources */,
+				DCE60B6B6819744A36544DEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A963E65B27C648A400DAF770 /* Build configuration list for PBXNativeTarget "MoodStationTests" */;
 			buildPhases = (
+				774EA1578511332262DCC92E /* [CP] Check Pods Manifest.lock */,
 				A963E64027C648A400DAF770 /* Sources */,
 				A963E64127C648A400DAF770 /* Frameworks */,
 				A963E64227C648A400DAF770 /* Resources */,
@@ -205,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A963E65E27C648A400DAF770 /* Build configuration list for PBXNativeTarget "MoodStationUITests" */;
 			buildPhases = (
+				B782706C8903B7F0B584373F /* [CP] Check Pods Manifest.lock */,
 				A963E64A27C648A400DAF770 /* Sources */,
 				A963E64B27C648A400DAF770 /* Frameworks */,
 				A963E64C27C648A400DAF770 /* Resources */,
+				253C467F1B31F81EAD303ABA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +334,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		253C467F1B31F81EAD303ABA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoodStation-MoodStationUITests/Pods-MoodStation-MoodStationUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoodStation-MoodStationUITests/Pods-MoodStation-MoodStationUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoodStation-MoodStationUITests/Pods-MoodStation-MoodStationUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FEEC6B2794B2352CA74F941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoodStation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		774EA1578511332262DCC92E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoodStationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B782706C8903B7F0B584373F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoodStation-MoodStationUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE60B6B6819744A36544DEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoodStation/Pods-MoodStation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoodStation/Pods-MoodStation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoodStation/Pods-MoodStation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A963E62A27C648A200DAF770 /* Sources */ = {
@@ -474,6 +623,7 @@
 		};
 		A963E65927C648A400DAF770 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8554F1D67D75FDAA6530D087 /* Pods-MoodStation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -501,6 +651,7 @@
 		};
 		A963E65A27C648A400DAF770 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88AE66616A50C489F5F9196F /* Pods-MoodStation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -528,6 +679,7 @@
 		};
 		A963E65C27C648A400DAF770 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49832C8378816691891F40D3 /* Pods-MoodStationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -552,6 +704,7 @@
 		};
 		A963E65D27C648A400DAF770 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -576,6 +729,7 @@
 		};
 		A963E65F27C648A400DAF770 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E80FF9C16305F3E518A7761 /* Pods-MoodStation-MoodStationUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -598,6 +752,7 @@
 		};
 		A963E66027C648A400DAF770 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16F377E057AB68E8A586A76F /* Pods-MoodStation-MoodStationUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
