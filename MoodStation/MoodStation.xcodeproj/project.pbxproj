@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341F620A27C8645C00296C49 /* UserDefaults+.swift */; };
+		34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309F4127C85B6300F54FE3 /* MainViewController.swift */; };
+		34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309F4627C85BDE00F54FE3 /* HomeViewController.swift */; };
+		34309F4927C85BEB00F54FE3 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309F4827C85BEB00F54FE3 /* ShareViewController.swift */; };
+		34309F4B27C85BF500F54FE3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309F4A27C85BF500F54FE3 /* SettingsViewController.swift */; };
+		34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */; };
+		34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309F4E27C85C6500F54FE3 /* ShareViewModel.swift */; };
+		34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34309F5027C85C7700F54FE3 /* SettingsViewModel.swift */; };
 		3EB0B354489CE90012055769 /* Pods_MoodStation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */; };
 		5C3D1569CEA1FB53139F4818 /* Pods_MoodStation_MoodStationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9AEBEF8539A77A071E7B7D /* Pods_MoodStation_MoodStationUITests.framework */; };
 		761E7951A7DA378270FC9C29 /* Pods_MoodStationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */; };
@@ -45,6 +53,14 @@
 /* Begin PBXFileReference section */
 		16F377E057AB68E8A586A76F /* Pods-MoodStation-MoodStationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation-MoodStationUITests.release.xcconfig"; path = "Target Support Files/Pods-MoodStation-MoodStationUITests/Pods-MoodStation-MoodStationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2E80FF9C16305F3E518A7761 /* Pods-MoodStation-MoodStationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation-MoodStationUITests.debug.xcconfig"; path = "Target Support Files/Pods-MoodStation-MoodStationUITests/Pods-MoodStation-MoodStationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		341F620A27C8645C00296C49 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
+		34309F4127C85B6300F54FE3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		34309F4627C85BDE00F54FE3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		34309F4827C85BEB00F54FE3 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		34309F4A27C85BF500F54FE3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		34309F4E27C85C6500F54FE3 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
+		34309F5027C85C7700F54FE3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		49832C8378816691891F40D3 /* Pods-MoodStationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.debug.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E9AEBEF8539A77A071E7B7D /* Pods_MoodStation_MoodStationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation_MoodStationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8554F1D67D75FDAA6530D087 /* Pods-MoodStation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation.debug.xcconfig"; path = "Target Support Files/Pods-MoodStation/Pods-MoodStation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +115,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34309F4327C85BAA00F54FE3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				34309F4627C85BDE00F54FE3 /* HomeViewController.swift */,
+				34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		34309F4427C85BAC00F54FE3 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				34309F4827C85BEB00F54FE3 /* ShareViewController.swift */,
+				34309F4E27C85C6500F54FE3 /* ShareViewModel.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		34309F4527C85BB400F54FE3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				34309F4A27C85BF500F54FE3 /* SettingsViewController.swift */,
+				34309F5027C85C7700F54FE3 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		62090D29E85122EC2AE7E398 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +194,10 @@
 				F11A10AC27C65BFE00E29A24 /* Utils */,
 				F11A10A227C651C700E29A24 /* Extension */,
 				F11A10AD27C7A40700E29A24 /* Intro */,
+				34309F4327C85BAA00F54FE3 /* Home */,
+				34309F4427C85BAC00F54FE3 /* Share */,
+				34309F4527C85BB400F54FE3 /* Settings */,
+				34309F4127C85B6300F54FE3 /* MainViewController.swift */,
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
 				A963E63327C648A200DAF770 /* SceneDelegate.swift */,
 				A963E63A27C648A300DAF770 /* Assets.xcassets */,
@@ -182,6 +229,7 @@
 			children = (
 				F11A10A327C651CE00E29A24 /* UIColor+.swift */,
 				F11A10B027C7AA8A00E29A24 /* UIFont+.swift */,
+				341F620A27C8645C00296C49 /* UserDefaults+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -450,13 +498,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */,
+				34309F4927C85BEB00F54FE3 /* ShareViewController.swift in Sources */,
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
+				341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */,
+				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
+				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
 				F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */,
 				F11A10A727C65A9100E29A24 /* Record.swift in Sources */,
+				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
+				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,
+				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 				F11A10A927C65A9800E29A24 /* Repository.swift in Sources */,
+				34309F4B27C85BF500F54FE3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,8 +682,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoodStation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -641,6 +699,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moodstation.MoodStation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -653,8 +712,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoodStation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -668,6 +729,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moodstation.MoodStation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

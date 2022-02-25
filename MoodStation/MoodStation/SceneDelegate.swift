@@ -17,9 +17,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         
-        let introViewController = IntroViewController(nibName: nil, bundle: nil)
         
-        self.window?.rootViewController = introViewController
+        let rootViewController: UIViewController = {
+            if UserDefaults.standard.bool(key: .introDidSkip) {
+                return MainViewController(nibName: nil, bundle: nil)
+            } else {
+                return IntroViewController(nibName: nil, bundle: nil)
+            }
+        }()
+        
+        self.window?.rootViewController = rootViewController
         self.window?.makeKeyAndVisible()
     }
 
