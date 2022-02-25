@@ -110,8 +110,13 @@ final class IntroViewController: UIViewController {
         
     }
     
+    private func setIntroDidSkip() {
+        UserDefaults.standard.setValue(true, key: .introDidSkip)
+    }
+    
     @objc private func skipButtonDidTap(_ sender: UIButton) {
-        // TODO: - 로그인 안하고 GO TO Main View
+        self.setIntroDidSkip()
+        self.view.window?.rootViewController = MainViewController(nibName: nil, bundle: nil)
     }
     
     @objc private func signInButtonDidTap(_ sender: UIButton) {
