@@ -40,8 +40,7 @@ final class MainViewController: UITabBarController {
     private var homeViewController: UINavigationController = {
         let viewModel = HomeViewModel()
         let viewController = HomeViewController(viewModel: viewModel).then {
-            $0.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: nil) // 피그마 이미지 가져오기
-//            $0.tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+            $0.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "icn-home"), selectedImage: nil)
         }
         return UINavigationController(rootViewController: viewController).then {
             $0.setNavigationBarHidden(true, animated: false)
@@ -51,8 +50,7 @@ final class MainViewController: UITabBarController {
     private var shareViewController: UINavigationController = {
         let viewModel = ShareViewModel()
         let viewController = ShareViewController(viewModel: viewModel).then {
-            $0.tabBarItem = UITabBarItem(title: "Share", image: UIImage(systemName: "square.on.square"), selectedImage: nil) // 피그마 이미지 가져오기
-//            $0.tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+            $0.tabBarItem = UITabBarItem(title: "Share", image: UIImage(named: "icn-share"), selectedImage: nil)
         }
         return UINavigationController(rootViewController: viewController).then {
             $0.setNavigationBarHidden(true, animated: false)
@@ -62,8 +60,7 @@ final class MainViewController: UITabBarController {
     private var settingsViewController: UINavigationController = {
         let viewModel = SettingsViewModel()
         let viewController = SettingsViewController(viewModel: viewModel).then {
-            $0.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape"), selectedImage: nil) // 피그마 이미지 가져오기
-//            $0.tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+            $0.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "icn-settings"), selectedImage: nil)
         }
         return UINavigationController(rootViewController: viewController).then {
             $0.setNavigationBarHidden(true, animated: false)
