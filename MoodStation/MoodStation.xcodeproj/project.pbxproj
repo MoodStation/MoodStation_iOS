@@ -31,6 +31,12 @@
 		F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10AA27C65AA100E29A24 /* ServerRepository.swift */; };
 		F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10AE27C7A5A100E29A24 /* IntroViewController.swift */; };
 		F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10B027C7AA8A00E29A24 /* UIFont+.swift */; };
+		F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C127CDF44500E29A24 /* SignInViewController.swift */; };
+		F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C327CDF44B00E29A24 /* SignInViewModel.swift */; };
+		F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C527CDF45B00E29A24 /* SignUpViewModel.swift */; };
+		F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C727CDF46100E29A24 /* SignUpViewController.swift */; };
+		F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C927CDF54E00E29A24 /* SignInView.swift */; };
+		F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10CB27CE01E000E29A24 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,12 @@
 		F11A10AA27C65AA100E29A24 /* ServerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		F11A10AE27C7A5A100E29A24 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		F11A10B027C7AA8A00E29A24 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		F11A10C127CDF44500E29A24 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F11A10C327CDF44B00E29A24 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		F11A10C527CDF45B00E29A24 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		F11A10C727CDF46100E29A24 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F11A10C927CDF54E00E29A24 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F11A10CB27CE01E000E29A24 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +206,7 @@
 				F11A10AC27C65BFE00E29A24 /* Utils */,
 				F11A10A227C651C700E29A24 /* Extension */,
 				F11A10AD27C7A40700E29A24 /* Intro */,
+				F11A10BE27CDF41200E29A24 /* Sign */,
 				34309F4327C85BAA00F54FE3 /* Home */,
 				34309F4427C85BAC00F54FE3 /* Share */,
 				34309F4527C85BB400F54FE3 /* Settings */,
@@ -257,6 +270,35 @@
 				F11A10AE27C7A5A100E29A24 /* IntroViewController.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		F11A10BE27CDF41200E29A24 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10BF27CDF42C00E29A24 /* SignIn */,
+				F11A10C027CDF43000E29A24 /* SignUp */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		F11A10BF27CDF42C00E29A24 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10C127CDF44500E29A24 /* SignInViewController.swift */,
+				F11A10C327CDF44B00E29A24 /* SignInViewModel.swift */,
+				F11A10C927CDF54E00E29A24 /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		F11A10C027CDF43000E29A24 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10C727CDF46100E29A24 /* SignUpViewController.swift */,
+				F11A10C527CDF45B00E29A24 /* SignUpViewModel.swift */,
+				F11A10CB27CE01E000E29A24 /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,15 +539,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */,
 				F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */,
 				34309F4927C85BEB00F54FE3 /* ShareViewController.swift in Sources */,
+				F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */,
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
+				F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
 				341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */,
 				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
+				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,
 				F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */,
 				F11A10A727C65A9100E29A24 /* Record.swift in Sources */,
+				F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */,
+				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,

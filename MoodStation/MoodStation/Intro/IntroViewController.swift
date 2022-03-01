@@ -64,6 +64,10 @@ final class IntroViewController: UIViewController {
     }
     
     private func setupAttributes() {
+        self.view.do {
+            $0.backgroundColor = .customBlack
+        }
+        
         self.skipButton.do {
             $0.setTitle("건너뛰기", for: .normal)
             $0.setTitleColor(.gray01, for: .normal)
@@ -120,11 +124,15 @@ final class IntroViewController: UIViewController {
     }
     
     @objc private func signInButtonDidTap(_ sender: UIButton) {
-        // TODO: - GO TO SignIn View
+        let viewModel = SignInViewModel()
+        let viewController = SignInViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func signUpButtonDidTap(_ sender: UIButton) {
-        // TODO: - GO TO SignUp View
+        let viewModel = SignUpViewModel()
+        let viewController = SignUpViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private let skipButton = UIButton(frame: .zero)
