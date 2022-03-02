@@ -5,7 +5,7 @@
 //  Created by Yongwoo Marco on 2022/03/02.
 //
 
-import UIKit
+import UIKit.UITableViewCell
 
 final class HomeRecordListCell: UITableViewCell {
 

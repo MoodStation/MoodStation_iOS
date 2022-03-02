@@ -39,6 +39,7 @@ final class HomeViewController: UIViewController {
         recordListView.do {
             $0.backgroundColor = .customBlack
             $0.separatorStyle = .none
+            $0.register(HomeRecordListCell.self, forCellReuseIdentifier: HomeRecordListCell.className)
         }
     }
     
