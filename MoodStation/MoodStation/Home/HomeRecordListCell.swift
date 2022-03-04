@@ -78,6 +78,14 @@ final class HomeRecordListCell: UITableViewCell {
         
         self.keywordCollection.do {
             $0.isScrollEnabled = false
+            let flowLayout = UICollectionViewFlowLayout().then {
+                $0.minimumLineSpacing = 6
+                $0.minimumInteritemSpacing = 6
+                $0.estimatedItemSize = CGSize(width: 24.0, height: 50.0)
+            }
+            $0.setCollectionViewLayout(flowLayout, animated: false)
+            $0.dataSource = self
+            $0.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: KeywordCollectionViewCell.className)
         }
     }
     
@@ -97,9 +105,25 @@ extension HomeRecordListCell: Configurable {
 //            moodRectangle  // Color 추가 필요
             dateLabel.text = record.date.description // formmater 필요
             keywords = record.keyword
+            DispatchQueue.main.async {
+                self.keywordCollection.reloadData()
+            }
             
             // 이미지 불러오기 비동기
         }
     }
 }
 
+extension HomeRecordListCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        keywords.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KeywordCollectionViewCell.className, for: indexPath) as? KeywordCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.configure(data: keywords[indexPath.item])
+        return cell
+    }
+}

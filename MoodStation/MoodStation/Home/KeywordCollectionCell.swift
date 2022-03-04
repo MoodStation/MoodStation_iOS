@@ -22,8 +22,8 @@ final class KeywordCollectionViewCell: UICollectionViewCell {
     private func setupLayout() {
         self.addSubview(self.keywordLabel)
         self.keywordLabel.snp.makeConstraints { make in
-            make.top.bottom.equalTo(contentView.safeAreaLayoutGuide).offset(3)
-            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).offset(11)
+            make.top.bottom.equalToSuperview().inset(3)
+            make.leading.trailing.equalToSuperview().inset(11)
         }
     }
     
@@ -34,8 +34,13 @@ final class KeywordCollectionViewCell: UICollectionViewCell {
         
         self.keywordLabel.do {
             $0.textColor = .gray01
-            $0.font = .body0M // body3-regular ?
+            $0.font = .body3R
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = 6
     }
     
     private let keywordLabel: UILabel = UILabel(frame: .zero)
