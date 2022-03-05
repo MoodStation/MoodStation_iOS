@@ -28,13 +28,19 @@ final class SignUpViewController: UIViewController {
     }
     
     private func setupLayout() {
-        self.view.addSubview(self.signUpView)
-        
-        self.signUpView.snp.makeConstraints { make in
+        self.view.addSubview(self.navigationView)
+        self.navigationView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(44)
         }
         
+        self.view.addSubview(self.signUpView)
+        self.signUpView.snp.makeConstraints { make in
+            make.top.equalTo(self.navigationView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        }
     }
     
     private func setupAttributes() {
@@ -42,11 +48,67 @@ final class SignUpViewController: UIViewController {
             $0.backgroundColor = .customBlack
         }
         
+        self.navigationView.do {
+            $0.delegate = self
+            $0.configure(type: .back)
+        }
+        
+        self.signUpView.do {
+            $0.delegate = self
+            $0.dataSource = self
+        }
+        
     }
     
+    private let navigationView = NavigationView()
+    private let signUpView = SignUpView()
     
     private let viewModel: SignUpViewModel
     
-    private let signUpView = SignUpView()
+}
+
+extension SignUpViewController: NavigationViewDelegate {
+    
+    func navigationViewDeleagteDidClickLeftButton(_ view: NavigationView) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+extension SignUpViewController: SignUpViewDelegate {
+    
+}
+
+extension SignUpViewController: SignUpViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        self.viewModel.numberOfSections
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.viewModel.numberOfRowsInSection(section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let model = self.viewModel.cellModel(at: indexPath) else {
+            return UITableViewCell()
+        }
+        
+        switch model {
+        case .text(let textOnlyTableViewCellModel):
+            guard let cell = tableView.dequeueReusableCell(TextOnlyTableViewCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.configure(model: textOnlyTableViewCellModel)
+            return cell
+            
+        case .textField(let textFieldOnlyTableViewCellModel):
+            guard let cell = tableView.dequeueReusableCell(TextFieldOnlyTableViewCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.configure(model: textFieldOnlyTableViewCellModel)
+            return cell
+        }
+    }
     
 }
