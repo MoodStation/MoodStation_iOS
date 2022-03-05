@@ -18,6 +18,7 @@
 		3EB0B354489CE90012055769 /* Pods_MoodStation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */; };
 		5C3D1569CEA1FB53139F4818 /* Pods_MoodStation_MoodStationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9AEBEF8539A77A071E7B7D /* Pods_MoodStation_MoodStationUITests.framework */; };
 		761E7951A7DA378270FC9C29 /* Pods_MoodStationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */; };
+		A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		A92B615427CFA9EE001FBE3E /* HomeRecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615327CFA9EE001FBE3E /* HomeRecordListCell.swift */; };
 		A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615527CFAA0B001FBE3E /* Configurable.swift */; };
 		A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */; };
@@ -76,6 +77,7 @@
 		8554F1D67D75FDAA6530D087 /* Pods-MoodStation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation.debug.xcconfig"; path = "Target Support Files/Pods-MoodStation/Pods-MoodStation.debug.xcconfig"; sourceTree = "<group>"; };
 		88AE66616A50C489F5F9196F /* Pods-MoodStation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation.release.xcconfig"; path = "Target Support Files/Pods-MoodStation/Pods-MoodStation.release.xcconfig"; sourceTree = "<group>"; };
 		9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		A92B615327CFA9EE001FBE3E /* HomeRecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecordListCell.swift; sourceTree = "<group>"; };
 		A92B615527CFAA0B001FBE3E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionCell.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */,
 				A92B615327CFA9EE001FBE3E /* HomeRecordListCell.swift */,
 				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
+				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
+				A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,
 				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,

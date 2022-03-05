@@ -78,14 +78,13 @@ final class HomeRecordListCell: UITableViewCell {
         
         self.keywordCollection.do {
             $0.isScrollEnabled = false
-            let flowLayout = UICollectionViewFlowLayout().then {
-                $0.minimumLineSpacing = 6
-                $0.minimumInteritemSpacing = 6
-                $0.estimatedItemSize = CGSize(width: 24.0, height: 50.0)
-            }
-            $0.setCollectionViewLayout(flowLayout, animated: false)
-            $0.dataSource = self
+            let leftAlignedFlowLayout = LeftAlignedCollectionViewFlowLayout(
+                minimumLineSpacing: 6,
+                minimumInteritemSpacing: 6,
+                estimatedItemSize: CGSize(width: 24.0, height: 50.0))
+            $0.setCollectionViewLayout(leftAlignedFlowLayout, animated: false)
             $0.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: KeywordCollectionViewCell.className)
+            $0.dataSource = self
         }
     }
     
