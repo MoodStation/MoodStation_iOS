@@ -37,6 +37,11 @@
 		F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C727CDF46100E29A24 /* SignUpViewController.swift */; };
 		F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C927CDF54E00E29A24 /* SignInView.swift */; };
 		F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10CB27CE01E000E29A24 /* SignUpView.swift */; };
+		F11A10E527D337A900E29A24 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10E427D337A900E29A24 /* NavigationView.swift */; };
+		F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */; };
+		F11A10E927D3805100E29A24 /* TextFieldOnlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */; };
+		F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10EA27D3843F00E29A24 /* UITableView+.swift */; };
+		F11A10ED27D3875100E29A24 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10EC27D3875100E29A24 /* Array+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,11 @@
 		F11A10C727CDF46100E29A24 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F11A10C927CDF54E00E29A24 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F11A10CB27CE01E000E29A24 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F11A10E427D337A900E29A24 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOnlyTableViewCell.swift; sourceTree = "<group>"; };
+		F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldOnlyTableViewCell.swift; sourceTree = "<group>"; };
+		F11A10EA27D3843F00E29A24 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		F11A10EC27D3875100E29A24 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +212,7 @@
 		A963E63027C648A200DAF770 /* MoodStation */ = {
 			isa = PBXGroup;
 			children = (
+				F11A10E327D337A300E29A24 /* Common */,
 				F11A10A527C65A8300E29A24 /* Model */,
 				F11A10AC27C65BFE00E29A24 /* Utils */,
 				F11A10A227C651C700E29A24 /* Extension */,
@@ -240,9 +251,11 @@
 		F11A10A227C651C700E29A24 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F11A10EC27D3875100E29A24 /* Array+.swift */,
 				F11A10A327C651CE00E29A24 /* UIColor+.swift */,
 				F11A10B027C7AA8A00E29A24 /* UIFont+.swift */,
 				341F620A27C8645C00296C49 /* UserDefaults+.swift */,
+				F11A10EA27D3843F00E29A24 /* UITableView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -299,6 +312,16 @@
 				F11A10CB27CE01E000E29A24 /* SignUpView.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		F11A10E327D337A300E29A24 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10E427D337A900E29A24 /* NavigationView.swift */,
+				F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */,
+				F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,18 +562,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */,
 				F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */,
 				F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */,
 				34309F4927C85BEB00F54FE3 /* ShareViewController.swift in Sources */,
+				F11A10ED27D3875100E29A24 /* Array+.swift in Sources */,
 				F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */,
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
 				F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */,
+				F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
 				341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */,
 				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
 				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,
 				F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */,
+				F11A10E527D337A900E29A24 /* NavigationView.swift in Sources */,
 				F11A10A727C65A9100E29A24 /* Record.swift in Sources */,
 				F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
@@ -561,6 +588,7 @@
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 				F11A10A927C65A9800E29A24 /* Repository.swift in Sources */,
 				34309F4B27C85BF500F54FE3 /* SettingsViewController.swift in Sources */,
+				F11A10E927D3805100E29A24 /* TextFieldOnlyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
