@@ -40,7 +40,8 @@ final class TextFieldOnlyTableViewCell: UITableViewCell {
     
     func configure(model: TextFieldOnlyTableViewCellModel) {
         self.textField.font = model.font
-        self.textField.attributedPlaceholder = NSAttributedString(string: model.placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray03]) // TODO: - Extension 만들기
+        self.textField.attributedPlaceholder = NSMutableAttributedString(string: model.placeholder)
+            .foregroundColor(.gray03)
         
         self.containerView.snp.remakeConstraints { make in
             make.edges.equalToSuperview().inset(model.inset ?? .zero)
