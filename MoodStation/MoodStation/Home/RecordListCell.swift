@@ -6,8 +6,15 @@
 //
 
 import UIKit.UITableViewCell
+import Foundation.NSDate
+import Kingfisher
 
 final class RecordListCell: UITableViewCell {
+    
+    static let recordDateFormatter = DateFormatter().then {
+        $0.locale = Locale(identifier: "en_KR")
+        $0.dateFormat = "d, MMMM"
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -136,9 +143,11 @@ extension RecordListCell: Configurable {
             configureRouteLine(isHidden: record.date.isLastDay)
             configureMoodRect(mood: record.mood)
             
+            dateLabel.text = Self.recordDateFormatter.string(from: record.date)
             keywords = record.keyword
+            if let url = URL(string: record.imagePath) {
+                recordImage.kf.setImage(with: url)
             }
-            // 이미지 불러오기 비동기
         }
     }
 }
