@@ -1,5 +1,5 @@
 //
-//  HomeRecordListCell.swift
+//  RecordListCell.swift
 //  MoodStation
 //
 //  Created by Yongwoo Marco on 2022/03/02.
@@ -7,7 +7,7 @@
 
 import UIKit.UITableViewCell
 
-final class HomeRecordListCell: UITableViewCell {
+final class RecordListCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -98,7 +98,7 @@ final class HomeRecordListCell: UITableViewCell {
                                                      collectionViewLayout: UICollectionViewLayout())
 }
 
-extension HomeRecordListCell: Configurable {
+extension RecordListCell: Configurable {
     func configure<T>(data: T) {
         if let record = data as? Record {
 //            moodRectangle  // Color 추가 필요
@@ -113,7 +113,7 @@ extension HomeRecordListCell: Configurable {
     }
 }
 
-extension HomeRecordListCell: UICollectionViewDataSource {
+extension RecordListCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         keywords.count
     }
