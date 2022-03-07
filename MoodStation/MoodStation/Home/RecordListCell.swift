@@ -42,6 +42,18 @@ final class RecordListCell: UITableViewCell {
             make.leading.equalTo(self.moodRectangle.snp.trailing).offset(20)
         }
         
+        self.addSubview(self.recordImage)
+        self.recordImage.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.bottom).offset(14)
+            make.leading.equalTo(self.contentView).offset(69)
+            make.width.height.equalTo(85)
+        }
+        
+        self.keywordCollection.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.bottom).offset(14)
+            make.leading.equalTo(recordImage.snp.trailing).offset(14)
+            make.bottom.equalTo(recordImage)
+        }
     }
     
     private func setupAttributes() {
@@ -51,20 +63,13 @@ final class RecordListCell: UITableViewCell {
         
         self.routeLine.do {
             $0.backgroundColor = .gray01
-            $0.isHidden = false // 말 일 true
+            $0.isHidden = false
         }
         
         self.moodRectangle.do {
+            $0.contentMode = .scaleToFill
             $0.clipsToBounds = true
-            $0.layer.cornerRadius = 10.5
-            $0.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
-            
-            let layer = CAGradientLayer().then {
-                $0.colors = [] // Color 추가 필요
-                $0.locations = [0, 1]
-            }
-            
-            $0.layer.addSublayer(layer)
+            $0.layer.cornerRadius = 6
         }
         
         self.dateLabel.do {
@@ -77,11 +82,12 @@ final class RecordListCell: UITableViewCell {
         }
         
         self.keywordCollection.do {
+            $0.backgroundColor = .customBlack
             $0.isScrollEnabled = false
             let leftAlignedFlowLayout = LeftAlignedCollectionViewFlowLayout(
                 minimumLineSpacing: 6,
                 minimumInteritemSpacing: 6,
-                estimatedItemSize: CGSize(width: 24.0, height: 50.0))
+                estimatedItemSize: CGSize(width: 50.0, height: 24.0))
             $0.setCollectionViewLayout(leftAlignedFlowLayout, animated: false)
             $0.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: KeywordCollectionViewCell.className)
             $0.dataSource = self
@@ -93,21 +99,45 @@ final class RecordListCell: UITableViewCell {
 
     private var dateLabel = UILabel(frame: .zero)
     private var recordImage = UIImageView(frame: .zero)
-    private var keywords: [String] = []
+    private var keywords: [String] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.keywordCollection.reloadData()
+            }
+        }
+    }
     private let keywordCollection = UICollectionView(frame: .zero,
                                                      collectionViewLayout: UICollectionViewLayout())
 }
 
 extension RecordListCell: Configurable {
+    private func configureMoodRect(mood: Int) {
+        let moodColors = UIColor.selectGradientColors(by: mood).compactMap{ $0 }
+        self.moodRectangle.do { view in
+            let gradient = CAGradientLayer()
+            gradient.do {
+                $0.colors = moodColors.map { $0.cgColor }.compactMap { $0 }
+                $0.locations = [0.0, 1.0]
+                $0.startPoint = CGPoint(x: 0.0, y: 0.0)
+                $0.endPoint = CGPoint(x: 0.0, y: 1.0)
+                $0.frame = view.bounds
+                $0.cornerRadius = 10.5
+            }
+            view.layer.addSublayer(gradient)
+        }
+    }
+    
+    private func configureRouteLine(isHidden: Bool) {
+        routeLine.isHidden = isHidden
+    }
+    
     func configure<T>(data: T) {
         if let record = data as? Record {
-//            moodRectangle  // Color 추가 필요
-            dateLabel.text = record.date.description // formmater 필요
-            keywords = record.keyword
-            DispatchQueue.main.async {
-                self.keywordCollection.reloadData()
-            }
+            configureRouteLine(isHidden: record.date.isLastDay)
+            configureMoodRect(mood: record.mood)
             
+            keywords = record.keyword
+            }
             // 이미지 불러오기 비동기
         }
     }
