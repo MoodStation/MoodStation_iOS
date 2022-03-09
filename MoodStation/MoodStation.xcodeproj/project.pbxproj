@@ -18,6 +18,12 @@
 		3EB0B354489CE90012055769 /* Pods_MoodStation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */; };
 		5C3D1569CEA1FB53139F4818 /* Pods_MoodStation_MoodStationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9AEBEF8539A77A071E7B7D /* Pods_MoodStation_MoodStationUITests.framework */; };
 		761E7951A7DA378270FC9C29 /* Pods_MoodStationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */; };
+		A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615327CFA9EE001FBE3E /* RecordListCell.swift */; };
+		A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615527CFAA0B001FBE3E /* Configurable.swift */; };
+		A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */; };
+		A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615B27CFAB89001FBE3E /* NSObject+.swift */; };
+		A934FC7B27D608B80042F2F9 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934FC7A27D608B80042F2F9 /* Date+.swift */; };
 		A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63127C648A200DAF770 /* AppDelegate.swift */; };
 		A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63327C648A200DAF770 /* SceneDelegate.swift */; };
 		A963E63B27C648A300DAF770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A963E63A27C648A300DAF770 /* Assets.xcassets */; };
@@ -88,6 +94,12 @@
 		8554F1D67D75FDAA6530D087 /* Pods-MoodStation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation.debug.xcconfig"; path = "Target Support Files/Pods-MoodStation/Pods-MoodStation.debug.xcconfig"; sourceTree = "<group>"; };
 		88AE66616A50C489F5F9196F /* Pods-MoodStation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStation.release.xcconfig"; path = "Target Support Files/Pods-MoodStation/Pods-MoodStation.release.xcconfig"; sourceTree = "<group>"; };
 		9094B0114BF82207A6E84CEB /* Pods_MoodStationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		A92B615327CFA9EE001FBE3E /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
+		A92B615527CFAA0B001FBE3E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionCell.swift; sourceTree = "<group>"; };
+		A92B615B27CFAB89001FBE3E /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
+		A934FC7A27D608B80042F2F9 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A963E62E27C648A200DAF770 /* MoodStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E63127C648A200DAF770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A963E63327C648A200DAF770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +176,9 @@
 			children = (
 				34309F4627C85BDE00F54FE3 /* HomeViewController.swift */,
 				34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */,
+				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
+				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
+				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -278,6 +293,8 @@
 				F11A10A327C651CE00E29A24 /* UIColor+.swift */,
 				F11A10B027C7AA8A00E29A24 /* UIFont+.swift */,
 				341F620A27C8645C00296C49 /* UserDefaults+.swift */,
+				A92B615B27CFAB89001FBE3E /* NSObject+.swift */,
+				A934FC7A27D608B80042F2F9 /* Date+.swift */,
 				F11A10EA27D3843F00E29A24 /* UITableView+.swift */,
 				F11A10F627D473C900E29A24 /* UICollectionView+.swift */,
 				F11A110527D4871B00E29A24 /* AttributedString+.swift */,
@@ -298,6 +315,7 @@
 			children = (
 				F11A10A827C65A9800E29A24 /* Repository.swift */,
 				F11A10AA27C65AA100E29A24 /* ServerRepository.swift */,
+				A92B615527CFAA0B001FBE3E /* Configurable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -611,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */,
 				F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */,
 				F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */,
 				F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */,
@@ -619,6 +638,7 @@
 				F11A10ED27D3875100E29A24 /* Array+.swift in Sources */,
 				F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */,
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
+				A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */,
 				F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */,
 				F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
@@ -639,11 +659,15 @@
 				F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
+				A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,
+				A934FC7B27D608B80042F2F9 /* Date+.swift in Sources */,
 				F11A10FD27D479B800E29A24 /* RecordKeywordCell.swift in Sources */,
 				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
+				A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */,
+				A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */,
 				F11A10A927C65A9800E29A24 /* Repository.swift in Sources */,
 				F11A10F727D473C900E29A24 /* UICollectionView+.swift in Sources */,
 				34309F4B27C85BF500F54FE3 /* SettingsViewController.swift in Sources */,

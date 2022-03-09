@@ -11,6 +11,7 @@ final class HomeViewController: UIViewController {
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
+        self.recordListView = UITableView()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,12 +28,21 @@ final class HomeViewController: UIViewController {
     
     
     private func setupLayout() {
+        self.view.addSubview(self.recordListView)
+        recordListView.snp.makeConstraints { make in
+            make.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
         
     }
     
     private func setupAttributes() {
-        
+        recordListView.do {
+            $0.backgroundColor = .customBlack
+            $0.separatorStyle = .none
+            $0.register(RecordListCell.self, forCellReuseIdentifier: RecordListCell.className)
+        }
     }
     
     private let viewModel: HomeViewModel
+    private let recordListView: UITableView
 }

@@ -51,4 +51,34 @@ extension UIColor {
     static let error = UIColor(hex: "#A93A3A")
     static let success = UIColor(hex: "#6CE16A")
     
+    // MARK: - Gradient Color
+
+    static let moodRed = [UIColor(hex: "#FF3D4F"), UIColor(hex: "#FFA755")]
+    static let moodOrange = [UIColor(hex: "#FF9144"), UIColor(hex: "#FFF973")]
+    static let moodGreen = [UIColor(hex: "#C5FF7C"), UIColor(hex: "#A8EFFF")]
+    static let moodBlue = [UIColor(hex: "#1F48DA"), UIColor(hex: "#9BE5FB")]
+    static let moodPurple = [UIColor(hex: "#741FFF"), UIColor(hex: "#FFA8CC")]
+    static let moodNavy = [UIColor(hex: "#130624"), UIColor(hex: "#243696")]
+}
+
+extension UIColor {
+    static func selectGradientColors(by moodNumber: Int) -> [UIColor?] {
+        switch moodNumber {
+        case 1:
+            return moodRed
+        case 2:
+            return moodOrange
+        case 3:
+            return moodGreen
+        case 4:
+            return moodBlue
+        case 5:
+            return moodPurple
+        case 6:
+            return moodNavy
+        default:
+            return []
+        }
+    }
+    
 }

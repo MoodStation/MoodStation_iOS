@@ -21,6 +21,8 @@ extension UIFont {
     static let body1R = UIFont.systemFont(ofSize: 16, weight: .regular)
     static let body0M = UIFont.systemFont(ofSize: 16, weight: .medium)
     
+    static let body3R = UIFont.systemFont(ofSize: 14, weight: .regular)
+    
     // Caption
     static let caption1M = UIFont.systemFont(ofSize: 12, weight: .medium)
     static let caption2R = UIFont.systemFont(ofSize: 12, weight: .regular)
