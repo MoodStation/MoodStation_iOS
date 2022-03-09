@@ -61,23 +61,25 @@ extension UIColor {
     static let moodNavy = [UIColor(hex: "#130624"), UIColor(hex: "#243696")]
 }
 
+enum GradientStyle: Int {
+    case moodRed = 1
+    case moodOrange
+    case moodGreen
+    case moodBlue
+    case moodPurple
+    case moodNavy
+}
+
 extension UIColor {
-    static func selectGradientColors(by moodNumber: Int) -> [UIColor?] {
-        switch moodNumber {
-        case 1:
-            return moodRed
-        case 2:
-            return moodOrange
-        case 3:
-            return moodGreen
-        case 4:
-            return moodBlue
-        case 5:
-            return moodPurple
-        case 6:
-            return moodNavy
-        default:
-            return []
+    
+    static func makeGradientColors(by style: GradientStyle) -> [CGColor] {
+        switch style {
+        case .moodRed:      return moodRed.compactMap{ $0?.cgColor }
+        case .moodOrange:   return moodOrange.compactMap{ $0?.cgColor }
+        case .moodGreen:    return moodGreen.compactMap{ $0?.cgColor }
+        case .moodBlue:     return moodBlue.compactMap{ $0?.cgColor }
+        case .moodPurple:   return moodPurple.compactMap{ $0?.cgColor }
+        case .moodNavy:     return moodNavy.compactMap{ $0?.cgColor }
         }
     }
     
