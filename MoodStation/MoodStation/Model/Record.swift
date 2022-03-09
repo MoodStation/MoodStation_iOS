@@ -9,7 +9,7 @@ import Foundation.NSDate
 struct Record: Identifiable, Codable {
     let id: Int
     let date: Date
-    let mood: Int
+    let mood: GradientStyle
     let keyword: [String]
     let imagePath: String
     let note: String

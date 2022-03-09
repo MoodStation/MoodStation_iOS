@@ -118,12 +118,11 @@ final class RecordListCell: UITableViewCell {
 }
 
 extension RecordListCell: Configurable {
-    private func configureMoodRect(mood: Int) {
-        let moodColors = UIColor.selectGradientColors(by: mood).compactMap{ $0 }
+    private func configureMoodRect(mood style: GradientStyle) {
         self.moodRectangle.do { view in
             let gradient = CAGradientLayer()
             gradient.do {
-                $0.colors = moodColors.map { $0.cgColor }.compactMap { $0 }
+                $0.colors = UIColor.makeGradientColors(by: style)
                 $0.locations = [0.0, 1.0]
                 $0.startPoint = CGPoint(x: 0.0, y: 0.0)
                 $0.endPoint = CGPoint(x: 0.0, y: 1.0)
