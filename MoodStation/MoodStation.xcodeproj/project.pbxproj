@@ -43,6 +43,22 @@
 		F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C727CDF46100E29A24 /* SignUpViewController.swift */; };
 		F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10C927CDF54E00E29A24 /* SignInView.swift */; };
 		F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10CB27CE01E000E29A24 /* SignUpView.swift */; };
+		F11A10E527D337A900E29A24 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10E427D337A900E29A24 /* NavigationView.swift */; };
+		F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */; };
+		F11A10E927D3805100E29A24 /* TextFieldOnlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */; };
+		F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10EA27D3843F00E29A24 /* UITableView+.swift */; };
+		F11A10ED27D3875100E29A24 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10EC27D3875100E29A24 /* Array+.swift */; };
+		F11A10F027D4734400E29A24 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10EF27D4734400E29A24 /* RecordViewController.swift */; };
+		F11A10F227D4734A00E29A24 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10F127D4734A00E29A24 /* RecordViewModel.swift */; };
+		F11A10F427D4734F00E29A24 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10F327D4734F00E29A24 /* RecordView.swift */; };
+		F11A10F727D473C900E29A24 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10F627D473C900E29A24 /* UICollectionView+.swift */; };
+		F11A10F927D4746F00E29A24 /* TextOnlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10F827D4746F00E29A24 /* TextOnlyCollectionViewCell.swift */; };
+		F11A10FB27D4799600E29A24 /* RecordColorChipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10FA27D4799600E29A24 /* RecordColorChipsCell.swift */; };
+		F11A10FD27D479B800E29A24 /* RecordKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10FC27D479B800E29A24 /* RecordKeywordCell.swift */; };
+		F11A110027D47A3800E29A24 /* RecordImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10FF27D47A3800E29A24 /* RecordImageViewCell.swift */; };
+		F11A110227D47A4C00E29A24 /* RecordSingleRecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110127D47A4C00E29A24 /* RecordSingleRecordingCell.swift */; };
+		F11A110427D4814000E29A24 /* RecordColorChipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110327D4814000E29A24 /* RecordColorChipCollectionViewCell.swift */; };
+		F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110527D4871B00E29A24 /* AttributedString+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +125,22 @@
 		F11A10C727CDF46100E29A24 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F11A10C927CDF54E00E29A24 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F11A10CB27CE01E000E29A24 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F11A10E427D337A900E29A24 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOnlyTableViewCell.swift; sourceTree = "<group>"; };
+		F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldOnlyTableViewCell.swift; sourceTree = "<group>"; };
+		F11A10EA27D3843F00E29A24 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		F11A10EC27D3875100E29A24 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		F11A10EF27D4734400E29A24 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		F11A10F127D4734A00E29A24 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		F11A10F327D4734F00E29A24 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		F11A10F627D473C900E29A24 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		F11A10F827D4746F00E29A24 /* TextOnlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOnlyCollectionViewCell.swift; sourceTree = "<group>"; };
+		F11A10FA27D4799600E29A24 /* RecordColorChipsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordColorChipsCell.swift; sourceTree = "<group>"; };
+		F11A10FC27D479B800E29A24 /* RecordKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordKeywordCell.swift; sourceTree = "<group>"; };
+		F11A10FF27D47A3800E29A24 /* RecordImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordImageViewCell.swift; sourceTree = "<group>"; };
+		F11A110127D47A4C00E29A24 /* RecordSingleRecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSingleRecordingCell.swift; sourceTree = "<group>"; };
+		F11A110327D4814000E29A24 /* RecordColorChipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordColorChipCollectionViewCell.swift; sourceTree = "<group>"; };
+		F11A110527D4871B00E29A24 /* AttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +249,7 @@
 		A963E63027C648A200DAF770 /* MoodStation */ = {
 			isa = PBXGroup;
 			children = (
+				F11A10E327D337A300E29A24 /* Common */,
 				F11A10A527C65A8300E29A24 /* Model */,
 				F11A10AC27C65BFE00E29A24 /* Utils */,
 				F11A10A227C651C700E29A24 /* Extension */,
@@ -225,6 +258,7 @@
 				34309F4327C85BAA00F54FE3 /* Home */,
 				34309F4427C85BAC00F54FE3 /* Share */,
 				34309F4527C85BB400F54FE3 /* Settings */,
+				F11A10EE27D472EB00E29A24 /* Record */,
 				34309F4127C85B6300F54FE3 /* MainViewController.swift */,
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
 				A963E63327C648A200DAF770 /* SceneDelegate.swift */,
@@ -255,11 +289,15 @@
 		F11A10A227C651C700E29A24 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F11A10EC27D3875100E29A24 /* Array+.swift */,
 				F11A10A327C651CE00E29A24 /* UIColor+.swift */,
 				F11A10B027C7AA8A00E29A24 /* UIFont+.swift */,
 				341F620A27C8645C00296C49 /* UserDefaults+.swift */,
 				A92B615B27CFAB89001FBE3E /* NSObject+.swift */,
 				A934FC7A27D608B80042F2F9 /* Date+.swift */,
+				F11A10EA27D3843F00E29A24 /* UITableView+.swift */,
+				F11A10F627D473C900E29A24 /* UICollectionView+.swift */,
+				F11A110527D4871B00E29A24 /* AttributedString+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -317,6 +355,40 @@
 				F11A10CB27CE01E000E29A24 /* SignUpView.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		F11A10E327D337A300E29A24 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10E427D337A900E29A24 /* NavigationView.swift */,
+				F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */,
+				F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */,
+				F11A10F827D4746F00E29A24 /* TextOnlyCollectionViewCell.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F11A10EE27D472EB00E29A24 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10FE27D47A0600E29A24 /* Cell */,
+				F11A10EF27D4734400E29A24 /* RecordViewController.swift */,
+				F11A10F127D4734A00E29A24 /* RecordViewModel.swift */,
+				F11A10F327D4734F00E29A24 /* RecordView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		F11A10FE27D47A0600E29A24 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F11A10FA27D4799600E29A24 /* RecordColorChipsCell.swift */,
+				F11A110327D4814000E29A24 /* RecordColorChipCollectionViewCell.swift */,
+				F11A10FC27D479B800E29A24 /* RecordKeywordCell.swift */,
+				F11A10FF27D47A3800E29A24 /* RecordImageViewCell.swift */,
+				F11A110127D47A4C00E29A24 /* RecordSingleRecordingCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,19 +630,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */,
+				F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */,
 				F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */,
 				F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */,
+				F11A10F027D4734400E29A24 /* RecordViewController.swift in Sources */,
 				34309F4927C85BEB00F54FE3 /* ShareViewController.swift in Sources */,
+				F11A10ED27D3875100E29A24 /* Array+.swift in Sources */,
 				F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */,
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
 				A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */,
 				F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */,
+				F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
 				341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */,
+				F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */,
+				F11A110227D47A4C00E29A24 /* RecordSingleRecordingCell.swift in Sources */,
 				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
+				F11A10F427D4734F00E29A24 /* RecordView.swift in Sources */,
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
 				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,
+				F11A10F227D4734A00E29A24 /* RecordViewModel.swift in Sources */,
 				F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */,
+				F11A110027D47A3800E29A24 /* RecordImageViewCell.swift in Sources */,
+				F11A110427D4814000E29A24 /* RecordColorChipCollectionViewCell.swift in Sources */,
+				F11A10F927D4746F00E29A24 /* TextOnlyCollectionViewCell.swift in Sources */,
+				F11A10E527D337A900E29A24 /* NavigationView.swift in Sources */,
 				F11A10A727C65A9100E29A24 /* Record.swift in Sources */,
 				F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
@@ -579,12 +663,16 @@
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,
 				A934FC7B27D608B80042F2F9 /* Date+.swift in Sources */,
+				F11A10FD27D479B800E29A24 /* RecordKeywordCell.swift in Sources */,
 				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 				A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */,
 				A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */,
 				F11A10A927C65A9800E29A24 /* Repository.swift in Sources */,
+				F11A10F727D473C900E29A24 /* UICollectionView+.swift in Sources */,
 				34309F4B27C85BF500F54FE3 /* SettingsViewController.swift in Sources */,
+				F11A10E927D3805100E29A24 /* TextFieldOnlyTableViewCell.swift in Sources */,
+				F11A10FB27D4799600E29A24 /* RecordColorChipsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
