@@ -22,4 +22,18 @@ extension UIView {
             view.layer.addSublayer(gradient)
         }
     }
+    
+    func drawEmptyImageView(color: UIColor?) {
+        self.do { view in
+            let layer = CAShapeLayer().then { layer in
+                color.flatMap { layer.strokeColor = $0.cgColor }
+                layer.lineDashPattern = [6.5, 7]
+                layer.frame = view.bounds
+                layer.fillColor = nil
+                layer.path = UIBezierPath(roundedRect: view.bounds, cornerRadius: 6).cgPath
+            }
+            view.layer.addSublayer(layer)
+        }
+        self.layoutIfNeeded()
+    }
 }

@@ -41,6 +41,7 @@ final class RecordListCell: UITableViewCell {
             make.width.equalTo(21)
             make.height.equalTo(30)
             make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(28)
         }
         
         self.addSubview(self.dateLabel)
@@ -49,19 +50,24 @@ final class RecordListCell: UITableViewCell {
             make.leading.equalTo(self.contentView).offset(69)
         }
         
-        self.addSubview(self.recordImage)
-        self.recordImage.snp.makeConstraints { make in
+        self.addSubview(self.recordImageView)
+        self.recordImageView.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(14)
             make.leading.equalTo(self.contentView).offset(69)
             make.width.height.equalTo(85)
         }
         
+        self.recordImageView.addSubview(self.imageStateLabel)
+        self.imageStateLabel.snp.makeConstraints { make in
+            make.centerX.centerY.equalTo(self.recordImageView)
+        }
+        
         self.addSubview(self.keywordCollection)
         self.keywordCollection.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(14)
-            make.leading.equalTo(recordImage.snp.trailing).offset(14)
+            make.leading.equalTo(recordImageView.snp.trailing).offset(14)
             make.trailing.equalToSuperview().offset(-35)
-            make.bottom.equalTo(recordImage)
+            make.bottom.equalTo(recordImageView)
         }
     }
     
@@ -85,10 +91,16 @@ final class RecordListCell: UITableViewCell {
             $0.font = .body0M
         }
         
-        self.recordImage.do {
+        self.recordImageView.do {
             $0.contentMode = .scaleAspectFill
             $0.layer.cornerRadius = 6
             $0.clipsToBounds = true
+        }
+        
+        self.imageStateLabel.do {
+            $0.isHidden = true
+            $0.textColor = .gray01
+            $0.text = "Empty"
         }
         
         self.keywordCollection.do {
@@ -103,10 +115,20 @@ final class RecordListCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.routeLine.isHidden = true
+        self.dateLabel.text = ""
+        self.recordImageView.image = nil
+        self.imageStateLabel.isHidden = true
+        self.keywords = []
+    }
+    
     private let routeLine = UIView(frame: .zero)
     private let moodRectangle = UIView(frame: .zero)
     private var dateLabel = UILabel(frame: .zero)
-    private var recordImage = UIImageView(frame: .zero)
+    private var recordImageView = UIImageView(frame: .zero)
+    private var imageStateLabel = UILabel(frame: .zero)
     private var keywords: [String] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -125,8 +147,12 @@ extension RecordListCell: Configurable {
             self.moodRectangle.drawMoodRectangle(mood: record.mood)
             self.dateLabel.text = Self.recordDateFormatter.string(from: record.date)
             self.keywords = record.keyword
-            if let url = URL(string: record.imagePath) {
-                recordImage.kf.setImage(with: url)
+            if let imagePath = record.imagePath,
+               let url = URL(string: imagePath) {
+                recordImageView.kf.setImage(with: url)
+            } else {
+                imageStateLabel.isHidden = false
+                recordImageView.drawEmptyImageView(color: .gray01)
             }
         }
     }
