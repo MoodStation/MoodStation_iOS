@@ -73,6 +73,21 @@ extension HomeViewController: HomeViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cellModel = viewModel.cellModel(at: indexPath)
+        
+        switch cellModel {
+        case .record(let record):
+            guard let cell = tableView.dequeueReusableCell(RecordListCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.configure(data: record)
+            return cell
+        case .empty(let emptyCellModel):
+            guard let cell = tableView.dequeueReusableCell(RecordListEmptyCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.configure(data: emptyCellModel)
+            return cell
+        }
     }
 }

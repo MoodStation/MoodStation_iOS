@@ -13,14 +13,13 @@ final class DateHandler {
     private init() {}
     
     private let calendar = Calendar(identifier: .gregorian)
-    private let today = Date()
 }
 
 // MARK: - Pagination Handle
 extension DateHandler {
     func makeTodayPage() -> (Int, Int) {
         var result = (year: 0, month: 0)
-        let components = calendar.dateComponents([.year, .month], from: today)
+        let components = calendar.dateComponents([.year, .month], from: Date())
         components.year.flatMap{ result.year = $0 }
         components.month.flatMap{ result.month = $0 }
         return result
@@ -33,5 +32,9 @@ extension DateHandler {
         var result = Date()
         calendar.date(from: components).flatMap{ result = $0 }
         return result
+    }
+    
+    func todayComponents() -> DateComponents {
+        return calendar.dateComponents([.year, .month, .day], from: Date())
     }
 }

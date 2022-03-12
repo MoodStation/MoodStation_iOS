@@ -23,6 +23,7 @@
 		A91FDA7727DB2C5B003542A2 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7627DB2C5B003542A2 /* DateHandler.swift */; };
 		A91FDA7927DB3771003542A2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7827DB3771003542A2 /* UIView+.swift */; };
 		A91FDA7B27DCA11C003542A2 /* RecordListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */; };
+		A91FDA7D27DCA1DD003542A2 /* RecordListEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */; };
 		A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615327CFA9EE001FBE3E /* RecordListCell.swift */; };
 		A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615527CFAA0B001FBE3E /* Configurable.swift */; };
 		A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */; };
@@ -103,6 +104,7 @@
 		A91FDA7627DB2C5B003542A2 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
 		A91FDA7827DB3771003542A2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListHeaderView.swift; sourceTree = "<group>"; };
+		A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListEmptyCell.swift; sourceTree = "<group>"; };
 		A92B615327CFA9EE001FBE3E /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
 		A92B615527CFAA0B001FBE3E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */,
 				A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */,
 				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
+				A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */,
 				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
 				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
@@ -641,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91FDA7D27DCA1DD003542A2 /* RecordListEmptyCell.swift in Sources */,
 				A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */,
 				F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */,
 				F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */,
