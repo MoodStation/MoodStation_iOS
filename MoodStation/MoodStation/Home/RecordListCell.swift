@@ -45,8 +45,8 @@ final class RecordListCell: UITableViewCell {
         
         self.addSubview(self.dateLabel)
         self.dateLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(self.moodRectangle)
-            make.leading.equalTo(self.moodRectangle.snp.trailing).offset(20)
+            make.top.equalTo(self.contentView).offset(6)
+            make.leading.equalTo(self.contentView).offset(69)
         }
         
         self.addSubview(self.recordImage)
@@ -56,9 +56,11 @@ final class RecordListCell: UITableViewCell {
             make.width.height.equalTo(85)
         }
         
+        self.addSubview(self.keywordCollection)
         self.keywordCollection.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(14)
             make.leading.equalTo(recordImage.snp.trailing).offset(14)
+            make.trailing.equalToSuperview().offset(-35)
             make.bottom.equalTo(recordImage)
         }
     }
@@ -70,13 +72,12 @@ final class RecordListCell: UITableViewCell {
         
         self.routeLine.do {
             $0.backgroundColor = .gray01
-            $0.isHidden = false
         }
         
         self.moodRectangle.do {
-            $0.contentMode = .scaleToFill
-            $0.clipsToBounds = true
+            $0.backgroundColor = .gray05
             $0.layer.cornerRadius = 6
+            $0.clipsToBounds = true
         }
         
         self.dateLabel.do {
@@ -86,24 +87,24 @@ final class RecordListCell: UITableViewCell {
         
         self.recordImage.do {
             $0.contentMode = .scaleAspectFill
+            $0.layer.cornerRadius = 6
+            $0.clipsToBounds = true
         }
         
         self.keywordCollection.do {
             $0.backgroundColor = .customBlack
+            $0.register(KeywordCollectionViewCell.self)
+            $0.dataSource = self
             $0.isScrollEnabled = false
-            let leftAlignedFlowLayout = LeftAlignedCollectionViewFlowLayout(
+            $0.setCollectionViewLayout(LeftAlignedCollectionViewFlowLayout(
                 minimumLineSpacing: 6,
                 minimumInteritemSpacing: 6,
-                estimatedItemSize: CGSize(width: 50.0, height: 24.0))
-            $0.setCollectionViewLayout(leftAlignedFlowLayout, animated: false)
-            $0.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: KeywordCollectionViewCell.className)
-            $0.dataSource = self
+                estimatedItemSize: CGSize(width: 50.0, height: 24.0)), animated: false)
         }
     }
     
     private let routeLine = UIView(frame: .zero)
     private let moodRectangle = UIView(frame: .zero)
-
     private var dateLabel = UILabel(frame: .zero)
     private var recordImage = UIImageView(frame: .zero)
     private var keywords: [String] = [] {
@@ -118,32 +119,12 @@ final class RecordListCell: UITableViewCell {
 }
 
 extension RecordListCell: Configurable {
-    private func configureMoodRect(mood style: GradientStyle) {
-        self.moodRectangle.do { view in
-            let gradient = CAGradientLayer()
-            gradient.do {
-                $0.colors = UIColor.makeGradientColors(by: style)
-                $0.locations = [0.0, 1.0]
-                $0.startPoint = CGPoint(x: 0.0, y: 0.0)
-                $0.endPoint = CGPoint(x: 0.0, y: 1.0)
-                $0.frame = view.bounds
-                $0.cornerRadius = 10.5
-            }
-            view.layer.addSublayer(gradient)
-        }
-    }
-    
-    private func configureRouteLine(isHidden: Bool) {
-        routeLine.isHidden = isHidden
-    }
-    
     func configure<T>(data: T) {
         if let record = data as? Record {
-            configureRouteLine(isHidden: record.date.isLastDay)
-            configureMoodRect(mood: record.mood)
-            
-            dateLabel.text = Self.recordDateFormatter.string(from: record.date)
-            keywords = record.keyword
+            self.routeLine.isHidden = record.date.isLastDay
+            self.moodRectangle.drawMoodRectangle(mood: record.mood)
+            self.dateLabel.text = Self.recordDateFormatter.string(from: record.date)
+            self.keywords = record.keyword
             if let url = URL(string: record.imagePath) {
                 recordImage.kf.setImage(with: url)
             }
