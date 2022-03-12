@@ -22,6 +22,7 @@
 		A91FDA7527DB2BA6003542A2 /* MonthlyBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7427DB2BA6003542A2 /* MonthlyBundle.swift */; };
 		A91FDA7727DB2C5B003542A2 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7627DB2C5B003542A2 /* DateHandler.swift */; };
 		A91FDA7927DB3771003542A2 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7827DB3771003542A2 /* UIView+.swift */; };
+		A91FDA7B27DCA11C003542A2 /* RecordListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */; };
 		A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615327CFA9EE001FBE3E /* RecordListCell.swift */; };
 		A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615527CFAA0B001FBE3E /* Configurable.swift */; };
 		A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */; };
@@ -101,6 +102,7 @@
 		A91FDA7427DB2BA6003542A2 /* MonthlyBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBundle.swift; sourceTree = "<group>"; };
 		A91FDA7627DB2C5B003542A2 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
 		A91FDA7827DB3771003542A2 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListHeaderView.swift; sourceTree = "<group>"; };
 		A92B615327CFA9EE001FBE3E /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
 		A92B615527CFAA0B001FBE3E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionCell.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				34309F4627C85BDE00F54FE3 /* HomeViewController.swift */,
 				34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */,
+				A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */,
 				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
 				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
 				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
@@ -658,6 +661,7 @@
 				F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */,
 				F11A110227D47A4C00E29A24 /* RecordSingleRecordingCell.swift in Sources */,
 				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
+				A91FDA7B27DCA11C003542A2 /* RecordListHeaderView.swift in Sources */,
 				F11A10F427D4734F00E29A24 /* RecordView.swift in Sources */,
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
 				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,

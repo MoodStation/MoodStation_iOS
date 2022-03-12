@@ -26,3 +26,12 @@ extension DateHandler {
         return result
     }
 }
+
+// MARK: - Calendar Handle
+extension DateHandler {
+    func date(from components: DateComponents) -> Date {
+        var result = Date()
+        calendar.date(from: components).flatMap{ result = $0 }
+        return result
+    }
+}
