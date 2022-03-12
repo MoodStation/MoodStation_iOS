@@ -138,12 +138,13 @@ final class RecordListCell: UITableViewCell {
     }
     private let keywordCollection = UICollectionView(frame: .zero,
                                                      collectionViewLayout: UICollectionViewLayout())
+    private let dateHandler = DateHandler.shared
 }
 
 extension RecordListCell: Configurable {
     func configure<T>(data: T) {
         if let record = data as? Record {
-            self.routeLine.isHidden = record.date.isLastDay
+            self.routeLine.isHidden = dateHandler.isLastDay(record.date)
             self.moodRectangle.drawMoodRectangle(mood: record.mood)
             self.dateLabel.text = Self.recordDateFormatter.string(from: record.date)
             self.keywords = record.keyword
