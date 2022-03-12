@@ -33,7 +33,7 @@ final class HomeViewModel {
 }
 
 // MARK: - DataSource
-extension HomeViewModel: HomeViewModelType{
+extension HomeViewModel: HomeViewModelType {
     var numberOfSection: Int {
         recordBundles.count
     }
@@ -58,14 +58,16 @@ extension HomeViewModel: HomeViewModelType{
         }
     }
     
+    private func makeCellDate(by section: MonthlyBundle, and indexPath: IndexPath) -> Date {
+        return dateHandler.makeDate(year: section.date.year, month: section.date.month, day: indexPath.row + 1)
+    }
+    
     private func makeEmptyCellModel(by section: MonthlyBundle, at indexPath: IndexPath) -> CellModel {
-        let todayComponents = dateHandler.todayComponents()
-        let cellDateComponents = DateComponents(year: section.date.year, month: section.date.month, day: indexPath.row + 1)
-        let cellDate = dateHandler.date(from: cellDateComponents)
-        
-        if section.isThisMonth, let index = todayComponents.day, index == indexPath.row {
+        let cellDate = makeCellDate(by: section, and: indexPath)
+        if section.isThisMonth,
+            dateHandler.convertCellIndex(by: Date()) < indexPath.row {
             return .empty(EmptyCellModel(date: cellDate, style: .tomorrow))
-        } else if todayComponents == cellDateComponents {
+        } else if dateHandler.isToday(cellDate) {
             return .empty(EmptyCellModel(date: cellDate, style: .today))
         } else {
             return .empty(EmptyCellModel(date: cellDate, style: .notRecord))
