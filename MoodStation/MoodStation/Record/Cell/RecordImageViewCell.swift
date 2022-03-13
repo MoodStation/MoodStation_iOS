@@ -45,6 +45,7 @@ final class RecordImageViewCell: UITableViewCell {
     private func setupAttributes() {
         self.do {
             $0.backgroundColor = .customBlack
+            $0.selectionStyle = .none
         }
         
         self.photoImageView.do {
