@@ -50,7 +50,10 @@ final class RecordColorChipsCell: UITableViewCell {
     }
     
     private func setupAttributes() {
-        self.backgroundColor = .customBlack
+        self.do {
+            $0.backgroundColor = .customBlack
+            $0.selectionStyle = .none
+        }
         
         self.contanierView.do {
             $0.layer.cornerRadius = 10

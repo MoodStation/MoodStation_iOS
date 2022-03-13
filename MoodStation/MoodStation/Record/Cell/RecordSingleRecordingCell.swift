@@ -45,6 +45,7 @@ final class RecordSingleRecordingCell: UITableViewCell {
     private func setupAttributes() {
         self.do {
             $0.backgroundColor = .customBlack
+            $0.selectionStyle = .none
         }
         
         self.containerView.do {

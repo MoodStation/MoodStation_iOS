@@ -15,7 +15,6 @@ final class RecordViewModel {
         case keyword([Item])
         case image([Item])
         case singleRecording([Item])
-        // TODO: - Calendar 추가
         
         var items: [Item] {
             switch self {
@@ -37,11 +36,18 @@ final class RecordViewModel {
     }
     
     init() {
+        // TODO: - Calendar View Model 을 RecordViewModel 이 갖도록하기 ?
+        // + Init 할 때 초기 Date 에 대한 의존성 필요함 -> 만약 Date 값이 없으면 Today 라고 생각하고 진행
         self.sections = self.makeSections()
     }
     
     var numberOfSections: Int {
         self.sections.count
+    }
+    
+    func selectItem(at indexPath: IndexPath) {
+        // TODO: - Do Something
+        
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
