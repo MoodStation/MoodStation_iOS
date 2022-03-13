@@ -28,6 +28,8 @@
 		A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615527CFAA0B001FBE3E /* Configurable.swift */; };
 		A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */; };
 		A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615B27CFAB89001FBE3E /* NSObject+.swift */; };
+		A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */; };
+		A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */; };
 		A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63127C648A200DAF770 /* AppDelegate.swift */; };
 		A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63327C648A200DAF770 /* SceneDelegate.swift */; };
 		A963E63B27C648A300DAF770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A963E63A27C648A300DAF770 /* Assets.xcassets */; };
@@ -112,6 +114,8 @@
 		A92B615527CFAA0B001FBE3E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionCell.swift; sourceTree = "<group>"; };
 		A92B615B27CFAB89001FBE3E /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
+		A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewController.swift; sourceTree = "<group>"; };
+		A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewModel.swift; sourceTree = "<group>"; };
 		A963E62E27C648A200DAF770 /* MoodStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E63127C648A200DAF770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A963E63327C648A200DAF770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 			children = (
 				34309F4A27C85BF500F54FE3 /* SettingsViewController.swift */,
 				34309F5027C85C7700F54FE3 /* SettingsViewModel.swift */,
+				A93DB85127DE31D500C6920B /* CrewInfo */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -240,6 +245,15 @@
 				D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A93DB85127DE31D500C6920B /* CrewInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */,
+				A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */,
+			);
+			path = CrewInfo;
 			sourceTree = "<group>";
 		};
 		A963E62527C648A200DAF770 = {
@@ -698,10 +712,12 @@
 				F11A110F27DC667300E29A24 /* RecordCalendarViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
 				F11A110D27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift in Sources */,
+				A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
 				A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,
+				A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */,
 				F11A10FD27D479B800E29A24 /* RecordKeywordCell.swift in Sources */,
 				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
