@@ -30,6 +30,7 @@
 		A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615B27CFAB89001FBE3E /* NSObject+.swift */; };
 		A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */; };
 		A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */; };
+		A93DB85727DE328C00C6920B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85627DE328C00C6920B /* UserTableViewCell.swift */; };
 		A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63127C648A200DAF770 /* AppDelegate.swift */; };
 		A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63327C648A200DAF770 /* SceneDelegate.swift */; };
 		A963E63B27C648A300DAF770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A963E63A27C648A300DAF770 /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		A92B615B27CFAB89001FBE3E /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewController.swift; sourceTree = "<group>"; };
 		A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewModel.swift; sourceTree = "<group>"; };
+		A93DB85627DE328C00C6920B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		A963E62E27C648A200DAF770 /* MoodStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E63127C648A200DAF770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A963E63327C648A200DAF770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				34309F4327C85BAA00F54FE3 /* Home */,
 				34309F4427C85BAC00F54FE3 /* Share */,
 				34309F4527C85BB400F54FE3 /* Settings */,
+				A93DB85627DE328C00C6920B /* UserTableViewCell.swift */,
 				F11A10EE27D472EB00E29A24 /* Record */,
 				34309F4127C85B6300F54FE3 /* MainViewController.swift */,
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
@@ -699,6 +702,7 @@
 				A91FDA7B27DCA11C003542A2 /* RecordListHeaderView.swift in Sources */,
 				F11A10F427D4734F00E29A24 /* RecordView.swift in Sources */,
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
+				A93DB85727DE328C00C6920B /* UserTableViewCell.swift in Sources */,
 				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,
 				F11A10F227D4734A00E29A24 /* RecordViewModel.swift in Sources */,
 				F11A110927DC596E00E29A24 /* RecordCalendarView.swift in Sources */,
