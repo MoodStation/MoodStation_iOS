@@ -27,7 +27,7 @@ struct Record: Identifiable, Codable {
     let date: Date
     let mood: GradientStyle
     let keyword: [String]
-    let imagePath: String
+    let imagePath: String?
     let note: String
     
     private enum CodingKeys: String, CodingKey {

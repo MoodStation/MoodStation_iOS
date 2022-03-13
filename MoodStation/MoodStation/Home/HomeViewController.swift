@@ -7,6 +7,9 @@
 
 import UIKit
 
+typealias HomeViewDelegate = UITableViewDelegate
+typealias HomeViewDataSource = UITableViewDataSource
+
 final class HomeViewController: UIViewController {
     
     init(viewModel: HomeViewModel) {
@@ -45,4 +48,46 @@ final class HomeViewController: UIViewController {
     
     private let viewModel: HomeViewModel
     private let recordListView: UITableView
+}
+
+extension HomeViewController: HomeViewDelegate {
+    
+}
+
+extension HomeViewController: HomeViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.numberOfSection
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: RecordListHeaderView.className) as? RecordListHeaderView else {
+            return UITableViewHeaderFooterView()
+        }
+        let headerData = viewModel.headerData(at: section)
+        headerView.configure(data: headerData)
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRowsInSection(section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellModel = viewModel.cellModel(at: indexPath)
+        
+        switch cellModel {
+        case .record(let record):
+            guard let cell = tableView.dequeueReusableCell(RecordListCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.configure(data: record)
+            return cell
+        case .empty(let emptyCellModel):
+            guard let cell = tableView.dequeueReusableCell(RecordListEmptyCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.configure(data: emptyCellModel)
+            return cell
+        }
+    }
 }
