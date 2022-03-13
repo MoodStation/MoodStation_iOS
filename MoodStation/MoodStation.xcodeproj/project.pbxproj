@@ -63,6 +63,10 @@
 		F11A110227D47A4C00E29A24 /* RecordSingleRecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110127D47A4C00E29A24 /* RecordSingleRecordingCell.swift */; };
 		F11A110427D4814000E29A24 /* RecordColorChipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110327D4814000E29A24 /* RecordColorChipCollectionViewCell.swift */; };
 		F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110527D4871B00E29A24 /* AttributedString+.swift */; };
+		F11A110927DC596E00E29A24 /* RecordCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110827DC596E00E29A24 /* RecordCalendarView.swift */; };
+		F11A110B27DC5E7500E29A24 /* RecordCalendarWeeklyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110A27DC5E7500E29A24 /* RecordCalendarWeeklyCollectionCell.swift */; };
+		F11A110D27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110C27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift */; };
+		F11A110F27DC667300E29A24 /* RecordCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A110E27DC667300E29A24 /* RecordCalendarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +153,10 @@
 		F11A110127D47A4C00E29A24 /* RecordSingleRecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSingleRecordingCell.swift; sourceTree = "<group>"; };
 		F11A110327D4814000E29A24 /* RecordColorChipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordColorChipCollectionViewCell.swift; sourceTree = "<group>"; };
 		F11A110527D4871B00E29A24 /* AttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+.swift"; sourceTree = "<group>"; };
+		F11A110827DC596E00E29A24 /* RecordCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCalendarView.swift; sourceTree = "<group>"; };
+		F11A110A27DC5E7500E29A24 /* RecordCalendarWeeklyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCalendarWeeklyCollectionCell.swift; sourceTree = "<group>"; };
+		F11A110C27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCalendarDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		F11A110E27DC667300E29A24 /* RecordCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCalendarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +391,7 @@
 		F11A10EE27D472EB00E29A24 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				F11A110727DC58C900E29A24 /* Calendar */,
 				F11A10FE27D47A0600E29A24 /* Cell */,
 				F11A10EF27D4734400E29A24 /* RecordViewController.swift */,
 				F11A10F127D4734A00E29A24 /* RecordViewModel.swift */,
@@ -401,6 +410,17 @@
 				F11A110127D47A4C00E29A24 /* RecordSingleRecordingCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F11A110727DC58C900E29A24 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F11A110827DC596E00E29A24 /* RecordCalendarView.swift */,
+				F11A110E27DC667300E29A24 /* RecordCalendarViewModel.swift */,
+				F11A110A27DC5E7500E29A24 /* RecordCalendarWeeklyCollectionCell.swift */,
+				F11A110C27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -667,6 +687,7 @@
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
 				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,
 				F11A10F227D4734A00E29A24 /* RecordViewModel.swift in Sources */,
+				F11A110927DC596E00E29A24 /* RecordCalendarView.swift in Sources */,
 				F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */,
 				F11A110027D47A3800E29A24 /* RecordImageViewCell.swift in Sources */,
 				F11A110427D4814000E29A24 /* RecordColorChipCollectionViewCell.swift in Sources */,
@@ -674,7 +695,9 @@
 				F11A10E527D337A900E29A24 /* NavigationView.swift in Sources */,
 				F11A10A727C65A9100E29A24 /* Record.swift in Sources */,
 				F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */,
+				F11A110F27DC667300E29A24 /* RecordCalendarViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
+				F11A110D27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
 				A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
@@ -689,6 +712,7 @@
 				34309F4B27C85BF500F54FE3 /* SettingsViewController.swift in Sources */,
 				F11A10E927D3805100E29A24 /* TextFieldOnlyTableViewCell.swift in Sources */,
 				F11A10FB27D4799600E29A24 /* RecordColorChipsCell.swift in Sources */,
+				F11A110B27DC5E7500E29A24 /* RecordCalendarWeeklyCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
