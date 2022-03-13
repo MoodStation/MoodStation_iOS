@@ -59,6 +59,8 @@ extension UIColor {
     static let moodBlue = [UIColor(hex: "#1F48DA"), UIColor(hex: "#9BE5FB")]
     static let moodPurple = [UIColor(hex: "#741FFF"), UIColor(hex: "#FFA8CC")]
     static let moodNavy = [UIColor(hex: "#130624"), UIColor(hex: "#243696")]
+    
+    static let crewInfo = [UIColor(hex: "#F6CACA"), UIColor(hex: "#E52F63")]
 }
 
 enum GradientStyle: Int {

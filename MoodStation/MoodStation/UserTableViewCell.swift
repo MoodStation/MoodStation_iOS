@@ -66,6 +66,7 @@ final class UserTableViewCell: UITableViewCell {
         self.gradientView.do {
             $0.clipsToBounds = true
             $0.layer.cornerRadius = 42.5
+            $0.drawGradientUserInfo()
         }
         
         self.userImageView.do {
@@ -97,9 +98,7 @@ extension UserTableViewCell: Configurable {
         if let user = data as? UserInfo {
             nickNameLabel.text = user.name
             emailLabel.text = user.email
-            guard let imagePath = user.userImagePath else {
-                return
-            }
+            guard let imagePath = user.userImagePath else { return }
             if let url = URL(string: imagePath) {
                 userImageView.kf.setImage(with: url)
             } else if let assetImage = UIImage(named: imagePath) {
