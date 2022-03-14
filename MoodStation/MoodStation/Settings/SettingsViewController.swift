@@ -68,6 +68,36 @@ extension SettingsViewController: SettingsViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.viewModel.heightForRowAt(at: indexPath)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = self.viewModel.didSelectRowAt(at: indexPath) else {
+            return
+        }
+        switch item {
+        case .text(_): break
+        case .user(let userInfo):
+            if let _ = userInfo {
+                print("사용자 뷰 - 로그인")
+            } else {
+                print("사용자 뷰 - 로그아웃")
+            }
+        case .cell(let setting):
+            switch setting {
+            case .contact:      print(setting.description)
+            case .crewInfo:     self.pushCrewInfoViewController()
+            case .logout:       print(setting.description)
+            case .deleteAcount: print(setting.description)
+            }
+        }
+    }
+    
+    private func pushCrewInfoViewController() {
+        let viewModel = CrewInfoViewModel()
+        let viewController = CrewInfoViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
 }
 
 extension SettingsViewController: SettingsViewDataSource {

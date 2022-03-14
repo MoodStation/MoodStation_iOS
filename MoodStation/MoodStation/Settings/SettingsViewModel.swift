@@ -12,6 +12,7 @@ protocol SettingsViewModelType {
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
     func cellModel(at indexPath: IndexPath) -> CellModel
+    func didSelectRowAt(at indexPath: IndexPath) -> CellModel?
 }
 
 final class SettingsViewModel {
@@ -55,7 +56,7 @@ final class SettingsViewModel {
 }
 
 extension SettingsViewModel: SettingsViewModelType {
-
+    // MARK: - DataSoruce
     var numberOfSection: Int {
         return self.sections.count
     }
@@ -75,6 +76,19 @@ extension SettingsViewModel: SettingsViewModelType {
         case .text(_):  return 62.0
         case .user(_):  return 108
         case .cell(_):  return 55
+        }
+    }
+    
+    // MARK: - Delegate
+    func didSelectRowAt(at indexPath: IndexPath) -> Item? {
+        let section = self.sections[indexPath.section]
+        switch section {
+        case .text(_):
+            return nil
+        case .user(let items):
+            return items[indexPath.row]
+        case .cell(let items):
+            return items[indexPath.row]
         }
     }
 }
