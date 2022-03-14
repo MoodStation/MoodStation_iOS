@@ -83,7 +83,7 @@ extension SettingsViewController: SettingsViewDelegate {
             }
         case .cell(let setting):
             switch setting {
-            case .contact:      print(setting.description)
+            case .contact:      self.pushContactViewController()
             case .crewInfo:     self.pushCrewInfoViewController()
             case .logout:       print(setting.description)
             case .deleteAcount: print(setting.description)
@@ -97,7 +97,10 @@ extension SettingsViewController: SettingsViewDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    
+    private func pushContactViewController() {
+        let viewController = ContactViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension SettingsViewController: SettingsViewDataSource {

@@ -41,6 +41,7 @@
 		A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997605E27DF33A9008F70E2 /* CrewInfoView.swift */; };
 		A997606527DF66E5008F70E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606427DF66E5008F70E2 /* SettingsView.swift */; };
 		A997606727DF67E0008F70E2 /* SettingsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */; };
+		A997606A27DF7026008F70E2 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606927DF7026008F70E2 /* ContactViewController.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 		F11A10A727C65A9100E29A24 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A627C65A9100E29A24 /* Record.swift */; };
 		F11A10A927C65A9800E29A24 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A827C65A9800E29A24 /* Repository.swift */; };
@@ -135,6 +136,7 @@
 		A997605E27DF33A9008F70E2 /* CrewInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoView.swift; sourceTree = "<group>"; };
 		A997606427DF66E5008F70E2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewCell.swift; sourceTree = "<group>"; };
+		A997606927DF7026008F70E2 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				34309F4327C85BAA00F54FE3 /* Home */,
 				34309F4427C85BAC00F54FE3 /* Share */,
 				34309F4527C85BB400F54FE3 /* Settings */,
+				A997606827DF7011008F70E2 /* ContactUs */,
 				A93DB85627DE328C00C6920B /* UserTableViewCell.swift */,
 				F11A10EE27D472EB00E29A24 /* Record */,
 				34309F4127C85B6300F54FE3 /* MainViewController.swift */,
@@ -328,6 +331,14 @@
 				A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */,
 			);
 			path = MoodStationUITests;
+			sourceTree = "<group>";
+		};
+		A997606827DF7011008F70E2 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				A997606927DF7026008F70E2 /* ContactViewController.swift */,
+			);
+			path = ContactUs;
 			sourceTree = "<group>";
 		};
 		F11A10A227C651C700E29A24 /* Extension */ = {
@@ -717,6 +728,7 @@
 				A93DB85727DE328C00C6920B /* UserTableViewCell.swift in Sources */,
 				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,
 				F11A10F227D4734A00E29A24 /* RecordViewModel.swift in Sources */,
+				A997606A27DF7026008F70E2 /* ContactViewController.swift in Sources */,
 				F11A110927DC596E00E29A24 /* RecordCalendarView.swift in Sources */,
 				F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */,
 				F11A110027D47A3800E29A24 /* RecordImageViewCell.swift in Sources */,
