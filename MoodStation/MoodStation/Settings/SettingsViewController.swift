@@ -53,8 +53,57 @@ final class SettingsViewController: UIViewController {
         self.view.do {
             $0.backgroundColor = .customBlack
         }
+        
+        self.settingsView.do {
+            $0.dataSource = self
+            $0.delegate = self
+        }
     }
     
     private let viewModel: SettingsViewModel
     private let settingsView = SettingsView(frame: .zero)
+}
+extension SettingsViewController: SettingsViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.viewModel.heightForRowAt(at: indexPath)
+    }
+}
+
+extension SettingsViewController: SettingsViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.viewModel.numberOfSection
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.numberOfRowsInSection(section)
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = self.viewModel.cellModel(at: indexPath)
+        
+        switch model {
+        case .text(let textOnlyTableViewCellModel):
+            guard let cell = tableView.dequeueReusableCell(TextOnlyTableViewCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.configure(model: textOnlyTableViewCellModel)
+            return cell
+        case .user(let userInfo):
+            guard let cell = tableView.dequeueReusableCell(UserTableViewCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.setAccessary(isHidden: false)
+            cell.configure(data: userInfo)
+            return cell
+        case .cell(let type):
+            guard let cell = tableView.dequeueReusableCell(SettingsListViewCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            cell.setAccessary(isHidden: false)
+            cell.configure(data: type.description)
+            return cell
+        }
+    }
 }

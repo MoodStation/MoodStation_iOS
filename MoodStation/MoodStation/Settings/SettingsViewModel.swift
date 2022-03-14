@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol SettingsViewModelType {
+    associatedtype CellModel
+    var numberOfSection: Int { get }
+    func numberOfRowsInSection(_ section: Int) -> Int
+    func cellModel(at indexPath: IndexPath) -> CellModel
+}
+
 final class SettingsViewModel {
     enum Section {
         case text([Item])
@@ -44,5 +51,31 @@ final class SettingsViewModel {
     }
     
     private var sections: [Section] = []
-    private var userInfo: UserInfo? = .init(name: "용우동", email: "keepingitflow@gmail.com", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg")
+    private var userInfo: UserInfo? = .init(name: "용우동", email: "keepingitflow@gmail.com", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") // 로그인 상태 Dummy 삭제 예정
 }
+
+extension SettingsViewModel: SettingsViewModelType {
+
+    var numberOfSection: Int {
+        return self.sections.count
+    }
+    
+    func numberOfRowsInSection(_ section: Int) -> Int {
+        return self.sections[section].items.count
+    }
+
+    func cellModel(at indexPath: IndexPath) -> Item {
+        return self.sections[indexPath.section].items[indexPath.row]
+    }
+    
+    func heightForRowAt(at indexPath: IndexPath) -> CGFloat {
+        let section = self.sections[indexPath.section]
+        
+        switch section {
+        case .text(_):  return 62.0
+        case .user(_):  return 108
+        case .cell(_):  return 55
+        }
+    }
+}
+
