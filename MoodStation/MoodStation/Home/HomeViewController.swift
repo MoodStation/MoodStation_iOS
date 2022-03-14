@@ -32,14 +32,14 @@ final class HomeViewController: UIViewController {
     
     private func setupLayout() {
         self.view.addSubview(self.recordListView)
-        recordListView.snp.makeConstraints { make in
+        self.recordListView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         
     }
     
     private func setupAttributes() {
-        recordListView.do {
+        self.recordListView.do {
             $0.backgroundColor = .customBlack
             $0.separatorStyle = .none
             $0.register(RecordListCell.self, forCellReuseIdentifier: RecordListCell.className)
@@ -63,19 +63,19 @@ extension HomeViewController: HomeViewDataSource {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: RecordListHeaderView.className) as? RecordListHeaderView else {
             return UITableViewHeaderFooterView()
         }
-        let headerData = viewModel.headerData(at: section)
+        let headerData = self.viewModel.headerData(at: section)
         headerView.configure(data: headerData)
         return headerView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfRowsInSection(section)
+        self.viewModel.numberOfRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellModel = viewModel.cellModel(at: indexPath)
+        let model = viewModel.cellModel(at: indexPath)
         
-        switch cellModel {
+        switch model {
         case .record(let record):
             guard let cell = tableView.dequeueReusableCell(RecordListCell.self, at: indexPath) else {
                 return UITableViewCell()

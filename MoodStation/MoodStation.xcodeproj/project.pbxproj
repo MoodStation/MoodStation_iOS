@@ -210,7 +210,6 @@
 				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
 				A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */,
 				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
-				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,7 +230,9 @@
 				34309F5027C85C7700F54FE3 /* SettingsViewModel.swift */,
 				A997606427DF66E5008F70E2 /* SettingsView.swift */,
 				A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */,
+				A93DB85627DE328C00C6920B /* UserTableViewCell.swift */,
 				A93DB85127DE31D500C6920B /* CrewInfo */,
+				A997606827DF7011008F70E2 /* ContactUs */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -303,8 +304,6 @@
 				34309F4327C85BAA00F54FE3 /* Home */,
 				34309F4427C85BAC00F54FE3 /* Share */,
 				34309F4527C85BB400F54FE3 /* Settings */,
-				A997606827DF7011008F70E2 /* ContactUs */,
-				A93DB85627DE328C00C6920B /* UserTableViewCell.swift */,
 				F11A10EE27D472EB00E29A24 /* Record */,
 				34309F4127C85B6300F54FE3 /* MainViewController.swift */,
 				A963E63127C648A200DAF770 /* AppDelegate.swift */,
@@ -421,6 +420,7 @@
 				F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */,
 				F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */,
 				F11A10F827D4746F00E29A24 /* TextOnlyCollectionViewCell.swift */,
+				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

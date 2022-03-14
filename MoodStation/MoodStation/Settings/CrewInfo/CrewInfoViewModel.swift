@@ -12,6 +12,7 @@ protocol CrewInfoViewModelType {
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
     func cellModel(at indexPath: IndexPath) -> CellModel
+    func cellHeight(at indexPath: IndexPath) -> CGFloat
 }
 
 final class CrewInfoViewModel {
@@ -55,6 +56,7 @@ final class CrewInfoViewModel {
 }
 
 extension CrewInfoViewModel: CrewInfoViewModelType {
+    //MARK: - DataSoruce
     var numberOfSection: Int {
         return self.crewInfos.count
     }
@@ -68,6 +70,7 @@ extension CrewInfoViewModel: CrewInfoViewModelType {
         return section.items[indexPath.row]
     }
     
+    // MARK: - Delegate
     func cellHeight(at indexPath: IndexPath) -> CGFloat {
         let section = self.crewInfos[indexPath.section]
         switch section {

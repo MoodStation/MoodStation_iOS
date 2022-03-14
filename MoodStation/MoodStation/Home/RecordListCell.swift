@@ -161,7 +161,7 @@ extension RecordListCell: Configurable {
 
 extension RecordListCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        keywords.count
+        return self.keywords.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

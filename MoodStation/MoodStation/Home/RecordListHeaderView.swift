@@ -8,6 +8,7 @@
 import UIKit.UIView
 
 final class RecordListHeaderView: UITableViewHeaderFooterView {
+    
     static let recordDateFormatter = DateFormatter().then {
         $0.locale = Locale(identifier: "en_KR")
         $0.dateFormat = "MMMM, yyyy"
@@ -49,7 +50,7 @@ final class RecordListHeaderView: UITableViewHeaderFooterView {
 extension RecordListHeaderView: Configurable {
     func configure<T>(data: T) {
         if let date = data as? Date {
-            dateLabel.text = Self.recordDateFormatter.string(from: date)
+            self.dateLabel.text = Self.recordDateFormatter.string(from: date)
         }
     }
 }

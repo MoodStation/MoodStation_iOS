@@ -22,12 +22,12 @@ final class HomeViewModel {
     }
 
     init() {
-        self.recordBundles = []
+        self.sections = []
         self.dateHandler = DateHandler.shared
         self.page = self.dateHandler.makeTodayPage()
     }
     
-    private var recordBundles: [MonthlyBundle] = []
+    private var sections: [MonthlyBundle] = []
     private let dateHandler: DateHandler
     private var page: (year: Int, month: Int)
 }
@@ -35,22 +35,22 @@ final class HomeViewModel {
 // MARK: - DataSource
 extension HomeViewModel: HomeViewModelType {
     var numberOfSection: Int {
-        recordBundles.count
+        self.sections.count
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
-        self.recordBundles[section].records.count
+        self.sections[section].records.count
     }
     
     func headerData(at index: Int) -> Date {
-        let section = self.recordBundles[index]
+        let section = self.sections[index]
         let sectionComponents = DateComponents(year: section.date.year, month: section.date.month)
         let sectionDate = self.dateHandler.date(from: sectionComponents)
         return sectionDate
     }
     
     func cellModel(at indexPath: IndexPath) -> CellModel {
-        let section = self.recordBundles[indexPath.section]
+        let section = self.sections[indexPath.section]
         if let record = section.records[indexPath.row] {
             return .record(record)
         } else {

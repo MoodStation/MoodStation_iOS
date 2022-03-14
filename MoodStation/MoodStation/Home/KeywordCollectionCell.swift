@@ -20,7 +20,7 @@ final class KeywordCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupLayout() {
-        self.addSubview(self.keywordLabel)
+        self.contentView.addSubview(self.keywordLabel)
         self.keywordLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(3)
             make.leading.trailing.equalToSuperview().inset(11)
@@ -40,7 +40,7 @@ final class KeywordCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 6
+        self.layer.cornerRadius = 6
     }
     
     private let keywordLabel: UILabel = UILabel(frame: .zero)
@@ -49,7 +49,7 @@ final class KeywordCollectionViewCell: UICollectionViewCell {
 extension KeywordCollectionViewCell: Configurable {
     func configure<T>(data: T) {
         if let text = data as? String {
-            keywordLabel.text = text
+            self.keywordLabel.text = text
         }
     }
 }

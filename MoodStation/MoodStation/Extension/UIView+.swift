@@ -21,6 +21,7 @@ extension UIView {
             }
             view.layer.addSublayer(gradient)
         }
+        self.setNeedsDisplay()
     }
     
     func drawEmptyImageView(color: UIColor?) {
@@ -34,7 +35,7 @@ extension UIView {
             }
             view.layer.addSublayer(layer)
         }
-        self.layoutIfNeeded()
+        self.setNeedsDisplay()
     }
     
     func drawGradientUserInfo() {
@@ -49,5 +50,6 @@ extension UIView {
             }
             view.layer.addSublayer(gradient)
         }
+        self.setNeedsDisplay()
     }
 }
