@@ -27,12 +27,18 @@ final class SettingsViewController: UIViewController {
     
     
     private func setupLayout() {
-        
+        self.view.addSubview(self.settingsView)
+        self.settingsView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
+        }
     }
     
     private func setupAttributes() {
-        
+        self.view.do {
+            $0.backgroundColor = .customBlack
+        }
     }
     
     private let viewModel: SettingsViewModel
+    private let settingsView = SettingsView(frame: .zero)
 }
