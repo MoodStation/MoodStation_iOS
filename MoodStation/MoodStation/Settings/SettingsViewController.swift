@@ -9,6 +9,22 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
     
+    enum Settings: CustomStringConvertible {
+        case contact
+        case crewInfo
+        case logout
+        case deleteAcount
+        
+        var description: String {
+            switch self {
+            case .contact:      return "문의하기"
+            case .crewInfo:     return "무드스테이션 팀원들"
+            case .logout:       return "로그아웃"
+            case .deleteAcount: return "탈퇴하기"
+            }
+        }
+    }
+    
     init(viewModel: SettingsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

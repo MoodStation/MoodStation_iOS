@@ -42,6 +42,9 @@ final class SettingsView: UIView {
         self.tableView.do {
             $0.separatorStyle = .singleLine
             $0.backgroundColor = .customBlack
+            $0.register(TextOnlyTableViewCell.self)
+            $0.register(UserTableViewCell.self)
+            $0.register(SettingsListViewCell.self)
         }
     }
     
