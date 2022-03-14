@@ -38,6 +38,7 @@
 		A963E64927C648A400DAF770 /* MoodStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E64827C648A400DAF770 /* MoodStationTests.swift */; };
 		A963E65327C648A400DAF770 /* MoodStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65227C648A400DAF770 /* MoodStationUITests.swift */; };
 		A963E65527C648A400DAF770 /* MoodStationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */; };
+		A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997605E27DF33A9008F70E2 /* CrewInfoView.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 		F11A10A727C65A9100E29A24 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A627C65A9100E29A24 /* Record.swift */; };
 		F11A10A927C65A9800E29A24 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A827C65A9800E29A24 /* Repository.swift */; };
@@ -129,6 +130,7 @@
 		A963E64E27C648A400DAF770 /* MoodStationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodStationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E65227C648A400DAF770 /* MoodStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITests.swift; sourceTree = "<group>"; };
 		A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A997605E27DF33A9008F70E2 /* CrewInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoView.swift; sourceTree = "<group>"; };
 		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */,
 				A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */,
+				A997605E27DF33A9008F70E2 /* CrewInfoView.swift */,
 			);
 			path = CrewInfo;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */,
 				F11A110227D47A4C00E29A24 /* RecordSingleRecordingCell.swift in Sources */,
 				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
+				A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */,
 				A91FDA7B27DCA11C003542A2 /* RecordListHeaderView.swift in Sources */,
 				F11A10F427D4734F00E29A24 /* RecordView.swift in Sources */,
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,

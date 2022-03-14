@@ -7,9 +7,6 @@
 
 import UIKit
 
-typealias CrewInfoViewDelegate = UITableViewDelegate
-typealias CrewInfoViewDataSource = UITableViewDataSource
-
 final class CrewInfoViewController: UIViewController {
     
     init(viewModel: CrewInfoViewModel) {
@@ -30,26 +27,21 @@ final class CrewInfoViewController: UIViewController {
     
     
     private func setupLayout() {
-        view.addSubview(self.tableView)
-        tableView.snp.makeConstraints { make in
+        self.view.addSubview(self.crewInfoView)
+        crewInfoView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
     private func setupAttributes() {
-        self.tableView.do {
-            $0.backgroundColor = .customBlack
-            $0.selectionFollowsFocus = false
-            $0.rowHeight = 50
-            $0.register(TextOnlyTableViewCell.self)
-            $0.register(UserTableViewCell.self)
-            $0.delegate = self
+        self.crewInfoView.do {
             $0.dataSource = self
+            $0.delegate = self
         }
     }
 
     private let viewModel: CrewInfoViewModel
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let crewInfoView = CrewInfoView(frame: .zero)
 }
 
 extension CrewInfoViewController: CrewInfoViewDelegate {
