@@ -27,21 +27,40 @@ final class CrewInfoViewController: UIViewController {
     
     
     private func setupLayout() {
+        self.view.addSubview(self.navigationView)
+        self.navigationView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(44)
+        }
+        
         self.view.addSubview(self.crewInfoView)
         crewInfoView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(self.navigationView.snp.bottom)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            make.leading.trailing.equalToSuperview()
         }
     }
     
     private func setupAttributes() {
+        self.view.do {
+            $0.backgroundColor = .customBlack
+        }
+        
+        self.navigationView.do {
+            $0.delegate = self
+            $0.configure(type: .back)
+        }
+        
         self.crewInfoView.do {
             $0.dataSource = self
             $0.delegate = self
         }
     }
 
-    private let viewModel: CrewInfoViewModel
+    private let navigationView = NavigationView(frame: .zero)
     private let crewInfoView = CrewInfoView(frame: .zero)
+    private let viewModel: CrewInfoViewModel
 }
 
 extension CrewInfoViewController: CrewInfoViewDelegate {
@@ -77,4 +96,12 @@ extension CrewInfoViewController: CrewInfoViewDataSource {
             return cell
         }
     }
+}
+
+extension CrewInfoViewController: NavigationViewDelegate {
+    
+    func navigationViewDeleagteDidClickLeftButton(_ view: NavigationView) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
