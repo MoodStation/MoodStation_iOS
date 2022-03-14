@@ -42,7 +42,6 @@ final class CrewInfoView: UIView {
         self.tableView.do {
             $0.backgroundColor = .customBlack
             $0.selectionFollowsFocus = false
-            $0.rowHeight = 50
             $0.register(TextOnlyTableViewCell.self)
             $0.register(UserTableViewCell.self)
         }

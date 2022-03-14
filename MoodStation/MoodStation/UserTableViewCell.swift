@@ -26,14 +26,8 @@ final class UserTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
-    }
-    
     private func setupLayout() {
-        self.addSubview(self.gradientView)
+        self.contentView.addSubview(self.gradientView)
         self.gradientView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.width.height.equalTo(85)
@@ -42,24 +36,37 @@ final class UserTableViewCell: UITableViewCell {
         
         gradientView.addSubview(self.userImageView)
         self.userImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.bottom.trailing.equalToSuperview()
         }
         
-        self.addSubview(self.nickNameLabel)
+        self.contentView.addSubview(self.nickNameLabel)
         self.nickNameLabel.snp.makeConstraints { make in
             make.leading.equalTo(self.userImageView.snp.trailing).offset(16)
             make.bottom.equalTo(self.contentView.snp.centerY).offset(-2)
         }
         
-        self.addSubview(self.emailLabel)
+        self.contentView.addSubview(self.emailLabel)
         self.emailLabel.snp.makeConstraints { make in
             make.leading.equalTo(self.userImageView.snp.trailing).offset(16)
             make.top.equalTo(self.contentView.snp.centerY).offset(2)
+        }
+        
+        self.contentView.addSubview(self.disclosureIndicator)
+        self.disclosureIndicator.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-33.5)
+            make.width.equalTo(5)
+            make.height.equalTo(10)
         }
     }
     
     private func setupAttributes() {
         self.do {
+            $0.selectionStyle = .none
+            $0.backgroundColor = .clear
+        }
+        
+        self.contentView.do {
             $0.backgroundColor = .customBlack
         }
         
@@ -67,9 +74,11 @@ final class UserTableViewCell: UITableViewCell {
             $0.clipsToBounds = true
             $0.layer.cornerRadius = 42.5
             $0.drawGradientUserInfo()
+            self.setNeedsDisplay()
         }
         
         self.userImageView.do {
+            $0.backgroundColor = .gray
             $0.clipsToBounds = true
             $0.layer.cornerRadius = 42.5
             $0.backgroundColor = .clear
@@ -85,12 +94,19 @@ final class UserTableViewCell: UITableViewCell {
             $0.textColor = .gray03
             $0.font = .body3R
         }
+        
+        self.disclosureIndicator.do {
+            $0.contentMode = .scaleAspectFit
+            $0.isHidden = true
+            $0.image = UIImage(named: "icn-arrow_right")
+        }
     }
     
     private let gradientView = UIView(frame: .zero)
     private let userImageView = UIImageView(frame: .zero)
     private let nickNameLabel = UILabel(frame: .zero)
     private let emailLabel = UILabel(frame: .zero)
+    private let disclosureIndicator = UIImageView(frame: .zero)
 }
 
 extension UserTableViewCell: Configurable {
@@ -98,13 +114,21 @@ extension UserTableViewCell: Configurable {
         if let user = data as? UserInfo {
             nickNameLabel.text = user.name
             emailLabel.text = user.email
-            guard let imagePath = user.userImagePath else { return }
+            guard let imagePath = user.userImagePath else {
+                return
+            }
             if let url = URL(string: imagePath) {
                 userImageView.kf.setImage(with: url)
             } else if let assetImage = UIImage(named: imagePath) {
                 userImageView.image = assetImage
             }
+        } else {
+            nickNameLabel.text = "로그인이 필요합니다." // 로그아웃 상태 수정 예정
         }
+    }
+    
+    func setAccessary(isHidden: Bool) {
+        disclosureIndicator.isHidden = isHidden
     }
 }
 
