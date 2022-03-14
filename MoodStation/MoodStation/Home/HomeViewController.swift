@@ -7,14 +7,10 @@
 
 import UIKit
 
-typealias HomeViewDelegate = UITableViewDelegate
-typealias HomeViewDataSource = UITableViewDataSource
-
-final class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController, NavigationViewDelegate {
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
-        self.recordListView = UITableView()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,23 +27,40 @@ final class HomeViewController: UIViewController {
     
     
     private func setupLayout() {
-        self.view.addSubview(self.recordListView)
-        self.recordListView.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        self.view.addSubview(self.navigationView)
+        self.navigationView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(44)
         }
         
+        self.view.addSubview(self.homeView)
+        homeView.snp.makeConstraints { make in
+            make.top.equalTo(self.navigationView.snp.bottom)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
     }
     
     private func setupAttributes() {
-        self.recordListView.do {
+        self.view.do {
             $0.backgroundColor = .customBlack
-            $0.separatorStyle = .none
-            $0.register(RecordListCell.self, forCellReuseIdentifier: RecordListCell.className)
+        }
+        
+        self.navigationView.do {
+//            $0.delegate = self
+            $0.configure(type: .main)
+        }
+        
+        self.homeView.do {
+            $0.dataSource = self
+            $0.delegate = self
         }
     }
     
+    private let navigationView = NavigationView(frame: .zero)
+    private let homeView = HomeView(frame: .zero)
     private let viewModel: HomeViewModel
-    private let recordListView: UITableView
 }
 
 extension HomeViewController: HomeViewDelegate {
