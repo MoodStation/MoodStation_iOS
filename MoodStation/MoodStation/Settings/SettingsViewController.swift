@@ -85,8 +85,16 @@ extension SettingsViewController: SettingsViewDelegate {
             switch setting {
             case .contact:      self.pushContactViewController()
             case .crewInfo:     self.pushCrewInfoViewController()
-            case .logout:       print(setting.description)
-            case .deleteAcount: print(setting.description)
+            case .logout:       AlertView(title: "로그아웃 하시겠어요?",
+                                          detail: "기록은 지워지지 않아요.",
+                                          confirm: "로그아웃", style: .confirm) {
+                    print("로그아웃 선택")
+                }.show(from: self)
+            case .deleteAcount: AlertView(title: "정말 탈퇴하시겠어요?",
+                                          detail: "기록이 삭제되며 복구할 수 없어요!",
+                                          confirm: "탈퇴", style: .confirm) {
+                    print("탈퇴 선택")
+                }.show(from: self)
             }
         }
     }
