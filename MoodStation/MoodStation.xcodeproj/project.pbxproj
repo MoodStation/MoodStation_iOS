@@ -43,6 +43,7 @@
 		A997606727DF67E0008F70E2 /* SettingsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */; };
 		A997606A27DF7026008F70E2 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606927DF7026008F70E2 /* ContactViewController.swift */; };
 		A997606E27DF7684008F70E2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606D27DF7684008F70E2 /* HomeView.swift */; };
+		A999D4AE27E0C60B001A6AE3 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4AD27E0C60B001A6AE3 /* ContactView.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 		F11A10A727C65A9100E29A24 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A627C65A9100E29A24 /* Record.swift */; };
 		F11A10A927C65A9800E29A24 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A827C65A9800E29A24 /* Repository.swift */; };
@@ -139,6 +140,7 @@
 		A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewCell.swift; sourceTree = "<group>"; };
 		A997606927DF7026008F70E2 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A997606D27DF7684008F70E2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A999D4AD27E0C60B001A6AE3 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				A997606927DF7026008F70E2 /* ContactViewController.swift */,
+				A999D4AD27E0C60B001A6AE3 /* ContactView.swift */,
 			);
 			path = ContactUs;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */,
 				F11A10FD27D479B800E29A24 /* RecordKeywordCell.swift in Sources */,
 				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,
+				A999D4AE27E0C60B001A6AE3 /* ContactView.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 				A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */,
 				A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */,

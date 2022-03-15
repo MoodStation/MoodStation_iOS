@@ -11,7 +11,7 @@ protocol SettingsViewModelType {
     associatedtype CellModel
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
-    func cellModel(at indexPath: IndexPath) -> CellModel
+    func cellModel(at indexPath: IndexPath) -> CellModel?
     func didSelectRowAt(at indexPath: IndexPath) -> CellModel?
 }
 
@@ -65,8 +65,9 @@ extension SettingsViewModel: SettingsViewModelType {
         return self.sections[section].items.count
     }
 
-    func cellModel(at indexPath: IndexPath) -> Item {
-        return self.sections[indexPath.section].items[indexPath.row]
+    func cellModel(at indexPath: IndexPath)  -> Item? {
+        guard let section = self.sections[safe: indexPath.section] else { return nil }
+        return section.items[safe: indexPath.item]
     }
     
     func heightForRowAt(at indexPath: IndexPath) -> CGFloat {

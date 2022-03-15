@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController, NavigationViewDelegate {
+final class HomeViewController: UIViewController {
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -25,7 +25,6 @@ final class HomeViewController: UIViewController, NavigationViewDelegate {
         self.setupAttributes()
     }
     
-    
     private func setupLayout() {
         self.view.addSubview(self.navigationView)
         self.navigationView.snp.makeConstraints { make in
@@ -35,7 +34,7 @@ final class HomeViewController: UIViewController, NavigationViewDelegate {
         }
         
         self.view.addSubview(self.homeView)
-        homeView.snp.makeConstraints { make in
+        self.homeView.snp.makeConstraints { make in
             make.top.equalTo(self.navigationView.snp.bottom)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
             make.leading.trailing.equalToSuperview()
@@ -48,7 +47,7 @@ final class HomeViewController: UIViewController, NavigationViewDelegate {
         }
         
         self.navigationView.do {
-//            $0.delegate = self
+            $0.delegate = self
             $0.configure(type: .main)
         }
         
@@ -73,12 +72,17 @@ extension HomeViewController: HomeViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: RecordListHeaderView.className) as? RecordListHeaderView else {
+        guard let model = viewModel.headerModel(at: section) else {
             return UITableViewHeaderFooterView()
         }
-        let headerData = self.viewModel.headerData(at: section)
-        headerView.configure(data: headerData)
-        return headerView
+        switch model {
+        case .date(let date):
+            guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: RecordListHeaderView.className) as? RecordListHeaderView else {
+                return UITableViewHeaderFooterView()
+            }
+            headerView.configure(data: date)
+            return headerView
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,7 +90,9 @@ extension HomeViewController: HomeViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = viewModel.cellModel(at: indexPath)
+        guard let model = viewModel.cellModel(at: indexPath) else {
+            return UITableViewCell()
+        }
         
         switch model {
         case .record(let record):
@@ -103,4 +109,8 @@ extension HomeViewController: HomeViewDataSource {
             return cell
         }
     }
+}
+
+extension HomeViewController: NavigationViewDelegate {
+    
 }

@@ -34,7 +34,7 @@ final class UserTableViewCell: UITableViewCell {
             make.leading.equalToSuperview().offset(24)
         }
         
-        gradientView.addSubview(self.userImageView)
+        self.gradientView.addSubview(self.userImageView)
         self.userImageView.snp.makeConstraints { make in
             make.top.leading.bottom.trailing.equalToSuperview()
         }

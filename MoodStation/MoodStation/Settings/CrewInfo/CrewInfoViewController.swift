@@ -79,7 +79,9 @@ extension CrewInfoViewController: CrewInfoViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = self.viewModel.cellModel(at: indexPath)
+        guard let model = self.viewModel.cellModel(at: indexPath) else {
+            return UITableViewCell()
+        }
         
         switch model {
         case .text(let textOnlyTableViewCellModel):

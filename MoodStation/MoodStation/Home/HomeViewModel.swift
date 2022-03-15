@@ -8,13 +8,20 @@
 import Foundation
 
 protocol HomeViewModelType {
+    associatedtype CellModel
+    associatedtype HeaderModel
+    
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
-    func headerData(at index: Int) -> Date
-    func cellModel(at indexPath: IndexPath) -> HomeViewModel.CellModel
+    func headerModel(at index: Int) -> HeaderModel? 
+    func cellModel(at indexPath: IndexPath) -> CellModel?
 }
 
 final class HomeViewModel {
+    
+    enum HeaderModel {
+        case date(Date)
+    }
     
     enum CellModel {
         case record(Record)
@@ -42,15 +49,15 @@ extension HomeViewModel: HomeViewModelType {
         self.sections[section].records.count
     }
     
-    func headerData(at index: Int) -> Date {
-        let section = self.sections[index]
+    func headerModel(at index: Int) -> HeaderModel? {
+        guard let section = self.sections[safe: index] else { return nil }
         let sectionComponents = DateComponents(year: section.date.year, month: section.date.month)
         let sectionDate = self.dateHandler.date(from: sectionComponents)
-        return sectionDate
+        return .date(sectionDate)
     }
     
-    func cellModel(at indexPath: IndexPath) -> CellModel {
-        let section = self.sections[indexPath.section]
+    func cellModel(at indexPath: IndexPath) -> CellModel? {
+        guard let section = self.sections[safe: indexPath.section] else { return nil }
         if let record = section.records[indexPath.row] {
             return .record(record)
         } else {

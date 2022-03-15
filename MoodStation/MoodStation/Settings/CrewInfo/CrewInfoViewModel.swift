@@ -11,7 +11,7 @@ protocol CrewInfoViewModelType {
     associatedtype CellModel
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
-    func cellModel(at indexPath: IndexPath) -> CellModel
+    func cellModel(at indexPath: IndexPath) -> CellModel?
     func cellHeight(at indexPath: IndexPath) -> CGFloat
 }
 
@@ -35,7 +35,7 @@ final class CrewInfoViewModel {
     }
     
     init() {
-        self.crewInfos = self.makeSections()
+        self.sections = self.makeSections()
     }
     
     private func makeSections() -> [Section] {
@@ -52,27 +52,27 @@ final class CrewInfoViewModel {
                    .cell(.init(name: "오현아", email: "haileyzeonni@gmail.com", userImagePath: "현아_memoji"))])
         ]
     }
-    private var crewInfos: [Section] = []
+    private var sections: [Section] = []
 }
 
 extension CrewInfoViewModel: CrewInfoViewModelType {
     //MARK: - DataSoruce
     var numberOfSection: Int {
-        return self.crewInfos.count
+        return self.sections.count
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
-        return self.crewInfos[section].items.count
+        return self.sections[section].items.count
     }
     
-    func cellModel(at indexPath: IndexPath) -> Item {
-        let section = self.crewInfos[indexPath.section]
-        return section.items[indexPath.row]
+    func cellModel(at indexPath: IndexPath) -> Item? {
+        guard let section = self.sections[safe: indexPath.section] else { return nil }
+        return section.items[safe: indexPath.item]
     }
     
     // MARK: - Delegate
     func cellHeight(at indexPath: IndexPath) -> CGFloat {
-        let section = self.crewInfos[indexPath.section]
+        let section = self.sections[indexPath.section]
         switch section {
         case .text(_):  return 46
         case .cell(_):  return 101
