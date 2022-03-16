@@ -21,6 +21,7 @@ extension UIView {
             }
             view.layer.addSublayer(gradient)
         }
+        self.setNeedsDisplay()
     }
     
     func drawEmptyImageView(color: UIColor?) {
@@ -34,6 +35,21 @@ extension UIView {
             }
             view.layer.addSublayer(layer)
         }
-        self.layoutIfNeeded()
+        self.setNeedsDisplay()
+    }
+    
+    func drawGradientUserInfo() {
+        self.do { view in
+            let gradient = CAGradientLayer()
+            gradient.do {
+                $0.colors = UIColor.crewInfo.compactMap { $0?.cgColor }
+                $0.type = .radial
+                $0.startPoint = CGPoint(x: 0.5, y: 0.5)
+                $0.endPoint = CGPoint(x: 1.0, y: 1.0)
+                $0.frame = view.bounds
+            }
+            view.layer.addSublayer(gradient)
+        }
+        self.setNeedsDisplay()
     }
 }

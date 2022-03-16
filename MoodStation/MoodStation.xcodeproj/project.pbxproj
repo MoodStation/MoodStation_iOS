@@ -28,6 +28,9 @@
 		A92B615627CFAA0B001FBE3E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615527CFAA0B001FBE3E /* Configurable.swift */; };
 		A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */; };
 		A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B615B27CFAB89001FBE3E /* NSObject+.swift */; };
+		A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */; };
+		A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */; };
+		A93DB85727DE328C00C6920B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85627DE328C00C6920B /* UserTableViewCell.swift */; };
 		A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63127C648A200DAF770 /* AppDelegate.swift */; };
 		A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63327C648A200DAF770 /* SceneDelegate.swift */; };
 		A963E63B27C648A300DAF770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A963E63A27C648A300DAF770 /* Assets.xcassets */; };
@@ -35,6 +38,12 @@
 		A963E64927C648A400DAF770 /* MoodStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E64827C648A400DAF770 /* MoodStationTests.swift */; };
 		A963E65327C648A400DAF770 /* MoodStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65227C648A400DAF770 /* MoodStationUITests.swift */; };
 		A963E65527C648A400DAF770 /* MoodStationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */; };
+		A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997605E27DF33A9008F70E2 /* CrewInfoView.swift */; };
+		A997606527DF66E5008F70E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606427DF66E5008F70E2 /* SettingsView.swift */; };
+		A997606727DF67E0008F70E2 /* SettingsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */; };
+		A997606A27DF7026008F70E2 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606927DF7026008F70E2 /* ContactViewController.swift */; };
+		A997606E27DF7684008F70E2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606D27DF7684008F70E2 /* HomeView.swift */; };
+		A999D4AE27E0C60B001A6AE3 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4AD27E0C60B001A6AE3 /* ContactView.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 		F11A10A727C65A9100E29A24 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A627C65A9100E29A24 /* Record.swift */; };
 		F11A10A927C65A9800E29A24 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A827C65A9800E29A24 /* Repository.swift */; };
@@ -112,6 +121,9 @@
 		A92B615527CFAA0B001FBE3E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionCell.swift; sourceTree = "<group>"; };
 		A92B615B27CFAB89001FBE3E /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
+		A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewController.swift; sourceTree = "<group>"; };
+		A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewModel.swift; sourceTree = "<group>"; };
+		A93DB85627DE328C00C6920B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		A963E62E27C648A200DAF770 /* MoodStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E63127C648A200DAF770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A963E63327C648A200DAF770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +135,12 @@
 		A963E64E27C648A400DAF770 /* MoodStationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodStationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E65227C648A400DAF770 /* MoodStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITests.swift; sourceTree = "<group>"; };
 		A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A997605E27DF33A9008F70E2 /* CrewInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoView.swift; sourceTree = "<group>"; };
+		A997606427DF66E5008F70E2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewCell.swift; sourceTree = "<group>"; };
+		A997606927DF7026008F70E2 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		A997606D27DF7684008F70E2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A999D4AD27E0C60B001A6AE3 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -192,11 +210,8 @@
 			children = (
 				34309F4627C85BDE00F54FE3 /* HomeViewController.swift */,
 				34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */,
-				A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */,
-				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
-				A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */,
-				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
-				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
+				A997606D27DF7684008F70E2 /* HomeView.swift */,
+				A9F1268427E1EDE100C53466 /* SubViews */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -215,6 +230,11 @@
 			children = (
 				34309F4A27C85BF500F54FE3 /* SettingsViewController.swift */,
 				34309F5027C85C7700F54FE3 /* SettingsViewModel.swift */,
+				A997606427DF66E5008F70E2 /* SettingsView.swift */,
+				A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */,
+				A93DB85627DE328C00C6920B /* UserTableViewCell.swift */,
+				A93DB85127DE31D500C6920B /* CrewInfo */,
+				A997606827DF7011008F70E2 /* ContactUs */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -240,6 +260,16 @@
 				D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A93DB85127DE31D500C6920B /* CrewInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */,
+				A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */,
+				A997605E27DF33A9008F70E2 /* CrewInfoView.swift */,
+			);
+			path = CrewInfo;
 			sourceTree = "<group>";
 		};
 		A963E62527C648A200DAF770 = {
@@ -302,6 +332,26 @@
 				A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */,
 			);
 			path = MoodStationUITests;
+			sourceTree = "<group>";
+		};
+		A997606827DF7011008F70E2 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				A997606927DF7026008F70E2 /* ContactViewController.swift */,
+				A999D4AD27E0C60B001A6AE3 /* ContactView.swift */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		A9F1268427E1EDE100C53466 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */,
+				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
+				A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */,
+				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		F11A10A227C651C700E29A24 /* Extension */ = {
@@ -384,6 +434,7 @@
 				F11A10E627D37C1400E29A24 /* TextOnlyTableViewCell.swift */,
 				F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */,
 				F11A10F827D4746F00E29A24 /* TextOnlyCollectionViewCell.swift */,
+				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -662,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91FDA7D27DCA1DD003542A2 /* RecordListEmptyCell.swift in Sources */,
+				A997606727DF67E0008F70E2 /* SettingsListViewCell.swift in Sources */,
 				A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */,
 				F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */,
 				F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */,
@@ -679,16 +731,21 @@
 				F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
 				341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */,
+				A997606527DF66E5008F70E2 /* SettingsView.swift in Sources */,
 				F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */,
 				F11A110227D47A4C00E29A24 /* RecordSingleRecordingCell.swift in Sources */,
 				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
+				A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */,
 				A91FDA7B27DCA11C003542A2 /* RecordListHeaderView.swift in Sources */,
 				F11A10F427D4734F00E29A24 /* RecordView.swift in Sources */,
 				34309F5127C85C7700F54FE3 /* SettingsViewModel.swift in Sources */,
+				A93DB85727DE328C00C6920B /* UserTableViewCell.swift in Sources */,
 				F11A10C227CDF44500E29A24 /* SignInViewController.swift in Sources */,
 				F11A10F227D4734A00E29A24 /* RecordViewModel.swift in Sources */,
+				A997606A27DF7026008F70E2 /* ContactViewController.swift in Sources */,
 				F11A110927DC596E00E29A24 /* RecordCalendarView.swift in Sources */,
 				F11A10AF27C7A5A100E29A24 /* IntroViewController.swift in Sources */,
+				A997606E27DF7684008F70E2 /* HomeView.swift in Sources */,
 				F11A110027D47A3800E29A24 /* RecordImageViewCell.swift in Sources */,
 				F11A110427D4814000E29A24 /* RecordColorChipCollectionViewCell.swift in Sources */,
 				F11A10F927D4746F00E29A24 /* TextOnlyCollectionViewCell.swift in Sources */,
@@ -698,12 +755,15 @@
 				F11A110F27DC667300E29A24 /* RecordCalendarViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
 				F11A110D27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift in Sources */,
+				A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
 				A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,
+				A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */,
 				F11A10FD27D479B800E29A24 /* RecordKeywordCell.swift in Sources */,
 				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,
+				A999D4AE27E0C60B001A6AE3 /* ContactView.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 				A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */,
 				A92B615C27CFAB89001FBE3E /* NSObject+.swift in Sources */,

@@ -8,26 +8,33 @@
 import Foundation
 
 protocol HomeViewModelType {
+    associatedtype CellModel
+    associatedtype HeaderModel
+    
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
-    func headerData(at index: Int) -> Date
-    func cellModel(at indexPath: IndexPath) -> HomeViewModel.CellModel
+    func headerModel(at index: Int) -> HeaderModel? 
+    func cellModel(at indexPath: IndexPath) -> CellModel?
 }
 
 final class HomeViewModel {
     
+    enum HeaderModel {
+        case date(RecordListHeaderViewModel)
+    }
+    
     enum CellModel {
-        case record(Record)
-        case empty(EmptyCellModel)
+        case record(RecordListCellModel)
+        case empty(RecordListEmptyCellModel)
     }
 
     init() {
-        self.recordBundles = []
+        self.sections = []
         self.dateHandler = DateHandler.shared
         self.page = self.dateHandler.makeTodayPage()
     }
     
-    private var recordBundles: [MonthlyBundle] = []
+    private var sections: [MonthlyBundle] = []
     private let dateHandler: DateHandler
     private var page: (year: Int, month: Int)
 }
@@ -35,24 +42,27 @@ final class HomeViewModel {
 // MARK: - DataSource
 extension HomeViewModel: HomeViewModelType {
     var numberOfSection: Int {
-        recordBundles.count
+        self.sections.count
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
-        self.recordBundles[section].records.count
+        self.sections[section].records.count
     }
     
-    func headerData(at index: Int) -> Date {
-        let section = self.recordBundles[index]
-        let sectionComponents = DateComponents(year: section.date.year, month: section.date.month)
-        let sectionDate = self.dateHandler.date(from: sectionComponents)
-        return sectionDate
+    func headerModel(at index: Int) -> HeaderModel? {
+        guard let section = self.sections[safe: index] else { return nil }
+        let headerDate = self.makeHeaderDate(by: section)
+        let stringDate = self.dateHandler.recordDate(from: headerDate)
+        return .date(RecordListHeaderViewModel(date: stringDate))
     }
     
-    func cellModel(at indexPath: IndexPath) -> CellModel {
-        let section = self.recordBundles[indexPath.section]
+    func cellModel(at indexPath: IndexPath) -> CellModel? {
+        guard let section = self.sections[safe: indexPath.section] else { return nil }
         if let record = section.records[indexPath.row] {
-            return .record(record)
+            return .record(RecordListCellModel(isLastDay: dateHandler.isLastDay(record.date),
+                                               mood: record.mood,
+                                               date: dateHandler.recordDate(from: record.date),
+                                               keywords: record.keywords, imagePath: record.imagePath))
         } else {
             return self.makeEmptyCellModel(by: section, at: indexPath)
         }
@@ -62,15 +72,20 @@ extension HomeViewModel: HomeViewModelType {
         return dateHandler.makeDate(year: section.date.year, month: section.date.month, day: indexPath.row + 1)
     }
     
+    private func makeHeaderDate(by section: MonthlyBundle) -> Date {
+        let sectionComponents = DateComponents(year: section.date.year, month: section.date.month)
+        return self.dateHandler.date(from: sectionComponents)
+    }
+    
     private func makeEmptyCellModel(by section: MonthlyBundle, at indexPath: IndexPath) -> CellModel {
         let cellDate = makeCellDate(by: section, and: indexPath)
         if section.isThisMonth,
             dateHandler.convertCellIndex(by: Date()) < indexPath.row {
-            return .empty(EmptyCellModel(date: cellDate, style: .tomorrow))
+            return .empty(RecordListEmptyCellModel(date: cellDate, style: .tomorrow))
         } else if dateHandler.isToday(cellDate) {
-            return .empty(EmptyCellModel(date: cellDate, style: .today))
+            return .empty(RecordListEmptyCellModel(date: cellDate, style: .today))
         } else {
-            return .empty(EmptyCellModel(date: cellDate, style: .notRecord))
+            return .empty(RecordListEmptyCellModel(date: cellDate, style: .notRecord))
         }
     }
 }

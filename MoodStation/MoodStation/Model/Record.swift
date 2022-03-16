@@ -26,7 +26,7 @@ struct Record: Identifiable, Codable {
     let id: Int
     let date: Date
     let mood: GradientStyle
-    let keyword: [String]
+    let keywords: [String]
     let imagePath: String?
     let note: String
     
@@ -43,7 +43,7 @@ struct Record: Identifiable, Codable {
             throw CodableError.dateDecodingFail
         }
         self.date = date
-        self.keyword = try container.decode([String].self, forKey: .keyword)
+        self.keywords = try container.decode([String].self, forKey: .keyword)
         let moodNumber = try container.decode(Int.self, forKey: .mood)
         guard let style = GradientStyle(rawValue: moodNumber) else {
             throw CodableError.moodDecodingFail
@@ -59,7 +59,7 @@ struct Record: Identifiable, Codable {
         let stringDate = DateFormatter.recordDate.string(from: self.date)
         try container.encode(stringDate, forKey: .date)
         try container.encode(self.mood.rawValue, forKey: .mood)
-        try container.encode(self.keyword, forKey: .keyword)
+        try container.encode(self.keywords, forKey: .keyword)
         try container.encode(self.imagePath, forKey: .imagePath)
         try container.encode(self.note, forKey: .note)
     }

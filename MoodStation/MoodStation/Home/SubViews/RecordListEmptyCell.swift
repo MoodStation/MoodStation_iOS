@@ -7,7 +7,7 @@
 
 import UIKit.UITableViewCell
 
-struct EmptyCellModel {
+struct RecordListEmptyCellModel {
     let date: Date
     let style: RecordListEmptyCell.EmptyStyle
 }
@@ -109,33 +109,33 @@ final class RecordListEmptyCell: UITableViewCell {
 
 extension RecordListEmptyCell: Configurable {
     func configure<T>(data: T) {
-        if let model = data as? EmptyCellModel {
+        if let model = data as? RecordListEmptyCellModel {
             dateLabel.text = Self.recordDateFormatter.string(from: model.date)
             switch model.style {
             case .notRecord:
-                routeLine.isHidden = false
-                routeLine.backgroundColor = .gray01
-                moodRectangle.backgroundColor = .gray01
-                dateLabel.textColor = .gray01
-                stateLabel.text = "Empty"
-                stateLabel.textColor = .gray01
-                emptyImageView.drawEmptyImageView(color: .gray01)
+                self.routeLine.isHidden = false
+                self.routeLine.backgroundColor = .gray01
+                self.moodRectangle.backgroundColor = .gray01
+                self.dateLabel.textColor = .gray01
+                self.stateLabel.text = "Empty"
+                self.stateLabel.textColor = .gray01
+                self.emptyImageView.drawEmptyImageView(color: .gray01)
             case .today:
-                routeLine.isHidden = true
-                routeLine.backgroundColor = .gray01
-                moodRectangle.backgroundColor = .gray01
-                dateLabel.textColor = .gray01
-                stateLabel.text = "Today"
-                stateLabel.textColor = .gray01
-                emptyImageView.drawEmptyImageView(color: .gray01)
+                self.routeLine.isHidden = true
+                self.routeLine.backgroundColor = .gray01
+                self.moodRectangle.backgroundColor = .gray01
+                self.dateLabel.textColor = .gray01
+                self.stateLabel.text = "Today"
+                self.stateLabel.textColor = .gray01
+                self.emptyImageView.drawEmptyImageView(color: .gray01)
             case .tomorrow:
-                routeLine.isHidden = false
-                routeLine.backgroundColor = .gray05
-                moodRectangle.backgroundColor = .gray05
-                dateLabel.textColor = .gray05
-                stateLabel.text = "Tomorrow"
-                stateLabel.textColor = .gray05
-                emptyImageView.drawEmptyImageView(color: .gray05)
+                self.routeLine.isHidden = false
+                self.routeLine.backgroundColor = .gray05
+                self.moodRectangle.backgroundColor = .gray05
+                self.dateLabel.textColor = .gray05
+                self.stateLabel.text = "Empty - Tomorrow" // - Tomorrow는 표시용 삭제 예정
+                self.stateLabel.textColor = .gray05
+                self.emptyImageView.drawEmptyImageView(color: .gray05)
             }
         }
     }
