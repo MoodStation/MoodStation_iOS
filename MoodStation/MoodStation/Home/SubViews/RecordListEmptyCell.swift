@@ -7,7 +7,7 @@
 
 import UIKit.UITableViewCell
 
-struct EmptyCellModel {
+struct RecordListEmptyCellModel {
     let date: Date
     let style: RecordListEmptyCell.EmptyStyle
 }
@@ -109,7 +109,7 @@ final class RecordListEmptyCell: UITableViewCell {
 
 extension RecordListEmptyCell: Configurable {
     func configure<T>(data: T) {
-        if let model = data as? EmptyCellModel {
+        if let model = data as? RecordListEmptyCellModel {
             dateLabel.text = Self.recordDateFormatter.string(from: model.date)
             switch model.style {
             case .notRecord:

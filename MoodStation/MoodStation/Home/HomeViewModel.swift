@@ -20,12 +20,12 @@ protocol HomeViewModelType {
 final class HomeViewModel {
     
     enum HeaderModel {
-        case date(Date)
+        case date(RecordListHeaderViewModel)
     }
     
     enum CellModel {
-        case record(Record)
-        case empty(EmptyCellModel)
+        case record(RecordListCellModel)
+        case empty(RecordListEmptyCellModel)
     }
 
     init() {
@@ -51,15 +51,18 @@ extension HomeViewModel: HomeViewModelType {
     
     func headerModel(at index: Int) -> HeaderModel? {
         guard let section = self.sections[safe: index] else { return nil }
-        let sectionComponents = DateComponents(year: section.date.year, month: section.date.month)
-        let sectionDate = self.dateHandler.date(from: sectionComponents)
-        return .date(sectionDate)
+        let headerDate = self.makeHeaderDate(by: section)
+        let stringDate = self.dateHandler.recordDate(from: headerDate)
+        return .date(RecordListHeaderViewModel(date: stringDate))
     }
     
     func cellModel(at indexPath: IndexPath) -> CellModel? {
         guard let section = self.sections[safe: indexPath.section] else { return nil }
         if let record = section.records[indexPath.row] {
-            return .record(record)
+            return .record(RecordListCellModel(isLastDay: dateHandler.isLastDay(record.date),
+                                               mood: record.mood,
+                                               date: dateHandler.recordDate(from: record.date),
+                                               keywords: record.keywords, imagePath: record.imagePath))
         } else {
             return self.makeEmptyCellModel(by: section, at: indexPath)
         }
@@ -69,15 +72,20 @@ extension HomeViewModel: HomeViewModelType {
         return dateHandler.makeDate(year: section.date.year, month: section.date.month, day: indexPath.row + 1)
     }
     
+    private func makeHeaderDate(by section: MonthlyBundle) -> Date {
+        let sectionComponents = DateComponents(year: section.date.year, month: section.date.month)
+        return self.dateHandler.date(from: sectionComponents)
+    }
+    
     private func makeEmptyCellModel(by section: MonthlyBundle, at indexPath: IndexPath) -> CellModel {
         let cellDate = makeCellDate(by: section, and: indexPath)
         if section.isThisMonth,
             dateHandler.convertCellIndex(by: Date()) < indexPath.row {
-            return .empty(EmptyCellModel(date: cellDate, style: .tomorrow))
+            return .empty(RecordListEmptyCellModel(date: cellDate, style: .tomorrow))
         } else if dateHandler.isToday(cellDate) {
-            return .empty(EmptyCellModel(date: cellDate, style: .today))
+            return .empty(RecordListEmptyCellModel(date: cellDate, style: .today))
         } else {
-            return .empty(EmptyCellModel(date: cellDate, style: .notRecord))
+            return .empty(RecordListEmptyCellModel(date: cellDate, style: .notRecord))
         }
     }
 }

@@ -211,10 +211,7 @@
 				34309F4627C85BDE00F54FE3 /* HomeViewController.swift */,
 				34309F4C27C85C4F00F54FE3 /* HomeViewModel.swift */,
 				A997606D27DF7684008F70E2 /* HomeView.swift */,
-				A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */,
-				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
-				A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */,
-				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
+				A9F1268427E1EDE100C53466 /* SubViews */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -344,6 +341,17 @@
 				A999D4AD27E0C60B001A6AE3 /* ContactView.swift */,
 			);
 			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		A9F1268427E1EDE100C53466 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A91FDA7A27DCA11C003542A2 /* RecordListHeaderView.swift */,
+				A92B615327CFA9EE001FBE3E /* RecordListCell.swift */,
+				A91FDA7C27DCA1DD003542A2 /* RecordListEmptyCell.swift */,
+				A92B615727CFAAFA001FBE3E /* KeywordCollectionCell.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		F11A10A227C651C700E29A24 /* Extension */ = {

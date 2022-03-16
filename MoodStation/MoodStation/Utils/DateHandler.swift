@@ -13,6 +13,10 @@ final class DateHandler {
     private init() {}
     
     private let calendar = Calendar(identifier: .gregorian)
+    private let recordDateFormatter = DateFormatter().then {
+        $0.locale = Locale(identifier: "en_KR")
+        $0.dateFormat = "MMMM, yyyy"
+    }
 }
 
 // MARK: - Pagination Handle
@@ -74,5 +78,12 @@ extension DateHandler {
         let thisDay = calendar.dateComponents([.year, .month, .day], from: date)
         let components = calendar.dateComponents([.year, .month, .day], from: Date())
         return thisDay == components
+    }
+}
+
+// MARK: - DateFormatting
+extension DateHandler {
+    func recordDate(from date: Date) -> String {
+        return recordDateFormatter.string(from: date)
     }
 }

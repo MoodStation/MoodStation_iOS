@@ -6,8 +6,15 @@
 //
 
 import UIKit.UITableViewCell
-import Foundation.NSDate
 import Kingfisher
+
+struct RecordListCellModel {
+    let isLastDay: Bool
+    let mood: GradientStyle
+    let date: String
+    let keywords: [String]
+    let imagePath: String?
+}
 
 final class RecordListCell: UITableViewCell {
     
@@ -138,17 +145,16 @@ final class RecordListCell: UITableViewCell {
     }
     private let keywordCollection = UICollectionView(frame: .zero,
                                                      collectionViewLayout: UICollectionViewLayout())
-    private let dateHandler = DateHandler.shared
 }
 
 extension RecordListCell: Configurable {
     func configure<T>(data: T) {
-        if let record = data as? Record {
-            self.routeLine.isHidden = dateHandler.isLastDay(record.date)
-            self.moodRectangle.drawMoodRectangle(mood: record.mood)
-            self.dateLabel.text = Self.recordDateFormatter.string(from: record.date)
-            self.keywords = record.keyword
-            if let imagePath = record.imagePath,
+        if let model = data as? RecordListCellModel {
+            self.routeLine.isHidden = model.isLastDay
+            self.moodRectangle.drawMoodRectangle(mood: model.mood)
+            self.dateLabel.text = model.date
+            self.keywords = model.keywords
+            if let imagePath = model.imagePath,
                let url = URL(string: imagePath) {
                 recordImageView.kf.setImage(with: url)
             } else {
