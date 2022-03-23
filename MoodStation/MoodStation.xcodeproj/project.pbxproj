@@ -38,6 +38,9 @@
 		A963E64927C648A400DAF770 /* MoodStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E64827C648A400DAF770 /* MoodStationTests.swift */; };
 		A963E65327C648A400DAF770 /* MoodStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65227C648A400DAF770 /* MoodStationUITests.swift */; };
 		A963E65527C648A400DAF770 /* MoodStationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */; };
+		A974D30827EB415800501187 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D30727EB415800501187 /* UserInfoViewController.swift */; };
+		A974D30A27EB416C00501187 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D30927EB416C00501187 /* UserInfoView.swift */; };
+		A974D30C27EB417900501187 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D30B27EB417900501187 /* UserInfoViewModel.swift */; };
 		A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997605E27DF33A9008F70E2 /* CrewInfoView.swift */; };
 		A997606527DF66E5008F70E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606427DF66E5008F70E2 /* SettingsView.swift */; };
 		A997606727DF67E0008F70E2 /* SettingsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */; };
@@ -135,6 +138,9 @@
 		A963E64E27C648A400DAF770 /* MoodStationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodStationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E65227C648A400DAF770 /* MoodStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITests.swift; sourceTree = "<group>"; };
 		A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A974D30727EB415800501187 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		A974D30927EB416C00501187 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		A974D30B27EB417900501187 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		A997605E27DF33A9008F70E2 /* CrewInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoView.swift; sourceTree = "<group>"; };
 		A997606427DF66E5008F70E2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewCell.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 				A93DB85627DE328C00C6920B /* UserTableViewCell.swift */,
 				A93DB85127DE31D500C6920B /* CrewInfo */,
 				A997606827DF7011008F70E2 /* ContactUs */,
+				A974D30627EB413800501187 /* UserIUnfo */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -332,6 +339,16 @@
 				A963E65427C648A400DAF770 /* MoodStationUITestsLaunchTests.swift */,
 			);
 			path = MoodStationUITests;
+			sourceTree = "<group>";
+		};
+		A974D30627EB413800501187 /* UserIUnfo */ = {
+			isa = PBXGroup;
+			children = (
+				A974D30727EB415800501187 /* UserInfoViewController.swift */,
+				A974D30B27EB417900501187 /* UserInfoViewModel.swift */,
+				A974D30927EB416C00501187 /* UserInfoView.swift */,
+			);
+			path = UserIUnfo;
 			sourceTree = "<group>";
 		};
 		A997606827DF7011008F70E2 /* ContactUs */ = {
@@ -748,15 +765,18 @@
 				A997606E27DF7684008F70E2 /* HomeView.swift in Sources */,
 				F11A110027D47A3800E29A24 /* RecordImageViewCell.swift in Sources */,
 				F11A110427D4814000E29A24 /* RecordColorChipCollectionViewCell.swift in Sources */,
+				A974D30A27EB416C00501187 /* UserInfoView.swift in Sources */,
 				F11A10F927D4746F00E29A24 /* TextOnlyCollectionViewCell.swift in Sources */,
 				F11A10E527D337A900E29A24 /* NavigationView.swift in Sources */,
 				F11A10A727C65A9100E29A24 /* Record.swift in Sources */,
 				F11A10C627CDF45B00E29A24 /* SignUpViewModel.swift in Sources */,
+				A974D30C27EB417900501187 /* UserInfoViewModel.swift in Sources */,
 				F11A110F27DC667300E29A24 /* RecordCalendarViewModel.swift in Sources */,
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
 				F11A110D27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift in Sources */,
 				A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
+				A974D30827EB415800501187 /* UserInfoViewController.swift in Sources */,
 				A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */,
 				34309F4D27C85C4F00F54FE3 /* HomeViewModel.swift in Sources */,
