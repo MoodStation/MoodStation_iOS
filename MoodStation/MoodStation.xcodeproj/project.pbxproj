@@ -41,6 +41,7 @@
 		A974D30827EB415800501187 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D30727EB415800501187 /* UserInfoViewController.swift */; };
 		A974D30A27EB416C00501187 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D30927EB416C00501187 /* UserInfoView.swift */; };
 		A974D30C27EB417900501187 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D30B27EB417900501187 /* UserInfoViewModel.swift */; };
+		A974D30E27EB451500501187 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D30D27EB451500501187 /* UserInfo.swift */; };
 		A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997605E27DF33A9008F70E2 /* CrewInfoView.swift */; };
 		A997606527DF66E5008F70E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606427DF66E5008F70E2 /* SettingsView.swift */; };
 		A997606727DF67E0008F70E2 /* SettingsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */; };
@@ -141,6 +142,7 @@
 		A974D30727EB415800501187 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		A974D30927EB416C00501187 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		A974D30B27EB417900501187 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		A974D30D27EB451500501187 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		A997605E27DF33A9008F70E2 /* CrewInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoView.swift; sourceTree = "<group>"; };
 		A997606427DF66E5008F70E2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A997606627DF67E0008F70E2 /* SettingsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewCell.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			children = (
 				F11A10A627C65A9100E29A24 /* Record.swift */,
 				A91FDA7427DB2BA6003542A2 /* MonthlyBundle.swift */,
+				A974D30D27EB451500501187 /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				A91FDA7527DB2BA6003542A2 /* MonthlyBundle.swift in Sources */,
 				F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */,
 				F11A10F027D4734400E29A24 /* RecordViewController.swift in Sources */,
+				A974D30E27EB451500501187 /* UserInfo.swift in Sources */,
 				A91FDA7727DB2C5B003542A2 /* DateHandler.swift in Sources */,
 				A91FDA7927DB3771003542A2 /* UIView+.swift in Sources */,
 				34309F4927C85BEB00F54FE3 /* ShareViewController.swift in Sources */,
