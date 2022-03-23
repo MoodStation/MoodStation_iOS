@@ -52,7 +52,7 @@ final class SettingsViewModel {
     }
     
     private var sections: [Section] = []
-    private var userInfo: UserInfo? = .init(name: "용우동", email: "keepingitflow@gmail.com", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") // 로그인 상태 Dummy 삭제 예정
+    private var userInfo: UserInfo? = .init(name: "용우동", email: "keepingitflow@gmail.com", password: "비밀번호password", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") // 로그인 상태 Dummy 삭제 예정
 }
 
 extension SettingsViewModel: SettingsViewModelType {

@@ -14,6 +14,18 @@ struct TextFieldOnlyTableViewCellModel {
     let inset: UIEdgeInsets?
     let placeholder: String
     let font: UIFont?
+    let text: String?
+    let isEnabled: Bool
+    let isSecureTextEntry: Bool
+        
+    init(inset: UIEdgeInsets?, placeholder: String = "", font: UIFont?, text: String? = "", isEnabled: Bool = true, isSecureTextEntry: Bool = false) {
+        self.inset = inset
+        self.placeholder = placeholder
+        self.font = font
+        self.text = text
+        self.isEnabled = isEnabled
+        self.isSecureTextEntry = isSecureTextEntry
+    }
     
 }
 
@@ -42,6 +54,10 @@ final class TextFieldOnlyTableViewCell: UITableViewCell {
         self.textField.font = model.font
         self.textField.attributedPlaceholder = NSMutableAttributedString(string: model.placeholder)
             .foregroundColor(.gray03)
+        self.textField.text = model.text
+        self.textField.isEnabled = model.isEnabled
+        self.textField.isSecureTextEntry = model.isSecureTextEntry
+        self.textField.textColor = model.isEnabled ? .white : .gray03
         
         self.containerView.snp.remakeConstraints { make in
             make.edges.equalToSuperview().inset(model.inset ?? .zero)
