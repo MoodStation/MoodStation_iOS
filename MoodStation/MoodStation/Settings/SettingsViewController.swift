@@ -76,10 +76,14 @@ extension SettingsViewController: SettingsViewDelegate {
         switch item {
         case .text(_): break
         case .user(let userInfo):
-            if let _ = userInfo {
-                print("사용자 뷰 - 로그인")
+            if let user = userInfo {
+                let userInfoViewModel = UserInfoViewModel(userInfo: user)
+                let viewController = UserInfoViewController(viewModel: userInfoViewModel).then {
+                    $0.hidesBottomBarWhenPushed = true
+                }
+                self.navigationController?.pushViewController(viewController, animated: true)
             } else {
-                print("사용자 뷰 - 로그아웃")
+                print("로그아웃")
             }
         case .cell(let setting):
             switch setting {

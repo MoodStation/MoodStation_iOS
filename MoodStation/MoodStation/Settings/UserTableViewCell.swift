@@ -7,12 +7,6 @@
 
 import UIKit.UITableViewCell
 
-struct UserInfo {
-    let name: String
-    let email: String
-    let userImagePath: String?
-}
-
 final class UserTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
