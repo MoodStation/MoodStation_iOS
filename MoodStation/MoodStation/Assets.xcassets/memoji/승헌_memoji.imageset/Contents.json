@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "승헌_memoji.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "승헌_memoji-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
