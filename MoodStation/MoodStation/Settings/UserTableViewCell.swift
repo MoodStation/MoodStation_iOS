@@ -64,13 +64,6 @@ final class UserTableViewCell: UITableViewCell {
             $0.backgroundColor = .customBlack
         }
         
-        self.gradientView.do {
-            $0.clipsToBounds = true
-            $0.layer.cornerRadius = 42.5
-            $0.drawGradientUserInfo()
-            self.setNeedsDisplay()
-        }
-        
         self.userImageView.do {
             $0.backgroundColor = .gray
             $0.clipsToBounds = true
@@ -96,7 +89,18 @@ final class UserTableViewCell: UITableViewCell {
         }
     }
     
-    private let gradientView = UIView(frame: .zero)
+    private let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: 85, height: 85)).then { view in
+        view.clipsToBounds = true
+        let gradient = CAGradientLayer().then {
+            $0.colors = UIColor.crewInfo.compactMap { $0?.cgColor }
+            $0.type = .radial
+            $0.startPoint = CGPoint(x: 0.5, y: 0.5)
+            $0.endPoint = CGPoint(x: 1.0, y: 1.0)
+            $0.frame = view.bounds
+            $0.cornerRadius = 42.5
+        }
+        view.layer.addSublayer(gradient)
+    }
     private let userImageView = UIImageView(frame: .zero)
     private let nickNameLabel = UILabel(frame: .zero)
     private let emailLabel = UILabel(frame: .zero)
