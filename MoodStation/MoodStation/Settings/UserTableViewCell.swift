@@ -110,8 +110,8 @@ final class UserTableViewCell: UITableViewCell {
 extension UserTableViewCell: Configurable {
     func configure<T>(data: T) {
         if let user = data as? UserInfo {
-            nickNameLabel.text = user.name
-            emailLabel.text = user.email
+            self.nickNameLabel.text = user.name
+            self.emailLabel.text = user.email
             guard let imagePath = user.userImagePath else {
                 return
             }
@@ -121,7 +121,8 @@ extension UserTableViewCell: Configurable {
                 userImageView.image = assetImage
             }
         } else {
-            nickNameLabel.text = "로그인이 필요합니다." // 로그아웃 상태 수정 예정
+            self.nickNameLabel.text = "로그인·회원가입"
+            self.emailLabel.text = "로그인 후 더 많은 기능을 사용해보세요."
         }
     }
     

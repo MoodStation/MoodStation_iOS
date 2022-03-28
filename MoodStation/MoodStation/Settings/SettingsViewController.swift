@@ -83,7 +83,7 @@ extension SettingsViewController: SettingsViewDelegate {
                 }
                 self.navigationController?.pushViewController(viewController, animated: true)
             } else {
-                print("로그아웃")
+                print("비 로그인 상태")
             }
         case .cell(let setting):
             switch setting {
@@ -97,12 +97,16 @@ extension SettingsViewController: SettingsViewDelegate {
     
     private func pushCrewInfoViewController() {
         let viewModel = CrewInfoViewModel()
-        let viewController = CrewInfoViewController(viewModel: viewModel)
+        let viewController = CrewInfoViewController(viewModel: viewModel).then {
+            $0.hidesBottomBarWhenPushed = true
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func pushContactViewController() {
-        let viewController = ContactViewController()
+        let viewController = ContactViewController().then {
+            $0.hidesBottomBarWhenPushed = true
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
