@@ -53,10 +53,6 @@ final class SettingsListViewCell: UITableViewCell {
             $0.backgroundColor = .customBlack
         }
         
-        self.logoImageView.do {
-            $0.backgroundColor = .gray
-        }
-        
         self.settingLabel.do {
             $0.font = .body1R
             $0.textColor = .gray01
@@ -76,8 +72,9 @@ final class SettingsListViewCell: UITableViewCell {
 
 extension SettingsListViewCell: Configurable {
     func configure<T>(data: T) {
-        if let text = data as? String {
-            settingLabel.text = text
+        if let setting = data as? SettingsViewController.Settings {
+            self.settingLabel.text = setting.description
+            self.logoImageView.image = UIImage(named: setting.imageName)
         }
     }
     

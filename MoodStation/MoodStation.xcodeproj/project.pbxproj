@@ -31,6 +31,7 @@
 		A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */; };
 		A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */; };
 		A93DB85727DE328C00C6920B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DB85627DE328C00C6920B /* UserTableViewCell.swift */; };
+		A93F381527F1D4CF0053308E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F381427F1D4CF0053308E /* AlertView.swift */; };
 		A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63127C648A200DAF770 /* AppDelegate.swift */; };
 		A963E63427C648A200DAF770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963E63327C648A200DAF770 /* SceneDelegate.swift */; };
 		A963E63B27C648A300DAF770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A963E63A27C648A300DAF770 /* Assets.xcassets */; };
@@ -128,6 +129,7 @@
 		A93DB85227DE31EC00C6920B /* CrewInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewController.swift; sourceTree = "<group>"; };
 		A93DB85427DE321200C6920B /* CrewInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewModel.swift; sourceTree = "<group>"; };
 		A93DB85627DE328C00C6920B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		A93F381427F1D4CF0053308E /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		A963E62E27C648A200DAF770 /* MoodStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A963E63127C648A200DAF770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A963E63327C648A200DAF770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				F11A10E827D3805100E29A24 /* TextFieldOnlyTableViewCell.swift */,
 				F11A10F827D4746F00E29A24 /* TextOnlyCollectionViewCell.swift */,
 				A903D23627D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift */,
+				A93F381427F1D4CF0053308E /* AlertView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				F11A10CA27CDF54E00E29A24 /* SignInView.swift in Sources */,
 				F11A110D27DC5E9800E29A24 /* RecordCalendarDayCollectionViewCell.swift in Sources */,
 				A93DB85527DE321200C6920B /* CrewInfoViewModel.swift in Sources */,
+				A93F381527F1D4CF0053308E /* AlertView.swift in Sources */,
 				34309F4727C85BDE00F54FE3 /* HomeViewController.swift in Sources */,
 				A974D30827EB415800501187 /* UserInfoViewController.swift in Sources */,
 				A903D23727D357D200B3BF3C /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,

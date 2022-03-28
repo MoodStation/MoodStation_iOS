@@ -46,7 +46,7 @@ final class ContactView: UIView {
         }
         
         self.logoImageView.do {
-            $0.backgroundColor = .gray
+            $0.image = UIImage(named: "문의하기")
         }
         
         self.guideLabel.do {

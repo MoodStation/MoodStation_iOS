@@ -23,6 +23,15 @@ final class SettingsViewController: UIViewController {
             case .deleteAcount: return "탈퇴하기"
             }
         }
+        
+        var imageName: String {
+            switch self {
+            case .contact:      return "icn_문의하기"
+            case .crewInfo:     return "icn_팀원"
+            case .logout:       return "icn_로그아웃"
+            case .deleteAcount: return "icn_탈퇴하기"
+            }
+        }
     }
     
     init(viewModel: SettingsViewModel) {
@@ -89,8 +98,18 @@ extension SettingsViewController: SettingsViewDelegate {
             switch setting {
             case .contact:      self.pushContactViewController()
             case .crewInfo:     self.pushCrewInfoViewController()
-            case .logout:       print(setting.description)
-            case .deleteAcount: print(setting.description)
+            case .logout:       AlertView(title: "로그아웃 하시겠어요?",
+                                          detail: "기록은 지워지지 않아요.",
+                                          imageName: setting.description,
+                                          confirm: "로그아웃", style: .confirm) {
+                print(setting.description)
+            }.show(from: self)
+            case .deleteAcount: AlertView(title: "정말 탈퇴하시겠어요?",
+                                          detail: "기록이 삭제되며 복구할 수 없어요!",
+                                          imageName: setting.description,
+                                          confirm: "탈퇴", style: .confirm) {
+                print(setting.description)
+            }.show(from: self)
             }
         }
     }
@@ -140,12 +159,12 @@ extension SettingsViewController: SettingsViewDataSource {
             cell.setAccessary(isHidden: false)
             cell.configure(data: userInfo)
             return cell
-        case .cell(let type):
+        case .cell(let setting):
             guard let cell = tableView.dequeueReusableCell(SettingsListViewCell.self, at: indexPath) else {
                 return UITableViewCell()
             }
             cell.setAccessary(isHidden: false)
-            cell.configure(data: type.description)
+            cell.configure(data: setting)
             return cell
         }
     }
