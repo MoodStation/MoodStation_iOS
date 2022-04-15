@@ -46,6 +46,11 @@
 		A997606A27DF7026008F70E2 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606927DF7026008F70E2 /* ContactViewController.swift */; };
 		A997606E27DF7684008F70E2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606D27DF7684008F70E2 /* HomeView.swift */; };
 		A999D4AE27E0C60B001A6AE3 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4AD27E0C60B001A6AE3 /* ContactView.swift */; };
+		A9F24D0B280975C100147ACF /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D0A280975C100147ACF /* AppController.swift */; };
+		A9F24D13280979D000147ACF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D10280979CF00147ACF /* UserView.swift */; };
+		A9F24D14280979D000147ACF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D11280979CF00147ACF /* UserViewController.swift */; };
+		A9F24D15280979D000147ACF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D12280979D000147ACF /* UserViewModel.swift */; };
+		A9F24D1728097EBE00147ACF /* LogInSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D1628097EBE00147ACF /* LogInSession.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 		F11A10A727C65A9100E29A24 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A627C65A9100E29A24 /* Record.swift */; };
 		F11A10A927C65A9800E29A24 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A827C65A9800E29A24 /* Repository.swift */; };
@@ -145,6 +150,11 @@
 		A997606927DF7026008F70E2 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A997606D27DF7684008F70E2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A999D4AD27E0C60B001A6AE3 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		A9F24D0A280975C100147ACF /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		A9F24D10280979CF00147ACF /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		A9F24D11280979CF00147ACF /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		A9F24D12280979D000147ACF /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		A9F24D1628097EBE00147ACF /* LogInSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSession.swift; sourceTree = "<group>"; };
 		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -381,6 +391,7 @@
 				F11A10F627D473C900E29A24 /* UICollectionView+.swift */,
 				F11A110527D4871B00E29A24 /* AttributedString+.swift */,
 				A91FDA7827DB3771003542A2 /* UIView+.swift */,
+				A92B615527CFAA0B001FBE3E /* UITableViewCell+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -401,6 +412,8 @@
 				F11A10A827C65A9800E29A24 /* Repository.swift */,
 				F11A10AA27C65AA100E29A24 /* ServerRepository.swift */,
 				A91FDA7627DB2C5B003542A2 /* DateHandler.swift */,
+				A9F24D1628097EBE00147ACF /* LogInSession.swift */,
+				A9F24D0A280975C100147ACF /* AppController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -748,10 +761,13 @@
 				F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */,
 				F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
+				A9F24D0B280975C100147ACF /* AppController.swift in Sources */,
+				A9F24D14280979D000147ACF /* UserViewController.swift in Sources */,
 				341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */,
 				A997606527DF66E5008F70E2 /* SettingsView.swift in Sources */,
 				F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */,
 				F11A110227D47A4C00E29A24 /* RecordSingleRecordingCell.swift in Sources */,
+				A9F24D1728097EBE00147ACF /* LogInSession.swift in Sources */,
 				34309F4F27C85C6500F54FE3 /* ShareViewModel.swift in Sources */,
 				A997605F27DF33A9008F70E2 /* CrewInfoView.swift in Sources */,
 				A91FDA7B27DCA11C003542A2 /* RecordListHeaderView.swift in Sources */,
