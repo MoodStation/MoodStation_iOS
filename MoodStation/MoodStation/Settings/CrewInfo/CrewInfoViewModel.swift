@@ -31,7 +31,7 @@ final class CrewInfoViewModel {
     
     enum Item {
         case text(TextOnlyTableViewCellModel)
-        case cell(UserInfo)
+        case cell(User)
     }
     
     init() {

@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol UserInfoViewModelModelType {
+protocol UserViewModelModelType {
     associatedtype CellModel
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
     func cellModel(at indexPath: IndexPath) -> CellModel
 }
 
-final class UserInfoViewModel {
+final class UserViewModel {
     
     enum Section {
         case text([Item])
@@ -33,7 +33,7 @@ final class UserInfoViewModel {
         case textField(TextFieldOnlyTableViewCellModel)
     }
     
-    init(userInfo: UserInfo?) {
+    init(userInfo: User?) {
         self.userInfo = userInfo
         self.sections = self.makeSections()
     }
@@ -54,10 +54,10 @@ final class UserInfoViewModel {
     }
     
     private var sections: [Section] = []
-    private var userInfo: UserInfo?
+    private var userInfo: User?
 }
 
-extension UserInfoViewModel: UserInfoViewModelModelType {
+extension UserViewModel: UserViewModelModelType {
     var numberOfSection: Int {
         return self.sections.count
     }

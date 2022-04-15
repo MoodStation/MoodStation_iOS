@@ -7,23 +7,23 @@
 
 import UIKit
 
-protocol UserInfoViewDelegate: UITableViewDelegate {
+protocol UserViewDelegate: UITableViewDelegate {
     
-    func userInfoViewUserImageViewDidClick(_ view: UserInfoView)
-    func userInfoViewSaveButtonDidClick(_ view: UserInfoView)
-    func userInfoViewEditButtonDidClick(_ view: UserInfoView)
+    func userViewUserImageViewDidClick(_ view: UserView)
+    func userViewSaveButtonDidClick(_ view: UserView)
+    func userViewEditButtonDidClick(_ view: UserView)
     
 }
 
-typealias UserInfoViewDataSource = UITableViewDataSource
+typealias UserViewDataSource = UITableViewDataSource
 
-final class UserInfoView: UIView {
+final class UserView: UIView {
     
-    weak var delegate: UserInfoViewDelegate? {
+    weak var delegate: UserViewDelegate? {
         didSet { self.tableView.delegate = self.delegate }
     }
     
-    weak var dataSource: UserInfoViewDataSource? {
+    weak var dataSource: UserViewDataSource? {
         didSet { self.tableView.dataSource = self.dataSource }
     }
     
@@ -129,7 +129,7 @@ final class UserInfoView: UIView {
     }
     
     @objc private func saveButtonClicked(_ sender: UIButton) {
-        self.delegate?.userInfoViewSaveButtonDidClick(self)
+        self.delegate?.userViewSaveButtonDidClick(self)
         self.pencilImageView.isHidden = true
         
         self.saveButton.isHidden = true
@@ -140,7 +140,7 @@ final class UserInfoView: UIView {
     }
     
     @objc private func editButtonClicked(_ sender: UIButton) {
-        self.delegate?.userInfoViewEditButtonDidClick(self)
+        self.delegate?.userViewEditButtonDidClick(self)
         self.pencilImageView.isHidden = false
         
         self.editButton.isHidden = true

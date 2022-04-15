@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class UserInfoViewController: UIViewController {
+final class UserViewController: UIViewController {
     
-    init(viewModel: UserInfoViewModel) {
+    init(viewModel: UserViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -58,26 +58,26 @@ final class UserInfoViewController: UIViewController {
     }
     
     private let navigationView = NavigationView(frame: .zero)
-    private let userInfoView = UserInfoView(frame: .zero)
-    private let viewModel: UserInfoViewModel
+    private let userInfoView = UserView(frame: .zero)
+    private let viewModel: UserViewModel
 }
 
-extension UserInfoViewController: UserInfoViewDelegate {
-    func userInfoViewUserImageViewDidClick(_ view: UserInfoView) {
+extension UserViewController: UserViewDelegate {
+    func userViewUserImageViewDidClick(_ view: UserView) {
         print("이미지 클릭")
     }
 
-    func userInfoViewSaveButtonDidClick(_ view: UserInfoView) {
+    func userViewSaveButtonDidClick(_ view: UserView) {
         print("저장")
     }
     
-    func userInfoViewEditButtonDidClick(_ view: UserInfoView) {
+    func userViewEditButtonDidClick(_ view: UserView) {
         print("수정")
     }
 
 }
 
-extension UserInfoViewController: UserInfoViewDataSource {
+extension UserViewController: UserViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         self.viewModel.numberOfSection
@@ -111,7 +111,7 @@ extension UserInfoViewController: UserInfoViewDataSource {
     
 }
 
-extension UserInfoViewController: NavigationViewDelegate {
+extension UserViewController: NavigationViewDelegate {
     
     func navigationViewDeleagteDidClickLeftButton(_ view: NavigationView) {
         self.navigationController?.popViewController(animated: true)

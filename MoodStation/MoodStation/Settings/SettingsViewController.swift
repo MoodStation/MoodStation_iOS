@@ -86,8 +86,8 @@ extension SettingsViewController: SettingsViewDelegate {
         case .text(_): break
         case .user(let userInfo):
             if let user = userInfo {
-                let userInfoViewModel = UserInfoViewModel(userInfo: user)
-                let viewController = UserInfoViewController(viewModel: userInfoViewModel).then {
+                let userInfoViewModel = UserViewModel(userInfo: user)
+                let viewController = UserViewController(viewModel: userInfoViewModel).then {
                     $0.hidesBottomBarWhenPushed = true
                 }
                 self.navigationController?.pushViewController(viewController, animated: true)

@@ -109,7 +109,7 @@ final class UserTableViewCell: UITableViewCell {
 
 extension UserTableViewCell: Configurable {
     func configure<T>(data: T) {
-        if let user = data as? UserInfo {
+        if let user = data as? User {
             self.nickNameLabel.text = user.name
             self.emailLabel.text = user.email
             guard let imagePath = user.userImagePath else {

@@ -1,11 +1,11 @@
 //
-//  UserInfo.swift
+//  User.swift
 //  MoodStation
 //
 //  Created by Yongwoo Marco on 2022/03/23.
 //
 
-struct UserInfo {
+struct User {
     let name: String
     let email: String
     let password: String?
