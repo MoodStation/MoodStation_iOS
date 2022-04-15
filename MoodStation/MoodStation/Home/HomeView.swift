@@ -12,11 +12,11 @@ typealias HomeViewDataSource = UITableViewDataSource
 
 final class HomeView: UIView {
     
-    weak var delegate: CrewInfoViewDelegate? {
+    weak var delegate: HomeViewDelegate? {
         didSet { self.tableView.delegate = self.delegate }
     }
     
-    weak var dataSource: CrewInfoViewDataSource? {
+    weak var dataSource: HomeViewDataSource? {
         didSet { self.tableView.dataSource = self.dataSource }
     }
     
