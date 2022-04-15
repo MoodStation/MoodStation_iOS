@@ -70,11 +70,17 @@ final class SettingsListViewCell: UITableViewCell {
     private let disclosureIndicator = UIImageView(frame: .zero)
 }
 
-extension SettingsListViewCell: Configurable {
-    func configure<T>(data: T) {
-        if let setting = data as? SettingsViewController.Settings {
-            self.settingLabel.text = setting.description
-            self.logoImageView.image = UIImage(named: setting.imageName)
+extension SettingsListViewCell {
+    func configure<T>(model: T) {
+        if let setting = model as? SettingsViewModel.Settings {
+            switch setting {
+            case .alert(let alert):
+                self.settingLabel.text = alert.description
+                self.logoImageView.image = UIImage(named: alert.imageName)
+            case .navigation(let navigation):
+                self.settingLabel.text = navigation.description
+                self.logoImageView.image = UIImage(named: navigation.imageName)
+            }
         }
     }
     

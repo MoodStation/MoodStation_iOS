@@ -9,36 +9,10 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
     
-    enum Settings: CustomStringConvertible {
-        case contact
-        case crewInfo
-        case logout
-        case deleteAcount
-        
-        var description: String {
-            switch self {
-            case .contact:      return "문의하기"
-            case .crewInfo:     return "무드스테이션 팀원들"
-            case .logout:       return "로그아웃"
-            case .deleteAcount: return "탈퇴하기"
-            }
-        }
-        
-        var imageName: String {
-            switch self {
-            case .contact:      return "icn_문의하기"
-            case .crewInfo:     return "icn_팀원"
-            case .logout:       return "icn_로그아웃"
-            case .deleteAcount: return "icn_탈퇴하기"
-            }
-        }
-    }
-    
     init(viewModel: SettingsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -84,33 +58,36 @@ extension SettingsViewController: SettingsViewDelegate {
         }
         switch item {
         case .text(_): break
-        case .user(let userInfo):
-            if let user = userInfo {
-                let userInfoViewModel = UserViewModel(userInfo: user)
-                let viewController = UserViewController(viewModel: userInfoViewModel).then {
-                    $0.hidesBottomBarWhenPushed = true
-                }
-                self.navigationController?.pushViewController(viewController, animated: true)
-            } else {
-                print("비 로그인 상태")
+        case .user(let user):
+            self.setUserCellPushViewController(by: user)
+        case .cell(let settings):
+            switch settings {
+            case .alert(let info):
+                self.setAlertCell(by: info)
+            case .navigation(let move):
+                self.setNavigationCellPushViewController(by: move)
             }
-        case .cell(let setting):
-            switch setting {
-            case .contact:      self.pushContactViewController()
-            case .crewInfo:     self.pushCrewInfoViewController()
-            case .logout:       AlertView(title: "로그아웃 하시겠어요?",
-                                          detail: "기록은 지워지지 않아요.",
-                                          imageName: setting.description,
-                                          confirm: "로그아웃", style: .confirm) {
-                print(setting.description)
-            }.show(from: self)
-            case .deleteAcount: AlertView(title: "정말 탈퇴하시겠어요?",
-                                          detail: "기록이 삭제되며 복구할 수 없어요!",
-                                          imageName: setting.description,
-                                          confirm: "탈퇴", style: .confirm) {
-                print(setting.description)
-            }.show(from: self)
+        }
+    }
+    
+    private func setUserCellPushViewController(by user: User?) {
+        if let user = user {
+            let userInfoViewModel = UserViewModel(userInfo: user)
+            let viewController = UserViewController(viewModel: userInfoViewModel).then {
+                $0.hidesBottomBarWhenPushed = true
             }
+            self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            print("비 로그인 상태")
+        }
+    }
+    
+    private func setNavigationCellPushViewController(by move: SettingsViewModel.Settings.Navigation) {
+        switch move {
+        case .contact:
+            self.pushContactViewController()
+        case .crewInfo:
+            self.pushCrewInfoViewController()
         }
     }
     
@@ -127,6 +104,43 @@ extension SettingsViewController: SettingsViewDelegate {
             $0.hidesBottomBarWhenPushed = true
         }
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    private func setAlertCell(by info: SettingsViewModel.Settings.Alert) {
+        guard let alert = self.viewModel.makeAlert(info) else { return }
+        switch info {
+        case .logIn:
+            alert.delegateConfirmAction {
+                self.pushLogInViewController()
+            }
+        case .logOut:
+            alert.delegateConfirmAction {
+                self.logOut()
+            }
+        case .deleteAcount:
+            alert.delegateConfirmAction {
+                self.deleteAcount()
+            }
+        }
+        alert.show(from: self)
+    }
+    
+    private func pushLogInViewController() {
+        print(#function)
+    }
+    
+    private func logOut() {
+        print(#function)
+    }
+    
+    private func deleteAcount() {
+        print(#function)
+    }
+        
+    private func logoutUser() {
+        self.viewModel.logOut() {
+            self.settingsView.reloadInputViews()
+        }
     }
 }
 
@@ -145,26 +159,22 @@ extension SettingsViewController: SettingsViewDataSource {
             return UITableViewCell()
         }
         
+        
         switch model {
         case .text(let textOnlyTableViewCellModel):
-            guard let cell = tableView.dequeueReusableCell(TextOnlyTableViewCell.self, at: indexPath) else {
-                return UITableViewCell()
-            }
+            guard let cell = tableView.dequeueReusableCell(TextOnlyTableViewCell.self, at: indexPath) else { return UITableViewCell() }
             cell.configure(model: textOnlyTableViewCellModel)
             return cell
-        case .user(let userInfo):
-            guard let cell = tableView.dequeueReusableCell(UserTableViewCell.self, at: indexPath) else {
-                return UITableViewCell()
-            }
+        case .user(let userTableViewCellModel):
+            guard let cell = tableView.dequeueReusableCell(UserTableViewCell.self, at: indexPath) else { return UITableViewCell() }
+            cell.configure(model: userTableViewCellModel)
             cell.setAccessary(isHidden: false)
-            cell.configure(data: userInfo)
             return cell
-        case .cell(let setting):
-            guard let cell = tableView.dequeueReusableCell(SettingsListViewCell.self, at: indexPath) else {
-                return UITableViewCell()
+        case .cell(let settingsListViewCellModel):
+            guard let cell = tableView.dequeueReusableCell(SettingsListViewCell.self, at: indexPath) else { return UITableViewCell()
             }
+            cell.configure(model: settingsListViewCellModel)
             cell.setAccessary(isHidden: false)
-            cell.configure(data: setting)
             return cell
         }
     }
