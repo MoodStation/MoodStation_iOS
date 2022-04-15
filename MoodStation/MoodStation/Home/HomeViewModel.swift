@@ -7,14 +7,9 @@
 
 import Foundation
 
-protocol HomeViewModelType {
-    associatedtype CellModel
+protocol HomeViewModelType: DefaultTableViewModel {
     associatedtype HeaderModel
-    
-    var numberOfSection: Int { get }
-    func numberOfRowsInSection(_ section: Int) -> Int
-    func headerModel(at index: Int) -> HeaderModel? 
-    func cellModel(at indexPath: IndexPath) -> CellModel?
+    func headerModel(at index: Int) -> HeaderModel?
 }
 
 final class HomeViewModel {

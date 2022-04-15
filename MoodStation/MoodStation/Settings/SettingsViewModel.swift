@@ -7,15 +7,13 @@
 
 import UIKit
 
-protocol SettingsViewModelType: LogInSession {
-    associatedtype CellModel
-    var numberOfSection: Int { get }
-    func numberOfRowsInSection(_ section: Int) -> Int
-    func cellModel(at indexPath: IndexPath) -> CellModel?
+protocol SettingsViewModelType: DefaultTableViewModel, LogInSession {
     func didSelectRowAt(at indexPath: IndexPath) -> CellModel?
 }
 
 final class SettingsViewModel {
+    
+    typealias ReloadDataAction = () -> Void
     
     enum Settings {
         case alert(Alert)
@@ -121,8 +119,14 @@ final class SettingsViewModel {
     
     
     private var sections: [Section] = []
+    private var reloadDataAction: ReloadDataAction?
     var appController = AppController.shared
-    var logInUser: User? = .init(name: "용우동", email: "keepingitflow@gmail.com", password: "비밀번호password", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") // 로그인 상태 Dummy 삭제 예정
+    var logInUser: User? = .init(name: "용우동", email: "keepingitflow@gmail.com", password: "비밀번호password", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") {
+        didSet {
+            self.sections = self.makeSections()
+            print("로그인 변경 \(oldValue) -> \(self.logInUser)")
+        }
+    }// 로그인 상태 Dummy 삭제 예정
 }
 
 extension SettingsViewModel: SettingsViewModelType {

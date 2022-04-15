@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol UserViewModelModelType {
-    associatedtype CellModel
-    var numberOfSection: Int { get }
-    func numberOfRowsInSection(_ section: Int) -> Int
-    func cellModel(at indexPath: IndexPath) -> CellModel
+protocol UserViewModelModelType : DefaultTableViewModel {
 }
 
 final class UserViewModel {

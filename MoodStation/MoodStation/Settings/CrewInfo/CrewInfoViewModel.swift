@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol CrewInfoViewModelType {
-    associatedtype CellModel
-    var numberOfSection: Int { get }
-    func numberOfRowsInSection(_ section: Int) -> Int
-    func cellModel(at indexPath: IndexPath) -> CellModel?
+protocol CrewInfoViewModelType: DefaultTableViewModel {
     func cellHeight(at indexPath: IndexPath) -> CGFloat
 }
 
