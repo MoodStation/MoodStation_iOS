@@ -107,9 +107,9 @@ final class RecordListEmptyCell: UITableViewCell {
     private var stateLabel = UILabel(frame: .zero)
 }
 
-extension RecordListEmptyCell: Configurable {
-    func configure<T>(data: T) {
-        if let model = data as? RecordListEmptyCellModel {
+extension RecordListEmptyCell {
+    func configure<T>(model: T) {
+        if let model = model as? RecordListEmptyCellModel {
             dateLabel.text = Self.recordDateFormatter.string(from: model.date)
             switch model.style {
             case .notRecord:

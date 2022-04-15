@@ -107,9 +107,9 @@ final class UserTableViewCell: UITableViewCell {
     private let disclosureIndicator = UIImageView(frame: .zero)
 }
 
-extension UserTableViewCell: Configurable {
-    func configure<T>(data: T) {
-        if let user = data as? User {
+extension UserTableViewCell {
+    func configure<T>(model: T) {
+        if let user = model as? User {
             self.nickNameLabel.text = user.name
             self.emailLabel.text = user.email
             guard let imagePath = user.userImagePath else {

@@ -90,11 +90,11 @@ extension CrewInfoViewController: CrewInfoViewDataSource {
             }
             cell.configure(model: textOnlyTableViewCellModel)
             return cell
-        case .cell(let userInfoModel):
+        case .cell(let userTableViewCell):
             guard let cell = tableView.dequeueReusableCell(UserTableViewCell.self, at: indexPath) else {
                 return UITableViewCell()
             }
-            cell.configure(data: userInfoModel)
+            cell.configure(model: userTableViewCell)
             return cell
         }
     }
