@@ -14,7 +14,7 @@ final class AlertView: UIView {
         case confirm
     }
     
-    convenience init(title: String, detail: String, imageName: String, confirm: String = "확인", style: AlertStyle, confirmAction: @escaping () -> ()) {
+    convenience init(title: String, detail: String, imageName: String, confirm: String = "확인", style: AlertStyle, confirmAction: @escaping () -> Void) {
         self.init(frame: UIScreen.main.bounds)
         
         self.titleLabel.text = title
@@ -24,13 +24,21 @@ final class AlertView: UIView {
         self.confirmAction = confirmAction
     }
     
+    convenience init(title: String, detail: String, imageName: String, confirm: String = "확인", style: AlertStyle) {
+        self.init(frame: UIScreen.main.bounds)
+        
+        self.titleLabel.text = title
+        self.detailLabel.text = detail
+        self.logoImageView.image = UIImage(named: imageName)
+        self.confirmButton.setTitle(confirm, for: .normal)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.setupLayout()
         self.setupAttributes()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -81,35 +89,6 @@ final class AlertView: UIView {
             $0.frame.size = CGSize(width: 327, height: 320)
             $0.backgroundColor = .gray06
         }
-        
-        self.titleLabel.do {
-            $0.font = .h4SB
-            $0.textColor = .white
-            $0.textAlignment = .center
-        }
-        
-        self.detailLabel.do {
-            $0.font = .body1R
-            $0.textColor = .white
-            $0.textAlignment = .center
-        }
-        
-        self.cancelButton.do {
-            $0.titleLabel?.font = .button1SB
-            $0.setTitle("취소", for: .normal)
-            $0.setTitleColor(.gray06, for: .normal)
-            $0.backgroundColor = .gray01
-            $0.layer.cornerRadius = 10
-            $0.addTarget(self, action: #selector(cancelButtonDidTap(_:)), for: .touchUpInside)
-        }
-        
-        self.confirmButton.do {
-            $0.titleLabel?.font = .button1SB
-            $0.setTitleColor(.white, for: .normal)
-            $0.backgroundColor = .main
-            $0.layer.cornerRadius = 10
-            $0.addTarget(self, action: #selector(confirmButtonDidTap(_:)), for: .touchUpInside)
-        }
     }
     
     func show(from rootViewController: UIViewController) {
@@ -127,13 +106,17 @@ final class AlertView: UIView {
         }
     }
     
+    func delegateConfirmAction(completed: @escaping () -> Void) {
+        self.confirmAction = completed
+    }
+    
     @objc private func cancelButtonDidTap(_ sender: UIButton) {
-        removeAlert()
+        self.removeAlert()
     }
     
     @objc private func confirmButtonDidTap(_ sender: UIButton) {
-        removeAlert()
-        confirmAction?()
+        self.removeAlert()
+        self.confirmAction?()
     }
     
     private func removeAlert() {
@@ -142,10 +125,31 @@ final class AlertView: UIView {
     }
     
     private let logoImageView = UIImageView(frame: .zero)
-    private let titleLabel = UILabel(frame: .zero)
-    private let detailLabel = UILabel(frame: .zero)
-    private let cancelButton = UIButton(frame: .zero)
-    private let confirmButton = UIButton(frame: .zero)
+    private let titleLabel = UILabel(frame: .zero).then {
+        $0.font = .h4SB
+        $0.textColor = .white
+        $0.textAlignment = .center
+    }
+    private let detailLabel = UILabel(frame: .zero).then {
+        $0.font = .body1R
+        $0.textColor = .white
+        $0.textAlignment = .center
+    }
+    private let cancelButton = UIButton(frame: .zero).then {
+        $0.titleLabel?.font = .button1SB
+        $0.setTitle("취소", for: .normal)
+        $0.setTitleColor(.gray06, for: .normal)
+        $0.backgroundColor = .gray01
+        $0.layer.cornerRadius = 10
+        $0.addTarget(self, action: #selector(cancelButtonDidTap(_:)), for: .touchUpInside)
+    }
+    private let confirmButton = UIButton(frame: .zero).then {
+        $0.titleLabel?.font = .button1SB
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .main
+        $0.layer.cornerRadius = 10
+        $0.addTarget(self, action: #selector(confirmButtonDidTap(_:)), for: .touchUpInside)
+    }
     
     private var confirmAction: ConfirmAction?
 }
