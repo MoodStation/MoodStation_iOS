@@ -38,7 +38,7 @@ final class MainViewController: UITabBarController {
     }
     
     private var homeViewController: UINavigationController = {
-        let viewModel = HomeViewModel()
+        let viewModel = HomeViewModelImpl()
         let viewController = HomeViewController(viewModel: viewModel).then {
             $0.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "icn-home"), selectedImage: nil)
         }
@@ -58,7 +58,7 @@ final class MainViewController: UITabBarController {
     }()
     
     private var settingsViewController: UINavigationController = {
-        let viewModel = SettingsViewModel()
+        let viewModel = SettingsViewModelImpl()
         let viewController = SettingsViewController(viewModel: viewModel).then {
             $0.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "icn-settings"), selectedImage: nil)
         }

@@ -50,3 +50,9 @@ final class SettingsView: UIView {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
 }
+
+extension SettingsView {
+    func reloadTableView() {
+        self.tableView.reloadData()
+    }
+}

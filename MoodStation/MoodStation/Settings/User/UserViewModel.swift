@@ -7,10 +7,13 @@
 
 import UIKit
 
-protocol UserViewModelModelType : DefaultTableViewModel {
+protocol UserViewModel {
+    var numberOfSection: Int { get }
+    func numberOfRowsInSection(_ section: Int) -> Int
+    func cellModel(at indexPath: IndexPath) -> UserViewModelImpl.Item?
 }
 
-final class UserViewModel {
+final class UserViewModelImpl {
     
     enum Section {
         case text([Item])
@@ -53,7 +56,7 @@ final class UserViewModel {
     private var userInfo: User?
 }
 
-extension UserViewModel: UserViewModelModelType {
+extension UserViewModelImpl: UserViewModel {
     var numberOfSection: Int {
         return self.sections.count
     }

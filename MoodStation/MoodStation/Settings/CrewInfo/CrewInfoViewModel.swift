@@ -7,11 +7,14 @@
 
 import UIKit
 
-protocol CrewInfoViewModelType: DefaultTableViewModel {
+protocol CrewInfoViewModel {
+    var numberOfSection: Int { get }
+    func numberOfRowsInSection(_ section: Int) -> Int
+    func cellModel(at indexPath: IndexPath) -> CrewInfoViewModelImpl.Item?
     func cellHeight(at indexPath: IndexPath) -> CGFloat
 }
 
-final class CrewInfoViewModel {
+final class CrewInfoViewModelImpl {
     
     enum Section {
         case text([Item])
@@ -51,7 +54,7 @@ final class CrewInfoViewModel {
     private var sections: [Section] = []
 }
 
-extension CrewInfoViewModel: CrewInfoViewModelType {
+extension CrewInfoViewModelImpl: CrewInfoViewModel {
     //MARK: - DataSoruce
     var numberOfSection: Int {
         return self.sections.count

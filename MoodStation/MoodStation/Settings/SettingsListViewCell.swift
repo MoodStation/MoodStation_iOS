@@ -72,7 +72,7 @@ final class SettingsListViewCell: UITableViewCell {
 
 extension SettingsListViewCell {
     func configure<T>(model: T) {
-        if let setting = model as? SettingsViewModel.Settings {
+        if let setting = model as? SettingsViewModelImpl.Settings {
             switch setting {
             case .alert(let alert):
                 self.settingLabel.text = alert.description

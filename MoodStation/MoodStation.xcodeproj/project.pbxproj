@@ -51,7 +51,6 @@
 		A9F24D14280979D000147ACF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D11280979CF00147ACF /* UserViewController.swift */; };
 		A9F24D15280979D000147ACF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D12280979D000147ACF /* UserViewModel.swift */; };
 		A9F24D1728097EBE00147ACF /* LogInSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D1628097EBE00147ACF /* LogInSession.swift */; };
-		A9F24D1B2809A3B100147ACF /* DefaultTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F24D1A2809A3B100147ACF /* DefaultTableViewModel.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 		F11A10A727C65A9100E29A24 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A627C65A9100E29A24 /* Record.swift */; };
 		F11A10A927C65A9800E29A24 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A827C65A9800E29A24 /* Repository.swift */; };
@@ -156,7 +155,6 @@
 		A9F24D11280979CF00147ACF /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A9F24D12280979D000147ACF /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		A9F24D1628097EBE00147ACF /* LogInSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSession.swift; sourceTree = "<group>"; };
-		A9F24D1A2809A3B100147ACF /* DefaultTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewModel.swift; sourceTree = "<group>"; };
 		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -415,7 +413,6 @@
 				F11A10AA27C65AA100E29A24 /* ServerRepository.swift */,
 				A91FDA7627DB2C5B003542A2 /* DateHandler.swift */,
 				A9F24D1628097EBE00147ACF /* LogInSession.swift */,
-				A9F24D1A2809A3B100147ACF /* DefaultTableViewModel.swift */,
 				A9F24D0A280975C100147ACF /* AppController.swift */,
 			);
 			path = Utils;
@@ -759,7 +756,6 @@
 				34309F4927C85BEB00F54FE3 /* ShareViewController.swift in Sources */,
 				F11A10ED27D3875100E29A24 /* Array+.swift in Sources */,
 				F11A10CC27CE01E000E29A24 /* SignUpView.swift in Sources */,
-				A9F24D1B2809A3B100147ACF /* DefaultTableViewModel.swift in Sources */,
 				A963E63227C648A200DAF770 /* AppDelegate.swift in Sources */,
 				A92B615627CFAA0B001FBE3E /* UITableViewCell+.swift in Sources */,
 				F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */,

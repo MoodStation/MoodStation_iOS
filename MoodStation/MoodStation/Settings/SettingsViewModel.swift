@@ -7,11 +7,16 @@
 
 import UIKit
 
-protocol SettingsViewModelType: DefaultTableViewModel, LogInSession {
-    func didSelectRowAt(at indexPath: IndexPath) -> CellModel?
+protocol SettingsViewModel: LogInSession {
+    var numberOfSection: Int { get }
+    func numberOfRowsInSection(_ section: Int) -> Int
+    func cellModel(at indexPath: IndexPath) -> SettingsViewModelImpl.Item?
+    func heightForRowAt(at indexPath: IndexPath) -> CGFloat
+    func didSelectRowAt(at indexPath: IndexPath) -> SettingsViewModelImpl.Item?
+    func makeAlert(_ style: SettingsViewModelImpl.Settings.Alert) -> AlertView?
 }
 
-final class SettingsViewModel {
+final class SettingsViewModelImpl {
     
     typealias ReloadDataAction = () -> Void
     
@@ -86,6 +91,7 @@ final class SettingsViewModel {
     }
     
     private func makeSections() -> [Section] {
+        print(#function)
         switch logInUser {
         case .none:
             return self.logOutSections()
@@ -96,6 +102,7 @@ final class SettingsViewModel {
     }
     
     private func logInSections(_ user: User) -> [Section] {
+        print(#function)
         return [
             .text([.text(.init(inset: UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 0), font: .body1R, text: "mood station", textColor: .white, numberOfLines: 1))]),
             .user([.user(user)]),
@@ -107,6 +114,7 @@ final class SettingsViewModel {
     }
     
     private func logOutSections() -> [Section] {
+        print(#function)
         return [
             .text([.text(.init(inset: UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 0), font: .body1R, text: "mood station", textColor: .white, numberOfLines: 1))]),
             .user([.user(self.logInUser)]),
@@ -129,7 +137,7 @@ final class SettingsViewModel {
     }// 로그인 상태 Dummy 삭제 예정
 }
 
-extension SettingsViewModel: SettingsViewModelType {
+extension SettingsViewModelImpl: SettingsViewModel {
     // MARK: - DataSoruce
     var numberOfSection: Int {
         return self.sections.count

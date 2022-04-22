@@ -72,7 +72,7 @@ extension SettingsViewController: SettingsViewDelegate {
     
     private func setUserCellPushViewController(by user: User?) {
         if let user = user {
-            let userInfoViewModel = UserViewModel(userInfo: user)
+            let userInfoViewModel = UserViewModelImpl(userInfo: user)
             let viewController = UserViewController(viewModel: userInfoViewModel).then {
                 $0.hidesBottomBarWhenPushed = true
             }
@@ -82,7 +82,7 @@ extension SettingsViewController: SettingsViewDelegate {
         }
     }
     
-    private func setNavigationCellPushViewController(by move: SettingsViewModel.Settings.Navigation) {
+    private func setNavigationCellPushViewController(by move: SettingsViewModelImpl.Settings.Navigation) {
         switch move {
         case .contact:
             self.pushContactViewController()
@@ -92,7 +92,7 @@ extension SettingsViewController: SettingsViewDelegate {
     }
     
     private func pushCrewInfoViewController() {
-        let viewModel = CrewInfoViewModel()
+        let viewModel = CrewInfoViewModelImpl()
         let viewController = CrewInfoViewController(viewModel: viewModel).then {
             $0.hidesBottomBarWhenPushed = true
         }
@@ -106,7 +106,7 @@ extension SettingsViewController: SettingsViewDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    private func setAlertCell(by info: SettingsViewModel.Settings.Alert) {
+    private func setAlertCell(by info: SettingsViewModelImpl.Settings.Alert) {
         guard let alert = self.viewModel.makeAlert(info) else { return }
         switch info {
         case .logIn:
@@ -130,17 +130,11 @@ extension SettingsViewController: SettingsViewDelegate {
     }
     
     private func logOut() {
-        print(#function)
+        self.viewModel.logOut()
     }
     
     private func deleteAcount() {
         print(#function)
-    }
-        
-    private func logoutUser() {
-        self.viewModel.logOut() {
-            self.settingsView.reloadInputViews()
-        }
     }
 }
 
