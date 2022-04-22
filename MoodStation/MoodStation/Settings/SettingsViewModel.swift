@@ -91,47 +91,27 @@ final class SettingsViewModelImpl {
     }
     
     private func makeSections() -> [Section] {
-        print(#function)
-        switch logInUser {
+        var baseSection: [Section] = [
+            .text([.text(.init(inset: UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 0), font: .body1R, text: "mood station", textColor: .white, numberOfLines: 1))]),
+            .user([.user(self.signInUser)]),
+            .text([.text(.init(inset: UIEdgeInsets(top: 36, left: 24, bottom: 8, right: 0), font: .body2M, text: "Contact", textColor: .gray03, numberOfLines: 1))]),
+            .cell([.cell(.navigation(.contact)), .cell(.navigation(.crewInfo))]),
+            .text([.text(.init(inset: UIEdgeInsets(top: 36, left: 24, bottom: 8, right: 0), font: .body2M, text: "Account", textColor: .gray03, numberOfLines: 1))])
+        ]
+        switch signInUser {
         case .none:
-            return self.logOutSections()
-        case .some(let user):
-            return self.logInSections(user)
+            baseSection.append(contentsOf: [.cell([.cell(.alert(.logIn))])] )
+        case .some(_):
+            baseSection.append(contentsOf: [.cell([.cell(.alert(.logOut)), .cell(.alert(.deleteAcount))])])
         }
-        
+        return baseSection
     }
-    
-    private func logInSections(_ user: User) -> [Section] {
-        print(#function)
-        return [
-            .text([.text(.init(inset: UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 0), font: .body1R, text: "mood station", textColor: .white, numberOfLines: 1))]),
-            .user([.user(user)]),
-            .text([.text(.init(inset: UIEdgeInsets(top: 36, left: 24, bottom: 8, right: 0), font: .body2M, text: "Contact", textColor: .gray03, numberOfLines: 1))]),
-            .cell([.cell(.navigation(.contact)), .cell(.navigation(.crewInfo))]),
-            .text([.text(.init(inset: UIEdgeInsets(top: 36, left: 24, bottom: 8, right: 0), font: .body2M, text: "Account", textColor: .gray03, numberOfLines: 1))]),
-            .cell([.cell(.alert(.logOut)), .cell(.alert(.deleteAcount))])
-        ]
-    }
-    
-    private func logOutSections() -> [Section] {
-        print(#function)
-        return [
-            .text([.text(.init(inset: UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 0), font: .body1R, text: "mood station", textColor: .white, numberOfLines: 1))]),
-            .user([.user(self.logInUser)]),
-            .text([.text(.init(inset: UIEdgeInsets(top: 36, left: 24, bottom: 8, right: 0), font: .body2M, text: "Contact", textColor: .gray03, numberOfLines: 1))]),
-            .cell([.cell(.navigation(.contact)), .cell(.navigation(.crewInfo))]),
-            .text([.text(.init(inset: UIEdgeInsets(top: 36, left: 24, bottom: 8, right: 0), font: .body2M, text: "Account", textColor: .gray03, numberOfLines: 1))]),
-            .cell([.cell(.alert(.logIn))])
-        ]
-    }
-    
     
     private var sections: [Section] = []
     private var reloadDataAction: ReloadDataAction?
-    var logInUser: User? = .init(name: "용우동", email: "keepingitflow@gmail.com", password: "비밀번호password", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") {
+    var signInUser: User? = .init(name: "용우동", email: "keepingitflow@gmail.com", password: "비밀번호password", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") {
         didSet {
             self.sections = self.makeSections()
-            print("로그인 변경 \(oldValue) -> \(self.logInUser)")
         }
     }// 로그인 상태 Dummy 삭제 예정
 }
@@ -165,12 +145,9 @@ extension SettingsViewModelImpl: SettingsViewModel {
     func didSelectRowAt(at indexPath: IndexPath) -> Item? {
         let section = self.sections[indexPath.section]
         switch section {
-        case .text(_):
-            return nil
-        case .user(let items):
-            return items[indexPath.row]
-        case .cell(let items):
-            return items[indexPath.row]
+        case .user(let items):  return items[indexPath.row]
+        case .cell(let items):  return items[indexPath.row]
+        default:                return nil
         }
     }
     

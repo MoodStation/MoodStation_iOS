@@ -108,18 +108,11 @@ extension SettingsViewController: SettingsViewDelegate {
     
     private func setAlertCell(by info: SettingsViewModelImpl.Settings.Alert) {
         guard let alert = self.viewModel.makeAlert(info) else { return }
-        switch info {
-        case .logIn:
-            alert.delegateConfirmAction {
-                self.pushLogInViewController()
-            }
-        case .logOut:
-            alert.delegateConfirmAction {
-                self.logOut()
-            }
-        case .deleteAcount:
-            alert.delegateConfirmAction {
-                self.deleteAcount()
+        alert.delegateConfirmAction {
+            switch info {
+            case .logIn:        self.pushLogInViewController()
+            case .logOut:       self.logOut()
+            case .deleteAcount: self.deleteAcount()
             }
         }
         alert.show(from: self)
