@@ -13,13 +13,12 @@ protocol LogInSession where Self: AnyObject {
 }
 
 extension LogInSession {
-    // MAKR: - LogIn Session
-    func logOut(completed: @escaping () -> Void) {
+    func logOut() {
         self.appController.logOut()
         self.logInUser = nil
     }
     
-    func logIn(userInput: (String, String), completed: @escaping () -> Void) {
+    func logIn(userInput: (String, String)) {
         self.appController.logIn(userInput) { result in
             switch result {
             case .success(let user):
