@@ -64,13 +64,6 @@ final class UserTableViewCell: UITableViewCell {
             $0.backgroundColor = .customBlack
         }
         
-        self.gradientView.do {
-            $0.clipsToBounds = true
-            $0.layer.cornerRadius = 42.5
-            $0.drawGradientUserInfo()
-            self.setNeedsDisplay()
-        }
-        
         self.userImageView.do {
             $0.backgroundColor = .gray
             $0.clipsToBounds = true
@@ -96,18 +89,29 @@ final class UserTableViewCell: UITableViewCell {
         }
     }
     
-    private let gradientView = UIView(frame: .zero)
+    private let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: 85, height: 85)).then { view in
+        view.clipsToBounds = true
+        let gradient = CAGradientLayer().then {
+            $0.colors = UIColor.crewInfo.compactMap { $0?.cgColor }
+            $0.type = .radial
+            $0.startPoint = CGPoint(x: 0.5, y: 0.5)
+            $0.endPoint = CGPoint(x: 1.0, y: 1.0)
+            $0.frame = view.bounds
+            $0.cornerRadius = 42.5
+        }
+        view.layer.addSublayer(gradient)
+    }
     private let userImageView = UIImageView(frame: .zero)
     private let nickNameLabel = UILabel(frame: .zero)
     private let emailLabel = UILabel(frame: .zero)
     private let disclosureIndicator = UIImageView(frame: .zero)
 }
 
-extension UserTableViewCell: Configurable {
-    func configure<T>(data: T) {
-        if let user = data as? UserInfo {
-            nickNameLabel.text = user.name
-            emailLabel.text = user.email
+extension UserTableViewCell {
+    func configure<T>(model: T) {
+        if let user = model as? User {
+            self.nickNameLabel.text = user.name
+            self.emailLabel.text = user.email
             guard let imagePath = user.userImagePath else {
                 return
             }
@@ -117,7 +121,8 @@ extension UserTableViewCell: Configurable {
                 userImageView.image = assetImage
             }
         } else {
-            nickNameLabel.text = "로그인이 필요합니다." // 로그아웃 상태 수정 예정
+            self.nickNameLabel.text = "로그인·회원가입"
+            self.emailLabel.text = "로그인 후 더 많은 기능을 사용해보세요."
         }
     }
     

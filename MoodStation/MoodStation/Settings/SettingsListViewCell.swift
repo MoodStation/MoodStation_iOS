@@ -53,10 +53,6 @@ final class SettingsListViewCell: UITableViewCell {
             $0.backgroundColor = .customBlack
         }
         
-        self.logoImageView.do {
-            $0.backgroundColor = .gray
-        }
-        
         self.settingLabel.do {
             $0.font = .body1R
             $0.textColor = .gray01
@@ -74,10 +70,17 @@ final class SettingsListViewCell: UITableViewCell {
     private let disclosureIndicator = UIImageView(frame: .zero)
 }
 
-extension SettingsListViewCell: Configurable {
-    func configure<T>(data: T) {
-        if let text = data as? String {
-            settingLabel.text = text
+extension SettingsListViewCell {
+    func configure<T>(model: T) {
+        if let setting = model as? SettingsViewModelImpl.Settings {
+            switch setting {
+            case .alert(let alert):
+                self.settingLabel.text = alert.description
+                self.logoImageView.image = UIImage(named: alert.imageName)
+            case .navigation(let navigation):
+                self.settingLabel.text = navigation.description
+                self.logoImageView.image = UIImage(named: navigation.imageName)
+            }
         }
     }
     

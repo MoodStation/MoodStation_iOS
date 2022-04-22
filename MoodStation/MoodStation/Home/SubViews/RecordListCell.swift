@@ -147,9 +147,9 @@ final class RecordListCell: UITableViewCell {
                                                      collectionViewLayout: UICollectionViewLayout())
 }
 
-extension RecordListCell: Configurable {
-    func configure<T>(data: T) {
-        if let model = data as? RecordListCellModel {
+extension RecordListCell {
+    func configure<T>(model: T) {
+        if let model = model as? RecordListCellModel {
             self.routeLine.isHidden = model.isLastDay
             self.moodRectangle.drawMoodRectangle(mood: model.mood)
             self.dateLabel.text = model.date

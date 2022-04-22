@@ -95,17 +95,17 @@ extension HomeViewController: HomeViewDataSource {
         }
         
         switch model {
-        case .record(let record):
+        case .record(let recordListCellModel):
             guard let cell = tableView.dequeueReusableCell(RecordListCell.self, at: indexPath) else {
                 return UITableViewCell()
             }
-            cell.configure(data: record)
+            cell.configure(model: recordListCellModel)
             return cell
-        case .empty(let emptyCellModel):
+        case .empty(let recordListEmptyCellModel):
             guard let cell = tableView.dequeueReusableCell(RecordListEmptyCell.self, at: indexPath) else {
                 return UITableViewCell()
             }
-            cell.configure(data: emptyCellModel)
+            cell.configure(model: recordListEmptyCellModel)
             return cell
         }
     }

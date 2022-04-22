@@ -7,23 +7,20 @@
 
 import Foundation
 
-protocol HomeViewModelType {
-    associatedtype CellModel
-    associatedtype HeaderModel
-    
+protocol HomeViewModel {
+    func headerModel(at index: Int) -> HomeViewModelImpl.Header?
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
-    func headerModel(at index: Int) -> HeaderModel? 
-    func cellModel(at indexPath: IndexPath) -> CellModel?
+    func cellModel(at indexPath: IndexPath) -> HomeViewModelImpl.Item?
 }
 
-final class HomeViewModel {
+final class HomeViewModelImpl {
     
-    enum HeaderModel {
+    enum Header {
         case date(RecordListHeaderViewModel)
     }
     
-    enum CellModel {
+    enum Item {
         case record(RecordListCellModel)
         case empty(RecordListEmptyCellModel)
     }
@@ -40,7 +37,8 @@ final class HomeViewModel {
 }
 
 // MARK: - DataSource
-extension HomeViewModel: HomeViewModelType {
+extension HomeViewModelImpl: HomeViewModel {
+    
     var numberOfSection: Int {
         self.sections.count
     }
@@ -49,14 +47,14 @@ extension HomeViewModel: HomeViewModelType {
         self.sections[section].records.count
     }
     
-    func headerModel(at index: Int) -> HeaderModel? {
+    func headerModel(at index: Int) -> Header? {
         guard let section = self.sections[safe: index] else { return nil }
         let headerDate = self.makeHeaderDate(by: section)
         let stringDate = self.dateHandler.recordDate(from: headerDate)
         return .date(RecordListHeaderViewModel(date: stringDate))
     }
     
-    func cellModel(at indexPath: IndexPath) -> CellModel? {
+    func cellModel(at indexPath: IndexPath) -> Item? {
         guard let section = self.sections[safe: indexPath.section] else { return nil }
         if let record = section.records[indexPath.row] {
             return .record(RecordListCellModel(isLastDay: dateHandler.isLastDay(record.date),
@@ -77,7 +75,7 @@ extension HomeViewModel: HomeViewModelType {
         return self.dateHandler.date(from: sectionComponents)
     }
     
-    private func makeEmptyCellModel(by section: MonthlyBundle, at indexPath: IndexPath) -> CellModel {
+    private func makeEmptyCellModel(by section: MonthlyBundle, at indexPath: IndexPath) -> Item {
         let cellDate = makeCellDate(by: section, and: indexPath)
         if section.isThisMonth,
             dateHandler.convertCellIndex(by: Date()) < indexPath.row {
