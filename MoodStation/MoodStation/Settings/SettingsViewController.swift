@@ -130,7 +130,7 @@ extension SettingsViewController: SettingsViewDelegate {
     }
     
     private func logOut() {
-        self.viewModel.logOut()
+        print(#function)
     }
     
     private func deleteAcount() {

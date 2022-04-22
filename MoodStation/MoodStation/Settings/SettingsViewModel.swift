@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SettingsViewModel: LogInSession {
+protocol SettingsViewModel {
     var numberOfSection: Int { get }
     func numberOfRowsInSection(_ section: Int) -> Int
     func cellModel(at indexPath: IndexPath) -> SettingsViewModelImpl.Item?
@@ -128,7 +128,6 @@ final class SettingsViewModelImpl {
     
     private var sections: [Section] = []
     private var reloadDataAction: ReloadDataAction?
-    var appController = AppController.shared
     var logInUser: User? = .init(name: "용우동", email: "keepingitflow@gmail.com", password: "비밀번호password", userImagePath: "https://image.tmdb.org/t/p/w500/uZRQgumqHdVqnaflAsJqu8NzjEA.jpg") {
         didSet {
             self.sections = self.makeSections()
