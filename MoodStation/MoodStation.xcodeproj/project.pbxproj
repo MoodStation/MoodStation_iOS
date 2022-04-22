@@ -46,9 +46,9 @@
 		A997606A27DF7026008F70E2 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606927DF7026008F70E2 /* ContactViewController.swift */; };
 		A997606E27DF7684008F70E2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997606D27DF7684008F70E2 /* HomeView.swift */; };
 		A999D4AE27E0C60B001A6AE3 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999D4AD27E0C60B001A6AE3 /* ContactView.swift */; };
-		A9A361AE2812A448005D5891 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A361AB2812A448005D5891 /* UserView.swift */; };
-		A9A361AF2812A448005D5891 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A361AC2812A448005D5891 /* UserViewModel.swift */; };
-		A9A361B02812A448005D5891 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A361AD2812A448005D5891 /* UserViewController.swift */; };
+		A9A361AE2812A448005D5891 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A361AB2812A448005D5891 /* UserDetailView.swift */; };
+		A9A361AF2812A448005D5891 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A361AC2812A448005D5891 /* UserDetailViewModel.swift */; };
+		A9A361B02812A448005D5891 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A361AD2812A448005D5891 /* UserDetailViewController.swift */; };
 		F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A327C651CE00E29A24 /* UIColor+.swift */; };
 		F11A10A727C65A9100E29A24 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A627C65A9100E29A24 /* Record.swift */; };
 		F11A10A927C65A9800E29A24 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A10A827C65A9800E29A24 /* Repository.swift */; };
@@ -148,9 +148,9 @@
 		A997606927DF7026008F70E2 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A997606D27DF7684008F70E2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A999D4AD27E0C60B001A6AE3 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
-		A9A361AB2812A448005D5891 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		A9A361AC2812A448005D5891 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		A9A361AD2812A448005D5891 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		A9A361AB2812A448005D5891 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		A9A361AC2812A448005D5891 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		A9A361AD2812A448005D5891 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		BCE592448F23982F1C098EE8 /* Pods_MoodStation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodStation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6278565DA2671DBE78CF191 /* Pods-MoodStationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodStationTests.release.xcconfig"; path = "Target Support Files/Pods-MoodStationTests/Pods-MoodStationTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11A10A327C651CE00E29A24 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -348,9 +348,9 @@
 		A974D30627EB413800501187 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				A9A361AB2812A448005D5891 /* UserView.swift */,
-				A9A361AD2812A448005D5891 /* UserViewController.swift */,
-				A9A361AC2812A448005D5891 /* UserViewModel.swift */,
+				A9A361AB2812A448005D5891 /* UserDetailView.swift */,
+				A9A361AD2812A448005D5891 /* UserDetailViewController.swift */,
+				A9A361AC2812A448005D5891 /* UserDetailViewModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -740,7 +740,7 @@
 				A92B615427CFA9EE001FBE3E /* RecordListCell.swift in Sources */,
 				F11A10E727D37C1400E29A24 /* TextOnlyTableViewCell.swift in Sources */,
 				F11A10C827CDF46100E29A24 /* SignUpViewController.swift in Sources */,
-				A9A361B02812A448005D5891 /* UserViewController.swift in Sources */,
+				A9A361B02812A448005D5891 /* UserDetailViewController.swift in Sources */,
 				A91FDA7527DB2BA6003542A2 /* MonthlyBundle.swift in Sources */,
 				F11A10B127C7AA8A00E29A24 /* UIFont+.swift in Sources */,
 				F11A10F027D4734400E29A24 /* RecordViewController.swift in Sources */,
@@ -755,7 +755,7 @@
 				F11A10C427CDF44B00E29A24 /* SignInViewModel.swift in Sources */,
 				F11A10EB27D3843F00E29A24 /* UITableView+.swift in Sources */,
 				F11A10AB27C65AA100E29A24 /* ServerRepository.swift in Sources */,
-				A9A361AF2812A448005D5891 /* UserViewModel.swift in Sources */,
+				A9A361AF2812A448005D5891 /* UserDetailViewModel.swift in Sources */,
 				341F620B27C8645C00296C49 /* UserDefaults+.swift in Sources */,
 				A997606527DF66E5008F70E2 /* SettingsView.swift in Sources */,
 				F11A110627D4871B00E29A24 /* AttributedString+.swift in Sources */,
@@ -790,7 +790,7 @@
 				A93DB85327DE31EC00C6920B /* CrewInfoViewController.swift in Sources */,
 				F11A10FD27D479B800E29A24 /* RecordKeywordCell.swift in Sources */,
 				34309F4227C85B6300F54FE3 /* MainViewController.swift in Sources */,
-				A9A361AE2812A448005D5891 /* UserView.swift in Sources */,
+				A9A361AE2812A448005D5891 /* UserDetailView.swift in Sources */,
 				A999D4AE27E0C60B001A6AE3 /* ContactView.swift in Sources */,
 				F11A10A427C651CE00E29A24 /* UIColor+.swift in Sources */,
 				A92B615827CFAAFA001FBE3E /* KeywordCollectionCell.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  UserInfoViewController.swift
+//  UserDetailViewController.swift
 //  MoodStation
 //
 //  Created by Yongwoo Marco on 2022/03/23.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class UserViewController: UIViewController {
+final class UserDetailViewController: UIViewController {
     
-    init(viewModel: UserViewModel) {
+    init(viewModel: UserDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,8 +33,8 @@ final class UserViewController: UIViewController {
             make.height.equalTo(44)
         }
         
-        self.view.addSubview(self.userInfoView)
-        self.userInfoView.snp.makeConstraints { make in
+        self.view.addSubview(self.userDetailView)
+        self.userDetailView.snp.makeConstraints { make in
             make.top.equalTo(self.navigationView.snp.bottom)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
             make.leading.trailing.equalToSuperview()
@@ -51,33 +51,33 @@ final class UserViewController: UIViewController {
             $0.configure(type: .back)
         }
         
-        self.userInfoView.do {
+        self.userDetailView.do {
             $0.delegate = self
             $0.dataSource = self
         }
     }
     
     private let navigationView = NavigationView(frame: .zero)
-    private let userInfoView = UserView(frame: .zero)
-    private let viewModel: UserViewModel
+    private let userDetailView = UserDetailView(frame: .zero)
+    private let viewModel: UserDetailViewModel
 }
 
-extension UserViewController: UserViewDelegate {
-    func userViewUserImageViewDidClick(_ view: UserView) {
+extension UserDetailViewController: UserDetailViewDelegate {
+    func userDetailUserImageViewDidClick(_ view: UserDetailView) {
         print("이미지 클릭")
     }
 
-    func userViewSaveButtonDidClick(_ view: UserView) {
+    func userDetailSaveButtonDidClick(_ view: UserDetailView) {
         print("저장")
     }
     
-    func userViewEditButtonDidClick(_ view: UserView) {
+    func userDetailEditButtonDidClick(_ view: UserDetailView) {
         print("수정")
     }
 
 }
 
-extension UserViewController: UserViewDataSource {
+extension UserDetailViewController: UserDetailViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         self.viewModel.numberOfSection
@@ -111,7 +111,7 @@ extension UserViewController: UserViewDataSource {
     
 }
 
-extension UserViewController: NavigationViewDelegate {
+extension UserDetailViewController: NavigationViewDelegate {
     
     func navigationViewDeleagteDidClickLeftButton(_ view: NavigationView) {
         self.navigationController?.popViewController(animated: true)

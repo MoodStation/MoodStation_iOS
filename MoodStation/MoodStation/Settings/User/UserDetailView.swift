@@ -1,5 +1,5 @@
 //
-//  UserInfoView.swift
+//  UserDetailView.swift
 //  MoodStation
 //
 //  Created by Yongwoo Marco on 2022/03/23.
@@ -7,23 +7,23 @@
 
 import UIKit
 
-protocol UserViewDelegate: UITableViewDelegate {
+protocol UserDetailViewDelegate: UITableViewDelegate {
     
-    func userViewUserImageViewDidClick(_ view: UserView)
-    func userViewSaveButtonDidClick(_ view: UserView)
-    func userViewEditButtonDidClick(_ view: UserView)
+    func userDetailUserImageViewDidClick(_ view: UserDetailView)
+    func userDetailSaveButtonDidClick(_ view: UserDetailView)
+    func userDetailEditButtonDidClick(_ view: UserDetailView)
     
 }
 
-typealias UserViewDataSource = UITableViewDataSource
+typealias UserDetailViewDataSource = UITableViewDataSource
 
-final class UserView: UIView {
+final class UserDetailView: UIView {
     
-    weak var delegate: UserViewDelegate? {
+    weak var delegate: UserDetailViewDelegate? {
         didSet { self.tableView.delegate = self.delegate }
     }
     
-    weak var dataSource: UserViewDataSource? {
+    weak var dataSource: UserDetailViewDataSource? {
         didSet { self.tableView.dataSource = self.dataSource }
     }
     
@@ -129,7 +129,7 @@ final class UserView: UIView {
     }
     
     @objc private func saveButtonClicked(_ sender: UIButton) {
-        self.delegate?.userViewSaveButtonDidClick(self)
+        self.delegate?.userDetailSaveButtonDidClick(self)
         self.pencilImageView.isHidden = true
         
         self.saveButton.isHidden = true
@@ -140,7 +140,7 @@ final class UserView: UIView {
     }
     
     @objc private func editButtonClicked(_ sender: UIButton) {
-        self.delegate?.userViewEditButtonDidClick(self)
+        self.delegate?.userDetailEditButtonDidClick(self)
         self.pencilImageView.isHidden = false
         
         self.editButton.isHidden = true

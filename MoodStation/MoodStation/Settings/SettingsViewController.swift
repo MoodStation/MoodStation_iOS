@@ -72,8 +72,8 @@ extension SettingsViewController: SettingsViewDelegate {
     
     private func setUserCellPushViewController(by user: User?) {
         if let user = user {
-            let userInfoViewModel = UserViewModelImpl(userInfo: user)
-            let viewController = UserViewController(viewModel: userInfoViewModel).then {
+            let userDetailViewModel = UserDetailViewModelImpl(user: user)
+            let viewController = UserDetailViewController(viewModel: userDetailViewModel).then {
                 $0.hidesBottomBarWhenPushed = true
             }
             self.navigationController?.pushViewController(viewController, animated: true)
